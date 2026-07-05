@@ -77,10 +77,31 @@ jobs:
           git add dist state
           if git diff --cached --quiet; then
             echo "no changes"
-          else
-            git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ)"
-            git push
+            exit 0
           fi
+          git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ)"
+          # Rebase over any concurrent changes on main, retry a few times if
+          # something else pushed while we were building.
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "pushed (attempt $i)"
+                exit 0
+              fi
+            else
+              # Rebase conflict - abort and prefer remote (our output regenerates anyway)
+              git rebase --abort || true
+              git reset --hard origin/main
+              # Re-stage and re-commit the freshly-built outputs
+              git add dist state
+              git diff --cached --quiet && exit 0
+              git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ) [retry $i]"
+            fi
+            sleep $((i * 2))
+          done
+          echo "push failed after retries"
+          exit 1
 
   deploy:
     needs: build
