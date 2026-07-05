@@ -1,0 +1,34 @@
+# fly.toml -- Fly.io app config for Paper Collector
+#
+# Replace `app = "paper-collector"` below with the name you get from `fly launch`.
+# Region: nrt (Tokyo). Change to your nearest region if you're not in Japan.
+
+app = "paper-collector"
+primary_region = "nrt"
+
+[build]
+
+[env]
+  PORT = "8080"
+  DAILY_HOUR_UTC = "22"        # 07:00 JST daily pipeline
+
+[[mounts]]
+  source = "paper_data"        # matches `fly volumes create paper_data`
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines  = "off"  # keep one machine warm so the phone bookmark is instant
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512              # PyMuPDF + Pillow fits comfortably in 512MB

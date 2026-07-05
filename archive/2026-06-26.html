@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Today's Papers - 2026-06-26 (Fri)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --bg: #0b0e13; --panel: #141a22; --border: #232b36; --border-hi: #4c8bf5;
+    --fg: #e7eef7; --muted: #8a96a6; --accent: #6ea9ff; --hero-bg: #f7f9fc;
+    --arxiv: #b31b1b; --acm: #0085ca;
+  }
+  body { background: var(--bg); color: var(--fg); font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif; }
+  .card { background: var(--panel); border: 1px solid var(--border); transition: border-color .15s, opacity .2s; }
+  .card:hover { border-color: var(--border-hi); }
+  .card.hidden-read { display: none; }
+  .badge { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 12px; font-size: 11px; font-weight: 500; line-height: 1.6; }
+  .badge-src-arxiv { background: var(--arxiv); color: white; }
+  .badge-src-acm   { background: var(--acm); color: white; }
+  .badge-cat       { background: #1d2530; color: #b6c1d1; border: 1px solid #2a3340; }
+  .badge-method    { background: #143b2c; color: #4ade80; border: 1px solid #1f5a45; }
+  .badge-field     { background: #2c2440; color: #d4b3ff; border: 1px solid #443560; }
+  .chip            { background: #1d2530; color: #b6c1d1; padding: 3px 10px; border-radius: 6px; font-size: 11px; }
+  .chip strong     { color: var(--fg); font-weight: 600; }
+  .tldr {
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(90deg, rgba(110,169,255,.08), transparent 70%);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e7eef7;
+    font-weight: 500;
+  }
+  .tldr .label { display: block; font-size: 10px; color: var(--accent); letter-spacing: 1px; margin-bottom: 4px; text-transform: uppercase; font-weight: 600; }
+  .hero-fig { background: var(--hero-bg); border-radius: 8px; padding: 12px; display: flex; align-items: center; justify-content: center; }
+  .hero-fig img { max-height: 320px; max-width: 100%; object-fit: contain; }
+  .hero-cap { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; font-style: italic; }
+  .more-figs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; }
+  .more-figs .mini { flex: 0 0 auto; background: var(--hero-bg); border-radius: 6px; padding: 6px; }
+  .more-figs .mini img { height: 120px; object-fit: contain; }
+  .more-figs .mini .cap { font-size: 10px; color: var(--muted); max-width: 200px; margin-top: 4px; line-height: 1.4; }
+  .id-line { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11px; color: var(--muted); }
+  .id-line a { color: var(--muted); }
+  .id-line a:hover { color: var(--accent); }
+  details > summary { cursor: pointer; color: var(--accent); font-size: 13px; list-style: none; user-select: none; }
+  details > summary::after { content: " \25BC"; font-size: 9px; }
+  details[open] > summary::after { content: " \25B2"; }
+  .abstract { color: #b6c1d1; font-size: 13px; line-height: 1.65; }
+  .btn-read {
+    background: #1d2530; color: #b6c1d1; border: 1px solid var(--border);
+    padding: 6px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; transition: all .15s;
+  }
+  .btn-read:hover { background: #2a3340; color: var(--fg); }
+  .progress {
+    height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 4px;
+  }
+  .progress > div { height: 100%; background: linear-gradient(90deg, #4ade80, #6ea9ff); transition: width .3s; }
+</style>
+</head>
+<body class="p-6 max-w-7xl mx-auto">
+
+<header class="mb-8">
+  <div class="flex items-end justify-between flex-wrap gap-3">
+    <div>
+      <h1 class="text-3xl font-bold">Today's Papers</h1>
+      <p class="text-gray-400 text-sm">2026-06-26 (Fri) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</p>
+    </div>
+    <div class="text-xs text-gray-500 text-right">
+      <span class="chip">arXiv + ACM (OA)</span>
+    </div>
+  </div>
+  <div class="progress mt-3"><div id="progressbar" style="width:0%"></div></div>
+</header>
+
+<main class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="23df202e81412cb7">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/23df202e81412cb7.fig0.png" alt="figure" loading="lazy">
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本研究は、顔の特徴と肌の色を保持しながらメイクアップを転送する拡散モデルであるMakeupMirrorを提案し、オンラインでの試着体験のための実用的なメイクアップ転送技術を開発した。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">diffusion</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-18</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.90</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.20094v1" target="_blank" rel="noopener" class="hover:text-blue-400">MakeupMirror: Improving Facial Attribute Preservation in Diffusion Models for Makeup Transfer</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Nefeli Andreou, Angel Martínez-González, Sabine Sternig, +3 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.20094" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.20094</a>
+      <a href="https://arxiv.org/abs/2606.20094v1" target="_blank" rel="noopener">arXiv:2606.20094v1</a>
+      <a href="https://arxiv.org/pdf/2606.20094v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/23df202e81412cb7.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 4. Skin tone distributions of our datasets (top, middle) com- pared to existing public datase…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/23df202e81412cb7.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 2. Illustration of the MakeupMirror architecture. Building upon Stable-Makeup, our approach e…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Makeup transfer models enable fun augmented reality (AR) experiences as well as virtual try-on (VTO) for online makeup shopping. While recent state-of-the-art diffusion based solutions such as Stable-Makeup dramatically improve the accuracy and realism of makeup transfer, they still face limitations in identity and skin color preservation, making production-level VTO for makeup shopping unrealistic. In this work, we propose MakeupMirror, a diffusion-based approach to makeup transfer that makes significant progress towards preserving facial features and skin tone. We introduce several technical innovations over Stable-Makeup: (1) integration of facial geometry conditioning with ControlNets to maintain facial fidelity; (2) region-specific makeup transfer control to enable precise makeup application across facial regions such as skin, eyes and lips; (3) skin tone-based makeup transfer modulation that prevent skin tone alteration in cross-subject transfer scenarios; and (4) integration of a Levenberg-Marquardt Langevin sampler to speed up inference while maintaining generation quality. Our experiments on CPM-Real, Makeup Wild, and (herein newly collected, more diverse) MakeupSelfies datasets show that MakeupMirror improves relative facial recognition similarity by +60%, reduces relative skin tone difference by -50% over Stable-Makeup, with a latency of 0.7s, while achieving expert acceptance rate of 94% across core facial identity preservation criteria.</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('23df202e81412cb7', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="933827fcc82259cb">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/933827fcc82259cb.fig0.png" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Figure 7 shows qualitative comparisons on DNA-Rendering.</p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、姿勢情報のみを用いて単眼または疎なマルチビュー動画から同期した密なマルチビュー動画を生成する多視点動画拡散モデルFlex4DHumanを提案し、これによりカジュアルな動画から動的な4Dガウススプラットを生成する道を開く。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">diffusion</span><span class="badge badge-method">gaussian splatting</span><span class="badge badge-method">text-to-video</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-11</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.55</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.13655v2" target="_blank" rel="noopener" class="hover:text-blue-400">Flex4DHuman: Flexible Multi-view Video Diffusion for 4D Human Reconstruction</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Jen-Hao Cheng, Yipeng Wang, Hao Zhang, +2 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.13655" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.13655</a>
+      <a href="https://arxiv.org/abs/2606.13655v2" target="_blank" rel="noopener">arXiv:2606.13655v2</a>
+      <a href="https://arxiv.org/pdf/2606.13655v2" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/933827fcc82259cb.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 7 shows qualitative comparisons on DNA-Rendering.</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/933827fcc82259cb.fig2.jpeg" alt="figure" loading="lazy">
+        <div class="cap">Figure 8: Composing 4D actors into generated scenes. Model-generated synchronized multi-view videos …</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">We present Flex4DHuman, a multi-view video diffusion model that transforms a monocular or sparse multi-view video of a dynamic subject into synchronized dense multi-view videos using only relative camera-pose conditioning. Unlike prior human-centric methods that rely on skeletons, depth maps, normals, or rendered target-view geometry, Flex4DHuman requires no explicit geometry priors and instead conditions generation through relative camera-pose positional encoding. The generated videos can be directly ingested by downstream reconstruction pipelines to create dynamic 4D Gaussian splats. Built on the Wan 2.1 1.3B text-to-video model, Flex4DHuman preserves the backbone architecture and encodes camera and view information through a five-axis positional encoding that extends spatio-temporal RoPE with view indices and continuous SE(3) relative camera geometry. A three-stage curriculum progressively trains the model for pose following, flexible reference-to-target view generation, and temporal rollout. To support temporal rollout, we train with clean historical target-view tokens. We also add multi-view captions to enable test-time text control. Combined with an off-the-shelf 4D Gaussian Splatting stage, our framework lifts monocular static-camera videos into dynamic 4D Gaussian splats. Experiments on DNA-Rendering and ActorsHQ show that Flex4DHuman surpasses prior state-of-the-art methods, while the same formulation generalizes to animal categories after mixed human-animal training</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('933827fcc82259cb', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="66d1d22a6049a465">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/66d1d22a6049a465.fig0.png" alt="figure" loading="lazy">
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、言語モデルによる行動計画と物理シミュレーションを統合するICMPGフレームワークを提案し、テキスト記述からより物理的に現実的で意味的に忠実な人体動作を生成することを可能にする。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">zero-shot</span><span class="badge badge-method">llm</span><span class="badge badge-method">large language model</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-25</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.55</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.26981v1" target="_blank" rel="noopener" class="hover:text-blue-400">In-Context Model Predictive Generation: Open-Vocabulary Motion Synthesis from Language Models to Physics</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Xiaomeng Fu, Junfan Lin, Yang Liu, +4 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.26981" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.26981</a>
+      <a href="https://arxiv.org/abs/2606.26981v1" target="_blank" rel="noopener">arXiv:2606.26981v1</a>
+      <a href="https://arxiv.org/pdf/2606.26981v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/66d1d22a6049a465.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Fig. 4. Comparison of Motions Under Physical Simulation. We compare ICMPG with MotionCLIP and AnySki…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/66d1d22a6049a465.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Fig. 9. t-SNE visualization of motion codebook utilization. Blue points indicate tokens activated by…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Synthesizing human motion from textual descriptions is essential for immersive digital applications, yet existing methods face a persistent trade-off between semantic fidelity and physical realism. Large language model (LLM)-based approaches can interpret diverse open-vocabulary instructions and compose high-level action plans, but they often generate motions that violate physical constraints. Physics-aware models improve realism through simulation or control, but they struggle with semantic complexity, fine-grained instructions, and novel concepts. To address this gap, we propose In-Context Model Predictive Generation (ICMPG), a framework that integrates language-model planning with inference-time physical feedback. ICMPG reformulates motion synthesis as a Model Predictive Control (MPC)-like process with two modules. The Context-Aware Motion Generation (CAMG) module uses an LLM as a planner to decompose textual commands and generate candidate motion sequences from motion tokens. The Model Predictive Generation (MPG) module evaluates these candidates through physical simulation and semantic alignment, estimates a composite reward, and selects the best sequence to guide subsequent generation steps. Unlike open-loop generation, this closed-loop refinement enables ICMPG to adapt motions to both the input semantics and the simulated physical environment without task-specific policy retraining. Extensive experiments across standard and zero-shot open-vocabulary settings show that </p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('66d1d22a6049a465', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="b2354bd480bc89b1">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/b2354bd480bc89b1.fig0.png" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Figure 11: Progressive streaming performance of continuous and discrete layering. On all the datasets, continuous layering achieves smoother quality transition and provides smaller model size at same quality.</p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、既存の離散的な層構造の問題を解決するため、進化木に基づいた連続的な層化表現であるEvoGSを提案し、スプラッティングデータの冗長性を大幅に削減しながら高品質でリアルタイムなストリーミングを実現する。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">gaussian splatting</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-05</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.36</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.07179v1" target="_blank" rel="noopener" class="hover:text-blue-400">EvoGS: Constructing Continuous-Layered Gaussian Splatting with Evolution Tree for Scalable 3D Streaming</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Yuang Shi, Simone Gasparini, Géraldine Morin, +1 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.07179" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.07179</a>
+      <a href="https://arxiv.org/abs/2606.07179v1" target="_blank" rel="noopener">arXiv:2606.07179v1</a>
+      <a href="https://arxiv.org/pdf/2606.07179v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/b2354bd480bc89b1.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 11: Progressive streaming performance of continuous and discrete layering. On all the dataset…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/b2354bd480bc89b1.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 11: Progressive streaming performance of continuous and discrete layering. On all the dataset…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Streaming 3D Gaussian Splatting requires highly scalable, progressive representations. Existing progressive methods rely on \textit{discrete layering}, accumulating separate splat sets for each level of detail. This structural independence between layers inherently leads to error accumulation, severe splat redundancy, and uncontrolled quality transitions. We propose EvoGS, the first \textit{continuous-layering} representation. Organized as an Evolution Tree, EvoGS generates finer details via an explicit, wavelet-inspired parent-child refinement. This empowers child nodes to structurally correct ancestral errors, yield inherently sparse and highly compressible inter-layer signals. Extensive experiments show EvoGS eliminates splat redundancy from over 65\% to under 25\%. Compared to state-of-the-art baselines, it reduces transmission payload and GPU VRAM footprint by up to 2.4$\times$ and 5.5$\times$, respectively, and achieves smooth quality transitions optimal for real-time adaptive streaming. Project page: https://yuang-ian.github.io/evogs/</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('b2354bd480bc89b1', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="6316a08bf58dec96">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/6316a08bf58dec96.fig0.png" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Figure 1: Respiratory data used in the study. The primary binary analysis uses stress as the positive class and groups baseline, amusement, and meditation as non-stress. The secondary one-vs-rest analysis is used to identify state-specific respiratory signatures.</p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本研究は、ウェアラブルデバイスの呼吸活動からストレスや感情状態を認識する際、分類精度だけでなく各状態を説明できるような解釈可能な呼吸特性を抽出することを目的とし、CNNと特徴量ベースの手法を組み合わせることで、ストレス検出とその他の状態ごとの呼吸マーカーの有用性を評価した。</div>
+    
+
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-25</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.30</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.26723v1" target="_blank" rel="noopener" class="hover:text-blue-400">State-Specific Respiratory Signatures for Affective and Stress Recognition: Interpretable Respiratory Markers, Autocorrelation Lags, and Compact CNN Models</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Andrei Velichko, Mehmet Tahir Huyut</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.26723" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.26723</a>
+      <a href="https://arxiv.org/abs/2606.26723v1" target="_blank" rel="noopener">arXiv:2606.26723v1</a>
+      <a href="https://arxiv.org/pdf/2606.26723v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/6316a08bf58dec96.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 1: Respiratory data used in the study. The primary binary analysis uses stress as the positiv…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Respiratory activity is a direct and interpretable physiological channel for wearable stress and affective-state recognition, yet many studies emphasize classification accuracy without identifying which respiratory properties separate different states. This work reframes RESP-based recognition as a joint predictive and explanatory problem. Using the chest respiratory channel of the WESAD dataset, we analyze 60 s windows under leave-one-subject-out validation and combine two complementary branches: compact raw-signal one-dimensional convolutional neural networks (1D-CNNs) and physically grouped handcrafted respiratory signatures. The primary application task is binary stress versus non-stress detection, while baseline, stress, amusement, and meditation are additionally analyzed in a one-vs-rest setting to reveal state-specific respiratory markers. The feature space is organized into respiratory timing, breath-to-breath variability, waveform statistics, spectral/time-frequency descriptors, and autocorrelation/nonlinear predictability descriptors, with the raw 60 s signal treated as a sixth representation for the CNN branch. We introduce autocorrelation transition lags (Zpm/Zmp) as interpretable markers of respiratory correlation scale and separately evaluate exploratory FEG-Pro/Lyapunov-like descriptors. In the final CNN refit setting, the raw-signal model achieved the strongest stress-vs-rest performance, with accuracy 96.72 percent, macro-F1 95.30 percent, and MCC 90.61 perce</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('6316a08bf58dec96', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="6084ce95af44478c">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/6084ce95af44478c.fig0.jpeg" alt="figure" loading="lazy">
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、データ不足に悩むマルチモーダル情報抽出タスクに対し、セマンティックアンカーを用いたデータ拡張フレームワークSAMAを提案し、高品質でタスクに適した合成データを生成することで、既存手法を凌駕する性能を示す。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">diffusion</span><span class="badge badge-method">large language model</span><span class="badge badge-method">multimodal</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-17</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.22</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.18780v1" target="_blank" rel="noopener" class="hover:text-blue-400">SAMA: Semantic Anchor-aligned Augmentation for Unified Low-Resource Multimodal Information Extraction</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Quanjiang Guo, Chong Mu, Jiazhou Pan, +4 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.18780" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.18780</a>
+      <a href="https://arxiv.org/abs/2606.18780v1" target="_blank" rel="noopener">arXiv:2606.18780v1</a>
+      <a href="https://arxiv.org/pdf/2606.18780v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/6084ce95af44478c.fig1.png" alt="figure" loading="lazy">
+        
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/6084ce95af44478c.fig2.jpeg" alt="figure" loading="lazy">
+        
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Multimodal Information Extraction (MIE)-covering tasks such as Multimodal Named Entity Recognition (MNER), Relation Extraction (MRE), and Event Extraction (MEE)-is essential for understanding multimedia content but remains constrained by severe data scarcity. Although data augmentation is a promising remedy, existing approaches are impeded by coarse cross-modal alignment and fragmented, task-specific designs that fail to exploit shared semantic knowledge. To overcome these limitations, we introduce Semantic Anchor-aligned Multimodal Augmentation (SAMA), a unified framework for generating high-fidelity, task-aware synthetic data. SAMA constructs structured semantic anchors from ground-truth labels to guide a Collaborative Multi-Experts Multimodal Large Language Model (CME-MLLM), which integrates a Universal Adapter for shared semantics with Task-Specific Adapters to produce diverse yet constraint-compliant textual samples. For image synthesis, SAMA employs an Anchor-Preserving Diffusion mechanism that uses anchor-weighted prompts and latent conditioning to maintain critical semantic anchors while diversifying visual contexts. To eliminate the need for manual verification, SAMA further introduces a Dual-Constraint Filtering module that selects synthetic samples based on both cross-modal consistency and anchor fidelity. Extensive experiments across benchmark datasets for MNER, MRE, and MEE demonstrate that SAMA consistently outperforms state-of-the-art augmentation baselines und</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('6084ce95af44478c', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="86ca6e71cec65645">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/86ca6e71cec65645.fig0.png" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Fig. 1. Overview of the proposed Edit3DGS framework. The core components are multi-view batch editing and mask-based refinement, which together ensure both spa- tial consistency across views and preservation of facial expressions. At each timestep, selected camera views are rendered and edited using instruction-guided </p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、2D指示付き拡散モデルと3Dガウススプラッティングを統合したEdit3DGSというフレームワークを提案し、表情や外見の編集を時間的に一貫性を保ちながら高精度に行うことを目指します。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">diffusion</span><span class="badge badge-method">gaussian splatting</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-16</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.08</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.17432v1" target="_blank" rel="noopener" class="hover:text-blue-400">Edit3DGS: Unified Framework for Dynamic Head Editing via 2D Instruction-Guided Diffusion and 3D Gaussian Splatting</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Duy-Dat Tran, Trung-Nghia Le</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.17432" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.17432</a>
+      <a href="https://arxiv.org/abs/2606.17432v1" target="_blank" rel="noopener">arXiv:2606.17432v1</a>
+      <a href="https://arxiv.org/pdf/2606.17432v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/86ca6e71cec65645.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Fig. 3. Qualitative results of the self-reenactment experiment. The edited avatar is driven by unsee…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/86ca6e71cec65645.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Fig. 4. Qualitative results of the cross-identity reenactment experiment. Expressions and poses from…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">We present Edit3DGS, a unified framework for dynamic 3D head editing that integrates 2D instruction-guided diffusion with 3D Gaussian splatting. Unlike prior approaches that separately address frame-based edits or static 3D reconstruction, our method couples semantic controllability in the image domain with photorealistic, temporally consistent 3D representations. Given an input video, editable facial regions are masked and modified using a text-conditioned diffusion model to support fine-grained operations such as expression transformation, attribute modification, and appearance refinement. The edited frames are then aggregated through 3D Gaussian splatting to produce a coherent, high-fidelity avatar that preserves both identity and motion dynamics. To enforce consistency, Edit3DGS incorporates multi-view batch editing and lightweight inpainting strategies that recover lost expressions across timesteps. Experimental results demonstrate that our framework enables controllable, artifact-free head editing with smooth temporal transitions, offering practical applications in virtual avatars, immersive communication, film production, and interactive media.</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('86ca6e71cec65645', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="7e8059c6b8b2c89b">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/7e8059c6b8b2c89b.fig0.png" alt="figure" loading="lazy">
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本研究は、正解なしでLLMを訓練するために、実行結果の比較に基づく報酬調整を行うRiVERというフレームワークを提案し、スコアベースの最適化タスクから一般化されたコーディング能力を向上させることを目指します。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">score-based</span><span class="badge badge-method">reinforcement learning</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-25</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 3.08</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.27369v1" target="_blank" rel="noopener" class="hover:text-blue-400">Reinforcement Learning without Ground-Truth Solutions can Improve LLMs</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Yingyu Lin, Qiyue Gao, Nikki Lijing Kuang, +6 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.27369" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.27369</a>
+      <a href="https://arxiv.org/abs/2606.27369v1" target="_blank" rel="noopener">arXiv:2606.27369v1</a>
+      <a href="https://arxiv.org/pdf/2606.27369v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/7e8059c6b8b2c89b.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 1: Comparison between traditional answer-matching verification and our group-wise rank-induce…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/7e8059c6b8b2c89b.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 1: Comparison between traditional answer-matching verification and our group-wise rank-induce…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Reinforcement learning with verifiable rewards (RLVR) for training LLMs typically rely on ground-truth answers to assign rewards, limiting their applicability to tasks where the ground-truth solution is unknown. We introduce a \textbf{R}anking-\textbf{i}nduced \textbf{VER}ifiable framework (RiVER) that trains LLMs on score-based optimization tasks without ground-truth solutions, using deterministic execution feedback as continuous-valued supervision. When applying group-relative RL to such continuous rewards, we identify two key challenges: \emph{scale dominance}, where uncalibrated score magnitudes across test instances distort policy updates, and \emph{frequency dominance}, where repeatedly sampled suboptimal solutions can outweigh rare but stronger candidates. RiVER addresses these challenges with calibrated reward shaping that uses instance-wise comparisons and emphasizes top-ranked solvers while retaining bounded feedback for other valid solutions. We train on 12 AtCoder Heuristic Contest tasks and evaluate on Algorithm Engineering Benchmark (ALE-Bench), LiveCodeBench, and USACO. RiVER advances Qwen3-8B and GLM-Z1-9B-0414 by 8.9\% and 9.4\% in ALE rating rank. More importantly, despite training exclusively on score-based tasks without any ground-truth solutions, RiVER also improves the backbones across exact-solution benchmarks such as LiveCodeBench and USACO by an absolute average improvement of 2.4\% and 3.5\%. By contrast, baselines trained with raw execution scores i</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('7e8059c6b8b2c89b', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="bd70eb26de9d5867">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/bd70eb26de9d5867.fig0.jpeg" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Figure 4: Visual comparison on representative scenes.</p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本論文は、2階微分を用いた非線形な損失関数を導入するLEGSを提案し、3D Gaussian Splattingの構造認識能力を向上させながら、より高品質なリアルタイム3Dシーン合成を実現することを目的とする。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">gaussian splatting</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-06</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 2.88</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.07932v1" target="_blank" rel="noopener" class="hover:text-blue-400">LEGS: Laplacian-Enhanced Gaussian Splatting with a Nonlinear Weighted Loss</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Yongfei Guo, Qizhou Huo, Xuan Sun, +1 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.07932" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.07932</a>
+      <a href="https://arxiv.org/abs/2606.07932v1" target="_blank" rel="noopener">arXiv:2606.07932v1</a>
+      <a href="https://arxiv.org/pdf/2606.07932v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/bd70eb26de9d5867.fig1.jpeg" alt="figure" loading="lazy">
+        <div class="cap">Figure 4: Visual comparison on representative scenes.</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/bd70eb26de9d5867.fig2.jpeg" alt="figure" loading="lazy">
+        <div class="cap">Figure 4: Visual comparison on representative scenes.</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">3D Gaussian Splatting (3DGS) has become an efficient explicit representation for radiance field reconstruction and real-time novel view synthesis. However, its standard photometric loss treats flat and structure-rich regions similarly, which may limit the recovery of sharp contours and fine details. Edge-Guided Gaussian Splatting (EGGS) improves structure awareness through edge-guided weighting, but mainly relies on first-order gradient responses and linear weighting. In this paper, we propose LEGS, a Laplacian-Enhanced Gaussian Splatting method with a nonlinearly weighted loss. LEGS replaces first-order gradient guidance with second-order Laplacian structural guidance and maps the normalized Laplacian response into pixel-wise weights through nonlinear response-to-weight functions. The proposed loss improves structure-aware Gaussian optimization while keeping the original 3DGS rendering pipeline unchanged. Experiments on the full Tanks\&Temples and Mip-NeRF360 datasets show that LEGS improves peak signal-to-noise ratio (PSNR) by up to 1.68 dB over 3DGS and up to 0.52 dB over EGGS. Incorporating the proposed second-order nonlinear weighting strategy into FastGS and FasterGS further improves PSNR by up to 1.69 dB, demonstrating its effectiveness as a general loss-level extension for Gaussian Splatting pipelines with potential applications in AR/VR, immersive visualization, and real-time 3D content generation.</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('bd70eb26de9d5867', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+  <article class="card rounded-xl p-5 flex flex-col gap-4" data-id="bc32e9f16bedc866">
+
+    
+    <div>
+      <div class="hero-fig">
+        <img src="data/figures/bc32e9f16bedc866.fig0.png" alt="figure" loading="lazy">
+      </div>
+      <p class="hero-cap">Figure 3. Quantitative comparison of latent topology and spectral fidelity between isotropic KL regularization and STAR regularization. (a) Channel-wise Information Rate: Average KL divergence plotted against latent channel index. (b) Latent Truncation Analysis: Reconstruction error (STFT-distance) as a function of the</p>
+    </div>
+    
+
+    
+    <div class="tldr"><span class="label">この論文がやりたいこと <em style="opacity:.7;font-style:normal">· llm</em></span>本研究は、連続VAEsが抱える圧縮率、再構成精度、潜在空間のトポロジーのトレードオフを解決するため、構造的トポロジー認識正則化（STAR）を提案し、これにより高忠実度な音声生成を実現する新しい手法を開発した。</div>
+    
+
+    
+    <div class="flex flex-wrap gap-1.5">
+      <span class="badge badge-method">diffusion</span><span class="badge badge-method">flow matching</span><span class="badge badge-method">vae</span><span class="badge badge-method">llm</span>
+    </div>
+    
+
+    <div class="flex flex-wrap gap-2 items-center text-xs">
+      <span class="chip">2026-06-22</span>
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="text-xs text-gray-600 ml-auto">score 2.74</span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-semibold leading-snug">
+        <a href="https://arxiv.org/abs/2606.23064v1" target="_blank" rel="noopener" class="hover:text-blue-400">STAR-VAE: Structured Topology-Aware Regularization for Audio Reconstruction and Generation</a>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1">Huadai Liu, Wen Wang, Kaicheng Luo, +3 more</p>
+    </div>
+
+    <div class="id-line flex flex-wrap gap-4">
+      <a href="https://doi.org/10.48550/arXiv.2606.23064" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.23064</a>
+      <a href="https://arxiv.org/abs/2606.23064v1" target="_blank" rel="noopener">arXiv:2606.23064v1</a>
+      <a href="https://arxiv.org/pdf/2606.23064v1" target="_blank" rel="noopener" class="text-blue-400">[PDF]</a>
+    </div>
+
+    
+    <div class="more-figs">
+      
+      <div class="mini">
+        <img src="data/figures/bc32e9f16bedc866.fig1.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 3. Quantitative comparison of latent topology and spectral fidelity between isotropic KL regu…</div>
+      </div>
+      
+      <div class="mini">
+        <img src="data/figures/bc32e9f16bedc866.fig2.png" alt="figure" loading="lazy">
+        <div class="cap">Figure 3. Quantitative comparison of latent topology and spectral fidelity between isotropic KL regu…</div>
+      </div>
+      
+    </div>
+    
+
+    <details>
+      <summary>Abstract</summary>
+      <p class="abstract mt-2">Continuous Variational Autoencoders (VAEs) serve as the fundamental continuous tokenizer for modern neural audio generation systems, enabling high-fidelity reconstruction while providing a compact, smooth latent space for downstream generative priors. However, continuous VAEs face a fundamental conflict among compression rate, reconstruction fidelity, and latent space topology, which we formalize as the Rate-Distortion-Regularity Trilemma. This trilemma stems from a topological mismatch: the isotropic Gaussian prior in standard VAEs imposes a flat latent geometry that fails to accommodate audio's hierarchical nature, where low-frequency components are structured and compressible while high-frequency components are stochastic and incompressible, leading to disordered information packing in which crucial semantic features are interleaved with high-entropy noise. To address this challenge, we propose Structured Topology-Aware Regularization (STAR), a general training strategy that reshapes latent space geometry by imposing a growth-based constraint field, routing structural and textural information into channel subspaces with matching capacities. STAR is applicable to any VAE architecture and effectively resolves the trilemma, as demonstrated in CNN-based VAEs. We further present STAR-VAE, which combines STAR with a hybrid CNN-Mamba architecture for local feature extraction and linear-complexity global context modeling, and STAR-Gen, an LLM-based Flow Matching framework that lev</p>
+    </details>
+
+    <div class="flex justify-end mt-2">
+      <button class="btn-read" onclick="markRead('bc32e9f16bedc866', this)">Read &amp; Dismiss</button>
+    </div>
+  </article>
+
+</main>
+
+<script>
+const STORE = 'paper_read_v2';
+const TOTAL = 10;
+function getRead() { try { return JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) { return {}; } }
+function setRead(m) { localStorage.setItem(STORE, JSON.stringify(m)); }
+function refreshProgress() {
+  const m = getRead();
+  let n = 0;
+  document.querySelectorAll('.card').forEach(c => { if (m[c.dataset.id]) n++; });
+  document.getElementById('readcount').textContent = n;
+  document.getElementById('progressbar').style.width = (TOTAL ? n / TOTAL * 100 : 0) + '%';
+}
+function markRead(id, btn) {
+  const m = getRead();
+  m[id] = Date.now();
+  setRead(m);
+  const card = btn.closest('.card');
+  card.classList.add('hidden-read');
+  refreshProgress();
+}
+window.addEventListener('DOMContentLoaded', () => {
+  const m = getRead();
+  document.querySelectorAll('.card').forEach(c => { if (m[c.dataset.id]) c.classList.add('hidden-read'); });
+  refreshProgress();
+});
+</script>
+</body>
+</html>

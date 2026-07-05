@@ -1,0 +1,1544 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Today's Papers - 2026-06-27 (Sat)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --bg: #0b0e13; --panel: #141a22; --border: #232b36; --border-hi: #4c8bf5;
+    --fg: #e7eef7; --muted: #8a96a6; --accent: #6ea9ff; --hero-bg: #f7f9fc;
+    --green: #4ade80; --green-dark: #143b2c;
+    --purple: #c084fc; --purple-dark: #2c1f3f;
+    --arxiv: #b31b1b; --acm: #0085ca;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body { background: var(--bg); color: var(--fg); font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif; overflow: hidden; display: flex; flex-direction: column; }
+  header, #refreshStatus, .progress { flex-shrink: 0; }
+
+  header { padding: 14px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 29px; font-weight: 700; margin: 0; }
+  header .sub { color: var(--muted); font-size: 16px; }
+  header .spacer { flex: 1; }
+  .chip { background: #1d2530; color: #b6c1d1; padding: 3px 10px; border-radius: 6px; font-size: 14px; }
+  .chip strong { color: var(--fg); font-weight: 600; }
+
+  #refreshBtn {
+    background: #1f6feb; color: white; font-weight: 600; padding: 8px 16px; border-radius: 6px;
+    border: 0; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 17px;
+  }
+  #refreshBtn:hover { background: #388bfd; }
+  #refreshBtn:disabled { background: #30363d; cursor: not-allowed; color: var(--muted); }
+
+  .settings-btn {
+    background: var(--panel); color: var(--fg); border: 1px solid var(--border);
+    padding: 7px 14px; border-radius: 6px; cursor: pointer;
+    display: flex; align-items: center; gap: 7px; font-size: 14px;
+  }
+  .settings-btn:hover { border-color: var(--border-hi); color: var(--accent); }
+
+  /* Settings modal */
+  .modal-bg {
+    position: fixed; inset: 0; background: rgba(0,0,0,.72); backdrop-filter: blur(4px);
+    z-index: 100; display: none; align-items: center; justify-content: center;
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px 26px; width: 90%; max-width: 760px; max-height: 90vh; overflow-y: auto;
+  }
+  .modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .modal-head h2 { font-size: 22px; font-weight: 700; margin: 0; }
+  .modal-x { background: transparent; border: 0; color: var(--muted); font-size: 26px; line-height: 1; cursor: pointer; padding: 0 4px; }
+  .modal-x:hover { color: var(--fg); }
+  .modal-hint { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0 0 16px 0; }
+  .modal-hint code { background: var(--bg); padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+  .cfg-cat {
+    background: rgba(255,255,255,.02); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px; margin-bottom: 12px;
+  }
+  .cfg-row1 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .cfg-name {
+    background: transparent; border: 0; border-bottom: 1px solid var(--border);
+    color: var(--fg); font-size: 16px; padding: 4px 0; flex: 1; font-weight: 600;
+  }
+  .cfg-name:focus { border-bottom-color: var(--accent); outline: none; }
+  .cfg-weight-lb { color: var(--muted); font-size: 13px; }
+  .cfg-weight {
+    width: 64px; background: var(--bg); border: 1px solid var(--border);
+    color: var(--fg); padding: 4px 8px; border-radius: 4px; font-size: 14px;
+  }
+  .cfg-del {
+    background: transparent; border: 0; color: #f87171;
+    font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px;
+  }
+  .cfg-del:hover { color: #fca5a5; }
+  .cfg-kw {
+    width: 100%; min-height: 70px;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+    padding: 10px; color: var(--fg); font-size: 14px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    resize: vertical; line-height: 1.5;
+  }
+  .cfg-kw:focus { border-color: var(--accent); outline: none; }
+  .modal-btn {
+    padding: 9px 20px; border-radius: 6px; border: 0;
+    cursor: pointer; font-size: 14px; font-weight: 600;
+  }
+  .modal-btn.primary { background: #1f6feb; color: white; }
+  .modal-btn.primary:hover { background: #388bfd; }
+  .modal-btn.primary:disabled { background: #30363d; cursor: not-allowed; color: var(--muted); }
+  .modal-btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+  .modal-btn.ghost:hover { background: rgba(255,255,255,.04); border-color: var(--border-hi); }
+  .modal-btn.full { width: 100%; margin-top: 4px; }
+  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+  .modal-status { font-size: 13px; color: var(--muted); margin: 10px 0 0 0; min-height: 18px; text-align: right; }
+  .modal-status.ok { color: var(--green); }
+  .modal-status.err { color: #f87171; }
+  #refreshSpinner { animation: spin 1s linear infinite; }
+  @keyframes spin { from {transform: rotate(0deg)} to {transform: rotate(360deg)} }
+
+  #refreshStatus { padding: 8px 28px; font-family: ui-monospace, monospace; font-size: 16px; color: var(--muted); background: #0d1219; border-bottom: 1px solid var(--border); }
+  #refreshStatus.hidden { display: none; }
+
+  .progress { height: 3px; background: var(--border); }
+  .progress > div { height: 100%; background: linear-gradient(90deg, var(--green), var(--accent)); transition: width .3s; }
+
+  /* Slides */
+  .slides {
+    display: flex; overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    flex: 1 1 auto; min-height: 0;
+    scrollbar-width: none;
+  }
+  .slides::-webkit-scrollbar { display: none; }
+  .slide {
+    flex: 0 0 100%; min-width: 100%; height: 100%;
+    scroll-snap-align: start;
+    padding: 24px 32px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 14px;
+  }
+  .slide.dismissed { display: none; }
+
+  /* Row 1: TLDR */
+  .tldr {
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(90deg, rgba(110,169,255,.12), transparent 70%);
+    padding: 14px 20px; border-radius: 0 10px 10px 0;
+    font-size: 23px; line-height: 1.6; font-weight: 500; color: #e7eef7;
+  }
+  .tldr .label {
+    display: block; font-size: 13px; color: var(--accent); letter-spacing: 1.5px;
+    margin-bottom: 6px; text-transform: uppercase; font-weight: 700;
+  }
+
+  /* Row 2: Title */
+  .title-row h2 {
+    font-size: 29px; font-weight: 600; line-height: 1.4; margin: 0;
+  }
+  .title-row h2 a { color: var(--fg); text-decoration: none; }
+  .title-row h2 a:hover { color: var(--accent); }
+  .title-row .authors { font-size: 16px; color: var(--muted); margin-top: 4px; }
+
+  /* Row 3: keywords + ids */
+  .kw-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .badge { display: inline-flex; padding: 3px 10px; border-radius: 12px; font-size: 14px; font-weight: 500; }
+  .badge-src-arxiv { background: var(--arxiv); color: white; }
+  .badge-src-acm   { background: var(--acm); color: white; }
+  .badge-cat       { background: #1d2530; color: #b6c1d1; border: 1px solid #2a3340; }
+  .badge-keyword   { background: var(--green-dark); color: var(--green); border: 1px solid #1f5a45; }
+  .id-line { font-family: ui-monospace, monospace; font-size: 14px; color: var(--muted); margin-left: auto; }
+  .id-line a { color: var(--muted); margin-left: 12px; text-decoration: none; }
+  .id-line a:hover { color: var(--accent); }
+
+  /* Row 4: method | evaluation grid */
+  .me-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 22px;
+    min-height: 0;
+  }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow-y: auto; }
+  .panel h3 {
+    font-size: 14px; letter-spacing: 1.5px; color: var(--accent);
+    text-transform: uppercase; margin: 0; font-weight: 700;
+  }
+  .panel.method  h3 { color: var(--green); }
+  .panel.insight    { background: linear-gradient(160deg, #1a2530 0%, #141a22 60%); }
+  .panel.insight h3 { color: var(--green); }
+
+  /* Method */
+  .hero-fig { background: var(--hero-bg); border-radius: 8px; padding: 10px; display: flex; align-items: center; justify-content: center; max-height: 460px; }
+  .hero-fig img { max-height: 440px; max-width: 100%; object-fit: contain; }
+  .hero-cap { font-size: 14px; color: var(--muted); line-height: 1.5; font-style: italic; margin: 0; }
+  .essence {
+    background: rgba(74,222,128,.08); border-left: 3px solid var(--green);
+    padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 17px; line-height: 1.6; color: #d4f5dc;
+  }
+  .essence .label { display: block; font-size: 12px; color: var(--green); letter-spacing: 1.5px;
+                    margin-bottom: 4px; text-transform: uppercase; font-weight: 700; }
+  .pipeline-section { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
+  .sub-h-green { color: var(--green); }
+  .pipeline {
+    display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center;
+    padding: 16px;
+    background: rgba(74, 222, 128, .04);
+    border: 1px dashed rgba(74, 222, 128, .25);
+    border-radius: 12px;
+  }
+  .pipeline .step {
+    background: linear-gradient(135deg, #1a4d3a, #143b2c);
+    border: 1.5px solid var(--green);
+    color: #d4f5dc;
+    padding: 10px 18px; border-radius: 22px;
+    font-size: 16px; font-weight: 600; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(74,222,128,.18);
+  }
+  .pipeline .arrow {
+    color: var(--green); font-size: 20px; font-weight: 700;
+    text-shadow: 0 0 8px rgba(74,222,128,.5);
+  }
+  .insight-dismiss {
+    align-self: flex-end;
+    margin-top: 6px;
+    background: rgba(74,222,128,.08);
+    border: 1px solid rgba(74,222,128,.3);
+    color: var(--green);
+    padding: 6px 16px; font-size: 14px;
+    border-radius: 6px; cursor: pointer;
+  }
+  .insight-dismiss:hover { background: rgba(74,222,128,.18); color: #d4f5dc; }
+
+  /* Insight panel (right column): key idea + key result */
+  .insight-header {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--green); font-size: 15px; letter-spacing: 1.5px;
+    text-transform: uppercase; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .insight-block {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(74,222,128,.18) 0%, rgba(110,169,255,.06) 70%);
+    border: 2px solid rgba(74,222,128,.45);
+    border-radius: 18px;
+    padding: 32px 36px;
+    font-size: 22px;
+    line-height: 1.75;
+    font-weight: 500;
+    color: #f0fff5;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center;
+    min-height: 220px;
+  }
+  .insight-block::before {
+    content: ""; position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(74,222,128,.35) 0%, transparent 65%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .insight-block::after {
+    content: "\201C"; position: absolute;
+    top: -28px; left: 14px;
+    font-size: 130px; font-family: Georgia, "Times New Roman", serif;
+    color: rgba(74,222,128,.22);
+    line-height: 1; font-weight: bold; pointer-events: none;
+  }
+  .insight-block > * { position: relative; z-index: 1; }
+  .key-result-section { display: flex; flex-direction: column; gap: 8px; padding-top: 6px; }
+  .key-result-section .lbl {
+    font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; font-weight: 700;
+    color: var(--purple);
+  }
+
+  /* Evaluation rows (now in left "Method" panel) */
+  .eval-block {
+    border-top: 1px solid var(--border);
+    padding-top: 14px; margin-top: 6px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sub-h {
+    font-size: 13px; letter-spacing: 1.5px;
+    color: var(--purple); text-transform: uppercase;
+    font-weight: 700; margin: 0;
+  }
+  .eval-row { display: flex; flex-direction: column; gap: 4px; }
+  .eval-row .lbl { font-size: 13px; color: var(--purple); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+  .eval-row .val { font-size: 17px; color: #e7eef7; line-height: 1.5; }
+  .eval-chip {
+    display: inline-flex; background: var(--purple-dark); color: var(--purple);
+    border: 1px solid #443560; padding: 4px 12px; border-radius: 12px; font-size: 14px;
+    margin: 2px 4px 2px 0;
+  }
+  .eval-key {
+    background: rgba(192,132,252,.10); border-left: 4px solid var(--purple);
+    padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 17px; line-height: 1.65;
+  }
+
+  /* Actions row at bottom */
+  .actions { display: flex; gap: 12px; align-items: center; padding-top: 8px; border-top: 1px solid var(--border); }
+  .actions details { flex: 1; }
+  .actions details > summary { cursor: pointer; color: var(--accent); font-size: 16px; list-style: none; user-select: none; }
+  .actions details > summary::after { content: " \25BC"; font-size: 12px; }
+  .actions details[open] > summary::after { content: " \25B2"; }
+  .abstract { color: #b6c1d1; font-size: 16px; line-height: 1.65; margin-top: 6px; max-height: 260px; overflow-y: auto; }
+  .btn-read {
+    background: #1d2530; color: #b6c1d1; border: 1px solid var(--border);
+    padding: 6px 16px; border-radius: 6px; font-size: 16px; cursor: pointer;
+  }
+  .btn-read:hover { background: #2a3340; color: var(--fg); }
+
+  /* Bottom navigation */
+  .navbar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(11,14,19,.92); backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+    padding: 10px 24px; display: flex; align-items: center; gap: 16px; z-index: 10;
+  }
+  .nav-btn {
+    background: var(--panel); color: var(--fg); border: 1px solid var(--border);
+    width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 21px; line-height: 1;
+  }
+  .nav-btn:hover { border-color: var(--border-hi); }
+  .nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+  .counter { font-family: ui-monospace, monospace; font-size: 17px; color: var(--muted); min-width: 60px; text-align: center; }
+  .dots { display: flex; gap: 6px; flex-wrap: wrap; }
+  .dot {
+    width: 24px; height: 6px; border-radius: 3px; background: var(--border); cursor: pointer; transition: background .2s;
+  }
+  .dot.active { background: var(--accent); }
+  .dot.read { background: var(--green-dark); }
+  .help { font-size: 14px; color: var(--muted); margin-left: auto; }
+  .help kbd { background: var(--panel); border: 1px solid var(--border); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, monospace; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Today's Papers</h1>
+  <span class="sub">2026-06-27 (Sat) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="spacer"></span>
+  <button class="settings-btn" onclick="openCfg()" title="検索キーワード設定">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+    <span>設定</span>
+  </button>
+  <button id="refreshBtn" onclick="refreshPapers()">
+    <svg id="refreshSpinner" class="hidden" width="14" height="14" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity=".25"/>
+      <path d="M22 12a10 10 0 0 1-10 10" stroke="currentColor" stroke-width="3"/>
+    </svg>
+    <span id="refreshLabel">論文を更新</span>
+  </button>
+  <span class="chip">arXiv + ACM (OA)</span>
+</header>
+
+<div class="modal-bg" id="cfgModal" onclick="if(event.target===this)closeCfg()">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>検索キーワード設定</h2>
+      <button class="modal-x" onclick="closeCfg()" title="閉じる">×</button>
+    </div>
+    <p class="modal-hint">編集内容は次回「論文を更新」から反映されます。元の設定は <code>config.yaml.bak</code> に保存されます。</p>
+    <div id="cfgList"></div>
+    <button class="modal-btn ghost full" onclick="addCategory()">＋ カテゴリを追加</button>
+    <div class="modal-actions">
+      <button class="modal-btn ghost" onclick="closeCfg()">キャンセル</button>
+      <button class="modal-btn primary" onclick="saveCfg()" id="cfgSaveBtn">保存</button>
+    </div>
+    <p class="modal-status" id="cfgStatus"></p>
+  </div>
+</div>
+
+<div id="refreshStatus" class="hidden"></div>
+<div class="progress"><div id="progressbar" style="width:0%"></div></div>
+
+<main class="slides" id="slides">
+
+  <section class="slide" data-id="23df202e81412cb7" data-idx="0">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文では、顔の特徴と肌の色を保持しながらメイクアップを転送するための拡散ベースの手法であるMakeupMirrorを提案し、オンラインでの試着体験の実現を目指す。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.20094v1" target="_blank" rel="noopener">MakeupMirror: Improving Facial Attribute Preservation in Diffusion Models for Makeup Transfer</a></h2>
+      <p class="authors">Nefeli Andreou, Angel Martínez-González, Sabine Sternig, +3 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">Makeup transfer</span><span class="badge badge-keyword">Diffusion model</span><span class="badge badge-keyword">Facial geometry conditioning</span><span class="badge badge-keyword">Skin tone modulation</span><span class="badge badge-keyword">Virtual try-on</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-06-18
+        <a href="https://doi.org/10.48550/arXiv.2606.20094" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.20094</a>
+        <a href="https://arxiv.org/abs/2606.20094v1" target="_blank" rel="noopener">arXiv:2606.20094v1</a>
+        <a href="https://arxiv.org/pdf/2606.20094v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/23df202e81412cb7.fig0.png" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">CPM-Real</span><span class="eval-chip">Makeup Wild</span><span class="eval-chip">MakeupSelfies</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">相対顔認識類似度</span><span class="eval-chip">相対肌色差</span><span class="eval-chip">専門家受容率</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">MakeupMirrorは、顔の幾何学的条件付け、領域特異的なメイクアップ転送制御、肌色ベースの調整、およびLevenberg-Marquardt Langevinサンプラーを統合することで、安定した顔の特徴と肌色の保持を実現する拡散モデルである。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">入力処理</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">特徴条件付け</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">領域制御</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">転送生成</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">MakeupMirrorは、Stable-Makeupと比較して相対顔認識類似度を+60%、相対肌色差を-50%改善し、コアな顔の同一性保持基準で94%の専門家受容率を達成した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('23df202e81412cb7', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="933827fcc82259cb" data-idx="1">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      Flex4DHumanは、相対的なカメラ姿勢条件のみを用いて、単眼または疎なマルチビュー動画から同期された密なマルチビュー動画を生成する多視点動画拡散モデルである。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.13655v2" target="_blank" rel="noopener">Flex4DHuman: Flexible Multi-view Video Diffusion for 4D Human Reconstruction</a></h2>
+      <p class="authors">Jen-Hao Cheng, Yipeng Wang, Hao Zhang, +2 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">video diffusion</span><span class="badge badge-keyword">multi-view</span><span class="badge badge-keyword">camera-pose conditioning</span><span class="badge badge-keyword">4D Gaussian splats</span><span class="badge badge-keyword">positional encoding</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-11
+        <a href="https://doi.org/10.48550/arXiv.2606.13655" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.13655</a>
+        <a href="https://arxiv.org/abs/2606.13655v2" target="_blank" rel="noopener">arXiv:2606.13655v2</a>
+        <a href="https://arxiv.org/pdf/2606.13655v2" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/933827fcc82259cb.fig0.png" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 7 shows qualitative comparisons on DNA-Rendering.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">DNA-Rendering</span><span class="eval-chip">ActorsHQ</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">Flex4DHumanは、骨格や深度マップなどの明示的な幾何学的事前知識に依存せず、相対的なカメラ姿勢の位置エンコーディングを用いて動画生成を条件付け、これにより単眼動画を動的な4D Gaussian splatsに変換する。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">Pose following</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">View generation</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">Temporal rollout</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">Flex4DHumanは先行する最先端手法を上回り、人間と動物の混合トレーニング後も一般化できることを示した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('933827fcc82259cb', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="66d1d22a6049a465" data-idx="2">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、テキスト記述から物理的に現実的で意味的に忠実な人間の動作を生成するために、言語モデルの計画と推論時の物理フィードバックを統合するICMPGフレームワークを提案する。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.26981v1" target="_blank" rel="noopener">In-Context Model Predictive Generation: Open-Vocabulary Motion Synthesis from Language Models to Physics</a></h2>
+      <p class="authors">Xiaomeng Fu, Junfan Lin, Yang Liu, +4 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">Motion Synthesis</span><span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">Model Predictive Control (MPC)</span><span class="badge badge-keyword">Physical Simulation</span><span class="badge badge-keyword">In-Context Learning</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-25
+        <a href="https://doi.org/10.48550/arXiv.2606.26981" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.26981</a>
+        <a href="https://arxiv.org/abs/2606.26981v1" target="_blank" rel="noopener">arXiv:2606.26981v1</a>
+        <a href="https://arxiv.org/pdf/2606.26981v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/66d1d22a6049a465.fig0.png" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">standard benchmarks</span><span class="eval-chip">zero-shot open-vocabulary settings</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">physical plausibility</span><span class="eval-chip">semantic faithfulness</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">ICMPGは、テキスト命令の分解と候補動作シーケンス生成を行うLLMベースの計画モジュールと、物理シミュレーションによる評価・報酬計算を行う予測生成モジュールを統合し、閉ループで動作を洗練させる手法である。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">CAMG</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">MPG</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">Refinement</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">ICMPGは、多様なコマンドに対して、代表的なベースラインよりも物理的に妥当で意味的に忠実な動作を生成できることが示された。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('66d1d22a6049a465', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="b2354bd480bc89b1" data-idx="3">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、3D Gaussian Splattingの進歩的な表現として、離散的な層構造ではなく連続的な層構造を用いるEvoGSを提案し、エラー蓄積と冗長性を解消することで、より高品質で効率的なリアルタイムストリーミングを実現する。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.07179v1" target="_blank" rel="noopener">EvoGS: Constructing Continuous-Layered Gaussian Splatting with Evolution Tree for Scalable 3D Streaming</a></h2>
+      <p class="authors">Yuang Shi, Simone Gasparini, Géraldine Morin, +1 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">3D Gaussian Splatting</span><span class="badge badge-keyword">Progressive Representation</span><span class="badge badge-keyword">Continuous Layering</span><span class="badge badge-keyword">Evolution Tree</span><span class="badge badge-keyword">Splat Redundancy</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-05
+        <a href="https://doi.org/10.48550/arXiv.2606.07179" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.07179</a>
+        <a href="https://arxiv.org/abs/2606.07179v1" target="_blank" rel="noopener">arXiv:2606.07179v1</a>
+        <a href="https://arxiv.org/pdf/2606.07179v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/b2354bd480bc89b1.fig0.png" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 11: Progressive streaming performance of continuous and discrete layering. On all the datasets, continuous layering achieves smoother quality transition and provides smaller model size at same quality.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">Splat Redundancy</span><span class="eval-chip">Transmission Payload</span><span class="eval-chip">GPU VRAM Footprint</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">EvoGSは、進化木として組織化された連続層構造を採用し、親ノードからの誤差を子ノードが明示的に修正するウェーブレットに着想を得た親子洗練プロセスを通じて、本質的に疎で高圧縮性の層間信号を生成する。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">EvoGS生成</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">親子の洗練</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">エラー修正</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">EvoGSはスプラットの冗長性を65%以上から25%未満に削減し、送信ペイロードとGPU VRAMフットプリントをそれぞれ最大2.4倍および5.5倍削減した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('b2354bd480bc89b1', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="6316a08bf58dec96" data-idx="4">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本研究は、ウェアラブルデバイスの呼吸活動からストレスや感情状態を認識する際、分類精度だけでなく、各状態を分離する呼吸特性を説明可能な形で特定することを目的としている。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.26723v1" target="_blank" rel="noopener">State-Specific Respiratory Signatures for Affective and Stress Recognition: Interpretable Respiratory Markers, Autocorrelation Lags, and Compact CNN Models</a></h2>
+      <p class="authors">Andrei Velichko, Mehmet Tahir Huyut</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">呼吸活動</span><span class="badge badge-keyword">CNN</span><span class="badge badge-keyword">呼吸特徴量</span><span class="badge badge-keyword">ストレス認識</span><span class="badge badge-keyword">可解性</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-06-25
+        <a href="https://doi.org/10.48550/arXiv.2606.26723" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.26723</a>
+        <a href="https://arxiv.org/abs/2606.26723v1" target="_blank" rel="noopener">arXiv:2606.26723v1</a>
+        <a href="https://arxiv.org/pdf/2606.26723v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/6316a08bf58dec96.fig0.png" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: Respiratory data used in the study. The primary binary analysis uses stress as the positive class and groups baseline, amusement, and meditation as non-stress. The secondary one-vs-rest analysis is used to identify state-specific respiratory signatures.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">WESAD</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">Accuracy</span><span class="eval-chip">F1</span><span class="eval-chip">MCC</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">WESADデータセットの胸部呼吸チャネルを用い、1D-CNNと物理的にグループ化された手作り呼吸シグネチャを組み合わせることで、ストレス検出と非ストレス状態（リラックス、瞑想など）の識別を行う。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">信号分析</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">特徴量抽出</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モデル統合</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">生信号を用いたCNNモデルがストレス対非ストレス検出で最高の性能を示したが、解釈可能な呼吸シグネチャは瞑想などの非ストレス状態の特定においてより生理学的に透明なマーカーを提供した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('6316a08bf58dec96', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="6084ce95af44478c" data-idx="5">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、データ不足の問題を克服するため、セマンティックアンカーに基づいたマルチモーダルデータ拡張フレームワークSAMAを提案し、高品質な合成データの生成とフィルタリングを行うことを目的としている。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.18780v1" target="_blank" rel="noopener">SAMA: Semantic Anchor-aligned Augmentation for Unified Low-Resource Multimodal Information Extraction</a></h2>
+      <p class="authors">Quanjiang Guo, Chong Mu, Jiazhou Pan, +4 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">MIE</span><span class="badge badge-keyword">データ拡張</span><span class="badge badge-keyword">マルチモーダルLLM</span><span class="badge badge-keyword">拡散モデル</span><span class="badge badge-keyword">セマンティックアンカー</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-06-17
+        <a href="https://doi.org/10.48550/arXiv.2606.18780" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.18780</a>
+        <a href="https://arxiv.org/abs/2606.18780v1" target="_blank" rel="noopener">arXiv:2606.18780v1</a>
+        <a href="https://arxiv.org/pdf/2606.18780v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/6084ce95af44478c.fig0.jpeg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">MNER</span><span class="eval-chip">MRE</span><span class="eval-chip">MEE</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">SAMAは、グラウンドトゥルースラベルから構造化されたセマンティックアンカーを構築し、これを協調的なマルチエキスパート多モーダル大規模言語モデル（CME-MLLM）にガイドすることで、タスクに適した多様な合成データを生成する統一フレームワークである。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">アンカー構築</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">データ生成</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">フィルタリング</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">SAMAは、教師ありおよび低リソース設定の両方で、最先端の拡張ベースラインを上回る性能を示し、その汎用性と堅牢性が実証された。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('6084ce95af44478c', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="86ca6e71cec65645" data-idx="6">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、2D指示ガイド拡散モデルと3Dガウススプラッティングを統合したフレームワークEdit3DGSを提案し、動画からの顔の動的な編集を、アイデンティティと動きの整合性を保ちながら高精度に行うことを目的としている。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.17432v1" target="_blank" rel="noopener">Edit3DGS: Unified Framework for Dynamic Head Editing via 2D Instruction-Guided Diffusion and 3D Gaussian Splatting</a></h2>
+      <p class="authors">Duy-Dat Tran, Trung-Nghia Le</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">3D Gaussian Splatting</span><span class="badge badge-keyword">Diffusion Model</span><span class="badge badge-keyword">3D Head Editing</span><span class="badge badge-keyword">Temporal Consistency</span><span class="badge badge-keyword">Face Editing</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-16
+        <a href="https://doi.org/10.48550/arXiv.2606.17432" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.17432</a>
+        <a href="https://arxiv.org/abs/2606.17432v1" target="_blank" rel="noopener">arXiv:2606.17432v1</a>
+        <a href="https://arxiv.org/pdf/2606.17432v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/86ca6e71cec65645.fig0.png" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 1. Overview of the proposed Edit3DGS framework. The core components are multi-view batch editing and mask-based refinement, which together ensure both spa- tial consistency across views and preservation of facial expressions. At each timestep, selected camera views are rendered and edited using instruction-guided </p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">Edit3DGSは、テキスト条件付き拡散モデルを用いて画像領域のセマンティック制御を可能にし、その結果を3Dガウススプラッティングで統合することで、表情変換や属性変更といった微細な操作を、時間的に一貫性のあるフォトリアリスティックなアバター生成を実現する。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">マスク適用</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">拡散モデル編集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">3D統合</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">本フレームワークは、滑らかな時間的遷移を伴う、アーティファクトのない制御可能な顔編集を可能にし、バーチャルアバターや没入型コミュニケーションなどの実用的な応用を提供する。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('86ca6e71cec65645', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="7e8059c6b8b2c89b" data-idx="7">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、正解のないスコアベースの最適化タスクを用いて大規模言語モデルを訓練するための、検証可能な報酬を与えるフレームワークを提案する。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.27369v1" target="_blank" rel="noopener">Reinforcement Learning without Ground-Truth Solutions can Improve LLMs</a></h2>
+      <p class="authors">Yingyu Lin, Qiyue Gao, Nikki Lijing Kuang, +6 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">Reinforcement Learning</span><span class="badge badge-keyword">LLMs</span><span class="badge badge-keyword">Verifiable Rewards</span><span class="badge badge-keyword">Score-based Optimization</span><span class="badge badge-keyword">Reward Calibration</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-25
+        <a href="https://doi.org/10.48550/arXiv.2606.27369" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.27369</a>
+        <a href="https://arxiv.org/abs/2606.27369v1" target="_blank" rel="noopener">arXiv:2606.27369v1</a>
+        <a href="https://arxiv.org/pdf/2606.27369v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/7e8059c6b8b2c89b.fig0.png" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">AtCoder Heuristic Contest tasks</span><span class="eval-chip">ALE-Bench</span><span class="eval-chip">LiveCodeBench</span><span class="eval-chip">USACO</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">ALE rating rank</span><span class="eval-chip">絶対平均改善率</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">正解のないスコアベースの最適化タスクにおいて、実行時のフィードバックを連続値の監督として利用し、インスタンス間比較を用いた報酬シェイピングによりスケールおよび頻度の支配問題を解決するフレームワークを導入する。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">RiVER学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">報酬シェイピング</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">評価</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">RiVERは、スコアベースのタスクのみで訓練したにもかかわらず、正確な解を持つベンチマークにおいてもバックボーンを2.4%および3.5%絶対平均改善した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('7e8059c6b8b2c89b', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="bd70eb26de9d5867" data-idx="8">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、3D Gaussian Splattingの構造認識能力を向上させるため、非線形重み付けを用いたラプラシアンベースの損失関数を導入するLEGSを提案し、高品質な再構成を目指す。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.07932v1" target="_blank" rel="noopener">LEGS: Laplacian-Enhanced Gaussian Splatting with a Nonlinear Weighted Loss</a></h2>
+      <p class="authors">Yongfei Guo, Qizhou Huo, Xuan Sun, +1 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">3D Gaussian Splatting</span><span class="badge badge-keyword">Radiance Field</span><span class="badge badge-keyword">Laplacian Guidance</span><span class="badge badge-keyword">Nonlinear Weighting</span><span class="badge badge-keyword">Novel View Synthesis</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-06
+        <a href="https://doi.org/10.48550/arXiv.2606.07932" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.07932</a>
+        <a href="https://arxiv.org/abs/2606.07932v1" target="_blank" rel="noopener">arXiv:2606.07932v1</a>
+        <a href="https://arxiv.org/pdf/2606.07932v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/bd70eb26de9d5867.fig0.jpeg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 4: Visual comparison on representative scenes.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">Tanks&Temples</span><span class="eval-chip">Mip-NeRF360</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">PSNR</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">LEGSは、標準的な勾配ガイドではなく、2次のラプラシアン構造ガイドを導入し、その応答を非線形関数を用いてピクセルごとの重みにマッピングすることで、構造認識を強化したガウス最適化を可能にする。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">3DGS</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">Laplacian計算</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">非線形重み付け</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">LEGSは3DGSに対して最大1.68 dB、EGGSに対して最大0.52 dBのピーク信号対ノイズ比（PSNR）を向上させた。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('bd70eb26de9d5867', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="bc32e9f16bedc866" data-idx="9">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      本論文は、連続VAEsが抱える圧縮率、再構成忠実度、潜在空間トポロジーのトレードオフを解決するため、構造的トポロジー認識正則化（STAR）という手法を提案し、高品質な音声生成を実現する。
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2606.23064v1" target="_blank" rel="noopener">STAR-VAE: Structured Topology-Aware Regularization for Audio Reconstruction and Generation</a></h2>
+      <p class="authors">Huadai Liu, Wen Wang, Kaicheng Luo, +3 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">VAE</span><span class="badge badge-keyword">Latent Space</span><span class="badge badge-keyword">Rate-Distortion-Regularity Tri</span><span class="badge badge-keyword">Structured Topology-Aware Regu</span><span class="badge badge-keyword">Flow Matching</span>
+      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-06-22
+        <a href="https://doi.org/10.48550/arXiv.2606.23064" target="_blank" rel="noopener">doi:10.48550/arXiv.2606.23064</a>
+        <a href="https://arxiv.org/abs/2606.23064v1" target="_blank" rel="noopener">arXiv:2606.23064v1</a>
+        <a href="https://arxiv.org/pdf/2606.23064v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/bc32e9f16bedc866.fig0.png" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 3. Quantitative comparison of latent topology and spectral fidelity between isotropic KL regularization and STAR regularization. (a) Channel-wise Information Rate: Average KL divergence plotted against latent channel index. (b) Latent Truncation Analysis: Reconstruction error (STFT-distance) as a function of the</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">diverse audio domains</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">reconstruction fidelity</span><span class="eval-chip">semantic information preservat</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">標準的なVAEsの等方的なガウス事前分布が音声の階層的性質を捉えられないというトポロジーの不一致を解消するため、成長ベースの制約場を導入し、構造的・質感情報をチャネルサブスペースにルーティングするSTARという一般化された訓練戦略を提案する。</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">STAR学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">STAR-VAE構築</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">STAR-Gen適用</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">STAR-VAEは最先端の再構成忠実度と意味的情報保持を達成し、構造化された潜在空間は拡散モデルやSTAR-Genのテキストから音声生成を改善した。</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('bc32e9f16bedc866', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+const STORE = 'paper_read_v3';
+const TOTAL = 10;
+const slides = document.getElementById('slides');
+let current = 0;
+
+function getRead() { try { return JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) { return {}; } }
+function setRead(m) { localStorage.setItem(STORE, JSON.stringify(m)); }
+
+function visibleSlides() { return [...document.querySelectorAll('.slide:not(.dismissed)')]; }
+
+function syncCounter() {
+  const m = getRead();
+  let n = 0;
+  document.querySelectorAll('.slide').forEach(c => { if (m[c.dataset.id]) n++; });
+  const rc = document.getElementById('readcount'); if (rc) rc.textContent = n;
+  const pb = document.getElementById('progressbar'); if (pb) pb.style.width = (TOTAL ? n / TOTAL * 100 : 0) + '%';
+}
+
+function goTo(i) {
+  const vis = visibleSlides();
+  if (vis.length === 0) return;
+  current = Math.max(0, Math.min(vis.length - 1, i));
+  vis[current].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+  syncCounter();
+}
+function goPrev() { goTo(current - 1); }
+function goNext() { goTo(current + 1); }
+
+function markRead(id, btn) {
+  const m = getRead();
+  m[id] = Date.now();
+  setRead(m);
+  const slide = btn.closest('.slide');
+  slide.classList.add('dismissed');
+  // After dismissing, recompute current so we don't jump weirdly
+  const vis = visibleSlides();
+  if (vis.length === 0) { syncCounter(); return; }
+  current = Math.min(current, vis.length - 1);
+  vis[current].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+  syncCounter();
+}
+
+slides.addEventListener('scroll', () => {
+  const vis = visibleSlides();
+  if (vis.length === 0) return;
+  const i = Math.round(slides.scrollLeft / slides.clientWidth);
+  if (i !== current && vis[i]) {
+    current = i;
+    syncCounter();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowLeft')      { e.preventDefault(); goPrev(); }
+  else if (e.key === 'ArrowRight'){ e.preventDefault(); goNext(); }
+  else if (e.key.toLowerCase() === 'r') {
+    const vis = visibleSlides();
+    if (vis[current]) {
+      const btn = vis[current].querySelector('.btn-read');
+      if (btn) btn.click();
+    }
+  }
+  else if (e.key === 'Enter') {
+    const vis = visibleSlides();
+    if (vis[current]) {
+      const a = vis[current].querySelector('.title-row h2 a');
+      if (a) window.open(a.href, '_blank');
+    }
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (location.protocol === 'file:') {
+    const b = document.createElement('div');
+    b.style.cssText = 'background:#7a1d1d;color:#fff;padding:14px 20px;text-align:center;font-size:15px;line-height:1.6;font-weight:500;border-bottom:2px solid #b91c1c';
+    b.innerHTML = '⚠ このページは <code style="background:rgba(0,0,0,.3);padding:2px 8px;border-radius:4px;font-family:ui-monospace,monospace">file://</code> で開かれているため、設定保存・更新ボタンが動作しません。<br>' +
+      'まず <code style="background:rgba(0,0,0,.3);padding:2px 8px;border-radius:4px;font-family:ui-monospace,monospace">setup.bat</code> または <code style="background:rgba(0,0,0,.3);padding:2px 8px;border-radius:4px;font-family:ui-monospace,monospace">start.bat</code> を起動し、<a href="http://localhost:8770/" style="color:#fbbf24;text-decoration:underline">http://localhost:8770/</a> をブックマークしてください。';
+    document.body.prepend(b);
+  }
+  const m = getRead();
+  document.querySelectorAll('.slide').forEach(c => { if (m[c.dataset.id]) c.classList.add('dismissed'); });
+  // Position at first visible
+  const vis = visibleSlides();
+  if (vis.length) { vis[0].scrollIntoView({ inline: 'start' }); }
+  syncCounter();
+});
+
+// --- Settings modal (interest keywords) ---
+async function openCfg() {
+  const status = document.getElementById('cfgStatus');
+  status.className = 'modal-status'; status.textContent = '';
+  let data;
+  try { data = await fetch('/api/config').then(r => r.json()); }
+  catch (e) { alert('設定の読み込みに失敗。server.py が起動していますか?'); return; }
+  const list = document.getElementById('cfgList');
+  list.innerHTML = '';
+  const interests = data.interests || {};
+  if (Object.keys(interests).length === 0) {
+    list.appendChild(makeCategoryRow('', 1.0, []));
+  } else {
+    for (const [name, spec] of Object.entries(interests)) {
+      list.appendChild(makeCategoryRow(name, spec.weight ?? 1.0, spec.keywords || []));
+    }
+  }
+  document.getElementById('cfgModal').classList.add('open');
+}
+function closeCfg() { document.getElementById('cfgModal').classList.remove('open'); }
+function makeCategoryRow(name, weight, keywords) {
+  const div = document.createElement('div');
+  div.className = 'cfg-cat';
+  const kwText = Array.isArray(keywords) ? keywords.join(', ') : String(keywords || '');
+  div.innerHTML = `
+    <div class="cfg-row1">
+      <input class="cfg-name" value="${name.replace(/"/g, '&quot;')}" placeholder="カテゴリ名 (例: VR_XR_HCI)">
+      <span class="cfg-weight-lb">重み</span>
+      <input class="cfg-weight" type="number" step="0.1" min="0" max="5" value="${weight}">
+      <button class="cfg-del" onclick="this.closest('.cfg-cat').remove()" title="このカテゴリを削除">×</button>
+    </div>
+    <textarea class="cfg-kw" placeholder="キーワードをカンマ区切りで入力 (例: vr, xr, virtual reality, hci)"></textarea>
+  `;
+  div.querySelector('.cfg-kw').value = kwText;
+  return div;
+}
+function addCategory() {
+  document.getElementById('cfgList').appendChild(makeCategoryRow('', 1.0, []));
+}
+async function saveCfg() {
+  const status = document.getElementById('cfgStatus');
+  const btn = document.getElementById('cfgSaveBtn');
+  const cats = document.querySelectorAll('.cfg-cat');
+  const interests = {};
+  for (const c of cats) {
+    const name = c.querySelector('.cfg-name').value.trim();
+    if (!name) continue;
+    const weight = parseFloat(c.querySelector('.cfg-weight').value) || 1.0;
+    const kws = c.querySelector('.cfg-kw').value
+      .split(',').map(s => s.trim()).filter(Boolean);
+    if (kws.length === 0) continue;
+    interests[name] = { weight, keywords: kws };
+  }
+  if (Object.keys(interests).length === 0) {
+    status.className = 'modal-status err';
+    status.textContent = '有効なカテゴリが1つもありません (名前とキーワードを入れてください)';
+    return;
+  }
+  btn.disabled = true;
+  status.className = 'modal-status'; status.textContent = '保存中...';
+  try {
+    const r = await fetch('/api/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ interests }),
+    });
+    const result = await r.json();
+    if (r.ok) {
+      status.className = 'modal-status ok';
+      status.textContent = `保存しました (${result.categories.length}カテゴリ)。次回「論文を更新」から反映されます。`;
+      setTimeout(closeCfg, 1200);
+    } else {
+      status.className = 'modal-status err';
+      status.textContent = '保存失敗: ' + (result.error || r.status);
+    }
+  } catch (e) {
+    status.className = 'modal-status err';
+    status.textContent = 'リクエスト失敗: ' + e.message;
+  }
+  btn.disabled = false;
+}
+// ESC closes modal; S opens it
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('cfgModal').classList.contains('open')) {
+    closeCfg();
+  }
+});
+
+// --- Refresh button + status polling (unchanged behavior) ---
+async function refreshPapers() {
+  const btn = document.getElementById('refreshBtn');
+  const spinner = document.getElementById('refreshSpinner');
+  const label = document.getElementById('refreshLabel');
+  const status = document.getElementById('refreshStatus');
+  function setRunning(on) {
+    btn.disabled = on;
+    spinner.classList.toggle('hidden', !on);
+    label.textContent = on ? '更新中...' : '論文を更新';
+  }
+  function show(msg) { status.classList.remove('hidden'); status.textContent = msg; }
+  setRunning(true);
+  show('開始しています...');
+  let started;
+  try { started = await fetch('/api/refresh', { method: 'POST' }); }
+  catch (e) { setRunning(false); show('サーバーに接続できません。start.bat を実行してください。'); return; }
+  if (started.status === 409) { show('既に更新中です。完了をお待ちください。'); }
+  else if (!started.ok)        { setRunning(false); show('開始に失敗: HTTP ' + started.status); return; }
+  const STAGE_JA = { cleanup:'掃除中', fetch:'arXiv/ACM 取得中', render:'要約・図抽出中', done:'完了' };
+  const poll = setInterval(async () => {
+    let s;
+    try { s = await fetch('/api/status').then(r => r.json()); } catch (e) { return; }
+    const stageJa = STAGE_JA[s.stage] || s.stage || '...';
+    const tail = (s.tail || []).filter(l => l && !l.startsWith('===')).slice(-2).join(' / ');
+    show(`[${stageJa}] ${tail}`);
+    if (s.status === 'idle' && s.stage === 'done') {
+      clearInterval(poll); show('完了。再読み込みします...'); setTimeout(() => location.reload(), 800);
+    } else if (s.status === 'error') {
+      clearInterval(poll); setRunning(false); show('エラー: ' + tail);
+    }
+  }, 1500);
+}
+</script>
+</body>
+</html>

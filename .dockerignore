@@ -1,0 +1,25 @@
+# Local-only files that shouldn't ship in the image
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime state (lives in /data volume, not the image)
+data/
+archive/
+index.html
+config.yaml.bak
+
+# Local dev helpers
+*.bat
+*.ps1
+auto_update.py
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docs / secrets
+DEPLOY.md
+.env
+.env.*

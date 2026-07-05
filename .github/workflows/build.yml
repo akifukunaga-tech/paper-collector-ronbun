@@ -1,0 +1,101 @@
+name: Build & Deploy
+
+on:
+  schedule:
+    # 21:00 UTC = 06:00 JST next day
+    - cron: "0 21 * * *"
+  workflow_dispatch:              # manual trigger from the Actions tab
+
+permissions:
+  contents: write                 # to commit dist/ + state/ back to the repo
+
+concurrency:
+  group: paper-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Pull dismissed log from Google Drive
+        env:
+          GDRIVE_CLIENT_ID:     ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+        run: |
+          if [ -n "$GDRIVE_REFRESH_TOKEN" ]; then
+            python gdrive_sync.py pull
+          else
+            echo "GDRIVE_REFRESH_TOKEN not set; starting with empty dismissed set"
+            echo "{}" > dismissed.json
+          fi
+
+      - name: Fetch papers
+        env:
+          PAPER_ROOT:        ${{ github.workspace }}/state
+          PAPER_PUBLIC_ROOT: ${{ github.workspace }}/dist
+        run: python fetch.py
+
+      - name: Render (LLM via Groq)
+        env:
+          PAPER_ROOT:        ${{ github.workspace }}/state
+          PAPER_PUBLIC_ROOT: ${{ github.workspace }}/dist
+          GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
+          LLM_PROVIDER:      groq
+          GDRIVE_CLIENT_ID:  ${{ secrets.GDRIVE_CLIENT_ID }}
+        run: python render.py
+
+      - name: Copy PWA static assets into dist/
+        run: |
+          mkdir -p dist/icons
+          cp manifest.json service-worker.js dist/
+          cp -r icons/. dist/icons/
+
+      - name: Prune bulky PDFs from state before commit
+        run: |
+          rm -rf state/data/pdfs
+          # figures live in dist/ (public); state keeps only the DB
+          find state -maxdepth 4 -type d -empty -delete || true
+          du -sh state dist || true
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist state
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages:    write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
