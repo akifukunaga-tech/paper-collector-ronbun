@@ -82,6 +82,11 @@ jobs:
           find state -maxdepth 4 -type d -empty -delete || true
           du -sh state dist || true
 
+      - name: Upload Pages artifact (fresh dist/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
       - name: Commit results
         run: |
           set -x
@@ -130,10 +135,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      # Deploy the artifact that BUILD just uploaded, not a fresh checkout.
+      # (Checkout of the trigger commit would deploy stale dist/.)
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
