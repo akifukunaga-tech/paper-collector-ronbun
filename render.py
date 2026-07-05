@@ -606,9 +606,10 @@ HTML = r"""<!doctype html>
   .progress { height: 3px; background: var(--border); }
   .progress > div { height: 100%; background: linear-gradient(90deg, var(--green), var(--accent)); transition: width .3s; }
 
-  /* Slides */
+  /* Slides — horizontal snap (next paper), each slide vertically scrollable */
   .slides {
-    display: flex; overflow-x: auto; overflow-y: hidden;
+    display: flex;
+    overflow-x: auto; overflow-y: hidden;
     scroll-snap-type: x mandatory; scroll-behavior: smooth;
     flex: 1 1 auto; min-height: 0;
     scrollbar-width: none;
@@ -618,9 +619,10 @@ HTML = r"""<!doctype html>
     flex: 0 0 100%; min-width: 100%; height: 100%;
     scroll-snap-align: start;
     padding: 24px 32px;
-    overflow-y: auto;
+    overflow-y: auto;                  /* THIS enables vertical scroll inside a slide */
+    overscroll-behavior-y: contain;    /* don't leak scroll to the horizontal container */
     display: grid;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto;   /* was 1fr on the last row: capped the height, hid overflow */
     gap: 14px;
   }
   .slide.dismissed { display: none; }
@@ -663,7 +665,7 @@ HTML = r"""<!doctype html>
     gap: 22px;
     min-height: 0;
   }
-  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow-y: auto; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
   .panel h3 {
     font-size: 14px; letter-spacing: 1.5px; color: var(--accent);
     text-transform: uppercase; margin: 0; font-weight: 700;
