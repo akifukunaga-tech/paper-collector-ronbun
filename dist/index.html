@@ -372,13 +372,7 @@
   <h1>Today's Papers</h1>
   <span class="sub">2026-07-05 (Sun) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
-  <button class="settings-btn" onclick="openCfg()" title="検索キーワード設定">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-    </svg>
-    <span>設定</span>
-  </button>
+  
   
   <button class="settings-btn" onclick="gdriveSignIn()" id="gdriveBtn" title="Google Drive でDismiss ログを同期">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
@@ -419,7 +413,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      In this work, we propose MakeupMirror, a diffusion-based approach to makeup transfer that makes significant progress towards preserving facial features and skin tone.
+      この論文では、仮想化粧の技術を向上させるために、MakeupMirrorという新しいアプローチを提案する
     </div>
     
 
@@ -430,7 +424,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">Diffusion Model</span><span class="badge badge-keyword">Virtual Try-On</span><span class="badge badge-keyword">ControlNets</span><span class="badge badge-keyword">Levenberg-Marquardt Langevin</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
         2026-06-18
@@ -449,13 +443,63 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">CPM-Real</span><span class="eval-chip">Makeup Wild</span><span class="eval-chip">MakeupSelfies</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">相対的な顔認識類似度</span><span class="eval-chip">相対的な肌色差</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">顔の幾何学的条件付けとControlNetsを組み合わせて、顔の特徴と肌色を保存する技術を開発した</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">データ収集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">顔幾何学条件付け</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">リージョン別化粧転送</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">生成</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">Stable-Makeupよりも顔認識類似度を60%向上させ、肌色差を50%削減した</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('23df202e81412cb7', this)">Read &amp; Dismiss (R)</button>
@@ -468,7 +512,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We propose X-Splat, the first Gaussian Splatting framework for generating CBCT-like 3D dental volumes from a single PXR.
+      単一のパノラマレントゲン画像から3D歯科ボリュームを生成する手法を提案する
     </div>
     
 
@@ -479,7 +523,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">Gaussian Splatting</span><span class="badge badge-keyword">CBCT</span><span class="badge badge-keyword">PXR</span><span class="badge badge-keyword">3D生成</span><span class="badge badge-keyword">深度学習</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
         2026-07-02
@@ -498,13 +542,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">合成PXR-CBCTペア</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">セグメンテーションに基づく幾何学的精度</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">ガウシアン・スプラッティングを用いて、X線パスの幾何学情報を活用し、3D歯科ボリュームを生成する手法を提案する</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">ガウシアン初期化</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">幾何学的制約</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">残差精製</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">従来手法を上回る3D歯科ボリュームの生成精度を達成する</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('660d212ec4c9b6c7', this)">Read &amp; Dismiss (R)</button>
@@ -517,7 +608,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We present VisionAId, an Android application that turns a commodity smartphone into a real-time visual assistant.
+      視覚障害を持つ人々の日常生活を支援するためのAndroidアプリケーションを開発した
     </div>
     
 
@@ -528,7 +619,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">深層学習</span><span class="badge badge-keyword">ONNX Runtime</span><span class="badge badge-keyword">インスタンスセグメンテーション</span><span class="badge badge-keyword">視覚エンベッディング</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
         2026-07-02
@@ -547,13 +638,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">mAP@50</span><span class="eval-chip">INT8量子化</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">オンデバイスで動作する深層学習モデルを複数組み合わせて、リアルタイムの視覚支援機能を実現した</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">写真撮影</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">オブジェクト学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">環境認識</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">カスタムバンクノート検出器のmAP@50が0.986に達し、メトリック深度の誤差を3m以内で1cm以下に抑えた</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('a4cda4153ed981c2', this)">Read &amp; Dismiss (R)</button>
@@ -566,7 +704,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We introduce SICAGE, a modular framework for culture-aware co-speech gesture generation that conditions motion synthesis models on speaker-independent cultural representations.
+      この論文は、文化の違いを考慮した共発話ジェスチャー生成方法を提案する
     </div>
     
 
@@ -577,7 +715,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">co-speech gesture generation</span><span class="badge badge-keyword">culture-aware</span><span class="badge badge-keyword">domain generalization</span><span class="badge badge-keyword">multimodal generator</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
         2026-06-29
@@ -596,13 +734,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">TED4C-L</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">motion realism</span><span class="eval-chip">diversity</span><span class="eval-chip">beat synchronization</span><span class="eval-chip">semantic relevance</span><span class="eval-chip">cultural consistency</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">文化依存のあるモーション合成モデルを、スピーカー独立の文化表現に基づいて条件付けることで、文化に適したジェスチャーを生成する</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">文化表現学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モーション合成</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">ジェスチャー生成</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">提案方法は、モーションのリアリズム、多様性、ビート同期、意味的関連性、文化的一貫性を向上させる</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('8f18d9afa16ceecc', this)">Read &amp; Dismiss (R)</button>
@@ -615,7 +800,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      To overcome these limitations, we introduce Semantic Anchor-aligned Multimodal Augmentation (SAMA), a unified framework for generating high-fidelity, task-aware synthetic data.
+      マルチモーダル情報抽出タスクのデータ不足問題を解決するために、統一されたデータ増強フレームワークSAMAを提案する
     </div>
     
 
@@ -626,7 +811,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">マルチモーダル情報抽出</span><span class="badge badge-keyword">データ増強</span><span class="badge badge-keyword">セマンティックアンカー</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
         2026-06-17
@@ -645,13 +830,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">MNER</span><span class="eval-chip">MRE</span><span class="eval-chip">MEE</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">精度</span><span class="eval-chip">再現率</span><span class="eval-chip">F1スコア</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">セマンティックアンカーを利用したマルチモーダルデータ増強手法を提案し、タスクに依存しない共有セマンティック知識を活用することで、高品質の合成データを生成する</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">セマンティックアンカー構築</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">テキスト合成</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">画像合成</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">提案手法SAMAが既存のデータ増強手法を上回る結果を達成した</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('6084ce95af44478c', this)">Read &amp; Dismiss (R)</button>
@@ -664,7 +896,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Emotion recognition in natural language is a foundational challenge in affective computing, with critical implications for human-computer interaction, mental health support, and conversational AI.
+      自然言語処理における感情認識の難しさを調べ、3つの商用言語モデルを比較検討した
     </div>
     
 
@@ -675,7 +907,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">感情認識</span><span class="badge badge-keyword">ゼロショット学習</span><span class="badge badge-keyword">言語モデル</span><span class="badge badge-keyword">感情分类</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
         2026-07-01
@@ -694,13 +926,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">boltuix/emotions</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">精度</span><span class="eval-chip">マクロF1スコア</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">3つの商用言語モデルを用いて、ゼロショット学習で感情認識タスクを実施し、精度と偏りを評価した</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">データ準備</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モデルの選択</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">評価実施</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">Geminiが最高の精度(39.9%)とマクロF1スコア(0.363)を達成した</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('99314cc1049cf88f', this)">Read &amp; Dismiss (R)</button>
@@ -713,7 +992,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Although most undergraduates now use large language models (LLMs), a form of generative artificial intelligence (GenAI) for academic writing, no validated method distinguishes the qualitatively different ways students rely on them.
+      学習者が大規模言語モデルをどのように利用するかを分類し、支援策を提案する
     </div>
     
 
@@ -724,7 +1003,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">GenAI</span><span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">AI Literacy Framework</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
         2026-06-27
@@ -743,13 +1022,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">382人の学習者のデータ</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">AI利用頻度</span><span class="eval-chip">学習成果</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">Expectancy-Value TheoryやBiggsのPresage-Process-Productモデルに基づいて、学習者のAI利用パターンを分析し、4つの利用タイプを同定した</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">データ収集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">アンケート分析</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">利用タイプ同定</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">学習者のAI利用タイプは、AI Literacyや価値観によって予測され、従来の評価尺度では独立思考を重視する学習者が不利になる</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('ac4b5703325d2fb0', this)">Read &amp; Dismiss (R)</button>
@@ -762,7 +1088,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We present Sign in the Air to Unlock, an in-air signature interface that enables users to authenticate by signing naturally in 3D space which is a familiar, personal, and reproducible gesture.
+      本論文では、仮想・拡張現実環境での認証を容易にするための空中署名インターフェースを提案する
     </div>
     
 
@@ -773,7 +1099,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">Virtual Reality</span><span class="badge badge-keyword">Augmented Reality</span><span class="badge badge-keyword">3D Trajectory</span><span class="badge badge-keyword">Point-Voxel Cross-Attention Ne</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
       <span class="id-line">
         2026-07-01
@@ -792,13 +1118,63 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">DeepAirSig</span><span class="eval-chip">ImmAirsig</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">Equal Error Rate</span><span class="eval-chip">分類精度</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">3D空間での手の動きから署名を認識するために、ローカルな動きとグローバルな空間構造を同時にモデル化する点ボクセルクロスアテンションネットワークを設計する</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">データ収集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">前処理</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モデル学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">認証</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">DeepAirSigデータセットで2.5%のEqual Error Rate、ImmAirsigデータセットで76%の分類精度を達成</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('9c4c37c05a190c61', this)">Read &amp; Dismiss (R)</button>
@@ -811,7 +1187,7 @@
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      In this work, we present TCG-AR, a novel real-time pipeline that augments trading card games using ordinary RGB cameras alone, without any physical markers or specialized hardware.
+      トレーディングカードゲームのライブストリームを仮想モデルで強化するシステムを提案する
     </div>
     
 
@@ -822,7 +1198,7 @@
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
+      <span class="badge badge-keyword">Augmented Reality</span><span class="badge badge-keyword">Computer Vision</span><span class="badge badge-keyword">Trading Card Games</span><span class="badge badge-keyword">Real-time Pipeline</span>
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
       <span class="id-line">
         2026-07-02
@@ -841,13 +1217,60 @@
         
 
         
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">合成データセット</span><span class="eval-chip">実画像データセット</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">精度</span><span class="eval-chip">処理時間</span></div>
+          </div>
+          
+        </div>
+        
       </div>
 
       <div class="panel insight">
         
-
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">RGBカメラのみを使用してトレーディングカードを検出、向きを決定、識別し、仮想コンテンツをカードに重ね合わせる技術を実現する</div>
         
 
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">カード検出</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">向き決定</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">仮想コンテンツ重ね合わせ</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">提案システムが実用的な精度と処理時間を達成した</div>
+        </div>
         
 
         <button class="btn-read insight-dismiss" onclick="markRead('cb79efa76814a75b', this)">Read &amp; Dismiss (R)</button>
