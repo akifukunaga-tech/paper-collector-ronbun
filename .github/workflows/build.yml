@@ -54,7 +54,9 @@ jobs:
           PAPER_PUBLIC_ROOT: ${{ github.workspace }}/dist
           GROQ_API_KEY:      ${{ secrets.GROQ_API_KEY }}
           LLM_PROVIDER:      groq
+          LLM_MODEL:         llama-3.3-70b-versatile
           GDRIVE_CLIENT_ID:  ${{ secrets.GDRIVE_CLIENT_ID }}
+          STATIC_BUILD:      "1"
         run: python render.py
 
       - name: Copy PWA static assets into dist/

@@ -174,8 +174,11 @@ def structured(abstract: str, cfg: dict) -> dict | None:
     Returns None on any failure so the caller can fall back gracefully."""
     if not abstract or not cfg.get("enabled"):
         return None
-    # env override wins over config so GitHub Actions can force groq without editing config.yaml
+    # env override wins over config so GitHub Actions can force provider+model
+    # without editing config.yaml
     provider = (os.environ.get("LLM_PROVIDER") or cfg.get("provider") or "ollama").strip()
+    if os.environ.get("LLM_MODEL"):
+        cfg = {**cfg, "model": os.environ["LLM_MODEL"]}
     fn = PROVIDERS.get(provider)
     if fn is None:
         return None

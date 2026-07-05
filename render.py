@@ -864,6 +864,7 @@ HTML = r"""<!doctype html>
   <h1>Today's Papers</h1>
   <span class="sub">{{ date }} &middot; {{ papers|length }} picked &middot; <span id="readcount">0</span> read &middot; {{ remaining }} queued</span>
   <span class="spacer"></span>
+  {% if not static_build %}
   <button class="settings-btn" onclick="openCfg()" title="検索キーワード設定">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
       <circle cx="12" cy="12" r="3"/>
@@ -871,6 +872,7 @@ HTML = r"""<!doctype html>
     </svg>
     <span>設定</span>
   </button>
+  {% endif %}
   {% if gdrive_client_id %}
   <button class="settings-btn" onclick="gdriveSignIn()" id="gdriveBtn" title="Google Drive でDismiss ログを同期">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
@@ -1365,7 +1367,9 @@ def main() -> int:
     print(f"Picked {len(picked)} papers, {remaining} more queued.")
 
     if (cfg.get("llm") or {}).get("enabled"):
-        print(f"Refining TLDRs via Ollama ({cfg['llm'].get('model')}) ...")
+        _prov = os.environ.get("LLM_PROVIDER") or cfg["llm"].get("provider", "ollama")
+        _model = os.environ.get("LLM_MODEL") or cfg["llm"].get("model")
+        print(f"Refining TLDRs via {_prov} ({_model}) ...")
         refined = llm_refine(picked, cfg)
         persist_llm_tldrs(picked)
         print(f"  LLM refined: {refined}/{len(picked)}")
@@ -1428,11 +1432,13 @@ def main() -> int:
         os.environ.get("GDRIVE_CLIENT_ID")
         or ((cfg.get("gdrive") or {}).get("client_id") or "")
     ).strip()
+    static_build = bool(os.environ.get("STATIC_BUILD"))
     html = Template(HTML).render(
         date=datetime.now().strftime("%Y-%m-%d (%a)"),
         papers=picked,
         remaining=remaining,
         gdrive_client_id=gdrive_client_id,
+        static_build=static_build,
     )
     out = PUBLIC / "index.html"
     out.write_text(html, encoding="utf-8")
