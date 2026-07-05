@@ -5,6 +5,16 @@ on:
     # 21:00 UTC = 06:00 JST next day
     - cron: "0 21 * * *"
   workflow_dispatch:              # manual trigger from the Actions tab
+  push:                           # auto-run when code changes
+    branches: [main]
+    paths:
+      - "**.py"
+      - ".github/workflows/*.yml"
+      - "requirements.txt"
+      - "config.yaml"
+      - "manifest.json"
+      - "service-worker.js"
+      - "icons/**"
 
 permissions:
   contents: write                 # to commit dist/ + state/ back to the repo
