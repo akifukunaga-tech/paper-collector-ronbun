@@ -1,0 +1,140 @@
+fetch:
+  arxiv_categories:
+    - cs.HC
+    - cs.GR
+    - cs.LG
+    - cs.AI
+    - cs.CL
+    - cs.CV
+    - cs.SD
+    - eess.AS
+    - cs.MM
+  arxiv_max_results: 80
+  crossref_acm_member: 320
+  crossref_days_back: 5
+  crossref_rows: 200
+
+interests:
+  VR_XR_HCI:
+    weight: 1.0
+    keywords: [vr, xr, virtual reality, augmented reality, mixed reality,
+               immersive, hci, human-computer interaction, gesture, haptic,
+               passthrough, head-mounted, wearable]
+  BCI_BMI:
+    weight: 1.2
+    keywords: [bci, bmi, brain-computer, brain-machine, eeg, neural interface,
+               neurofeedback, ecog, fnirs, p300, ssvep, motor imagery]
+  ML_GenAI:
+    weight: 0.8
+    keywords: [diffusion, latent diffusion, transformer, llm, language model,
+               generative model, gan, vae, flow matching, text-to-image,
+               text-to-video, text-to-3d, multimodal]
+  Music_Art:
+    weight: 1.0
+    keywords: [music generation, audio synthesis, audio generation, melody,
+               sound design, generative art, neural rendering, nerf,
+               gaussian splatting, score-based, motion synthesis]
+
+# Methods/tech-stack vocabulary for badge extraction.
+# Matched as whole-word case-insensitive against title + tldr + abstract.
+methods:
+  - transformer
+  - diffusion
+  - latent diffusion
+  - score-based
+  - flow matching
+  - gan
+  - vae
+  - normalizing flow
+  - u-net
+  - resnet
+  - vit
+  - clip
+  - sam
+  - dino
+  - nerf
+  - gaussian splatting
+  - graph neural network
+  - gnn
+  - reinforcement learning
+  - rlhf
+  - dpo
+  - contrastive learning
+  - self-supervised
+  - few-shot
+  - zero-shot
+  - meta-learning
+  - in-context learning
+  - chain-of-thought
+  - retrieval-augmented
+  - rag
+  - llm
+  - large language model
+  - instruction tuning
+  - fine-tuning
+  - lora
+  - prompt tuning
+  - mixture of experts
+  - moe
+  - text-to-image
+  - text-to-video
+  - text-to-3d
+  - text-to-speech
+  - speech-to-text
+  - vision-language
+  - multimodal
+  - eye-tracking
+  - hand-tracking
+  - gaze
+  - passthrough
+  - foveated
+  - haptic
+  - eeg
+  - fmri
+  - ecog
+  - bci
+
+# Composite-score weights. Citation/recency removed - too noisy for fresh papers.
+score_weights:
+  keyword: 1.0       # per-interest keyword matches in title + tldr + abstract
+  novelty: 0.3       # multiplier from "we propose / novel / first / sota" signal words
+
+# How many top-keyword candidates to enrich via Semantic Scholar before final ranking.
+candidate_pool: 80
+
+# LLM for high-quality 1-sentence summaries + structured method extraction.
+# provider = ollama (local) | groq (cloud, free) | claude (cloud, paid)
+# API keys for cloud providers come from env vars: GROQ_API_KEY, ANTHROPIC_API_KEY
+llm:
+  enabled: true
+  provider: ollama                       # switch to "groq" for cloud deployment
+  model: gemma4:e2b                      # ollama:gemma4:e2b / groq:gemma2-9b-it / claude:claude-haiku-4-5-20251001
+  ollama_url: http://localhost:11434     # ignored unless provider=ollama
+  timeout_seconds: 120
+  language: ja                           # ja or en
+
+display:
+  papers_per_day: 10
+  oa_only: true
+  email: aki.fukunaga01@gmail.com
+
+# Google Drive dismiss-log sync (optional). Leave client_id blank to disable
+# the sync button on the PWA. Set via env GDRIVE_CLIENT_ID in GitHub Actions.
+gdrive:
+  client_id: ""
+
+# Image compression for mobile-friendly payload.
+# Full-resolution originals are kept in data/figures/; served files are the compressed .thumb.jpg.
+images:
+  hero_max_px: 900
+  hero_quality: 80
+  more_max_px: 400
+  more_quality: 75
+
+# Server auth. Leave password empty to disable (localhost use only).
+# When set, HTTP Basic auth is required for every request. Use a strong password
+# if you expose this via cloudflared / ngrok.
+server:
+  auth:
+    username: aki
+    password: ""
