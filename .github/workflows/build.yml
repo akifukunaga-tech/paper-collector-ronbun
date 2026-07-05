@@ -84,33 +84,38 @@ jobs:
 
       - name: Commit results
         run: |
+          set -x
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist state
-          if git diff --cached --quiet; then
-            echo "no changes"
-            exit 0
-          fi
-          git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ)"
-          # Rebase over any concurrent changes on main, retry a few times if
-          # something else pushed while we were building.
-          for i in 1 2 3 4 5; do
+
+          # Snapshot the freshly-built outputs so we can survive any git reset.
+          echo "=== dist size before snapshot ==="; du -sh dist state
+          tar czf /tmp/outputs.tgz dist state
+          ls -la /tmp/outputs.tgz
+
+          # Force LF for the SQLite DB so autocrlf doesn't muck with it.
+          echo "state/data/papers.db binary" > .gitattributes
+
+          for attempt in 1 2 3 4 5; do
+            echo "=== attempt $attempt ==="
             git fetch origin main
-            if git rebase origin/main; then
-              if git push origin HEAD:main; then
-                echo "pushed (attempt $i)"
-                exit 0
-              fi
-            else
-              # Rebase conflict - abort and prefer remote (our output regenerates anyway)
-              git rebase --abort || true
-              git reset --hard origin/main
-              # Re-stage and re-commit the freshly-built outputs
-              git add dist state
-              git diff --cached --quiet && exit 0
-              git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ) [retry $i]"
+            git reset --hard origin/main
+            # Restore our freshly-built outputs on top of remote HEAD
+            tar xzf /tmp/outputs.tgz
+            # Ensure the marker file is present too (harmless if unchanged)
+            echo "state/data/papers.db binary" > .gitattributes
+            git add -A dist state .gitattributes
+            git status --short
+            if git diff --cached --quiet; then
+              echo "no changes vs origin/main after re-apply"
+              exit 0
             fi
-            sleep $((i * 2))
+            git commit -m "build: $(date -u +%Y-%m-%dT%H:%MZ) [attempt $attempt]"
+            if git push origin HEAD:main; then
+              echo "pushed (attempt $attempt)"
+              exit 0
+            fi
+            sleep $((attempt * 3))
           done
           echo "push failed after retries"
           exit 1
