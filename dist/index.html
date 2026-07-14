@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="icon" type="image/png" href="/icons/favicon.png">
-<title>Today's Papers - 2026-07-12 (Sun)</title>
+<title>Today's Papers - 2026-07-14 (Tue)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -372,7 +372,7 @@
 
 <header>
   <h1>Today's Papers</h1>
-  <span class="sub">2026-07-12 (Sun) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="sub">2026-07-14 (Tue) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
   
   
@@ -410,29 +410,29 @@
 
 <main class="slides" id="slides">
 
-  <section class="slide" data-id="d74977a5e35a13c3" data-idx="0">
+  <section class="slide" data-id="4001b0dbced3dc16" data-idx="0">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      この論文では、オープンセットの合成顔画像のソース帰属を扱うパイプラインを提案する
+      この論文は、3Dガウシアンスプラッティング、リアルタイムVR探索、音声駆動のビジョン言語モデル相互作用のための新しい統合アーキテクチャを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.07545v1" target="_blank" rel="noopener">Face-trace: Open-Set Attribution and Progressive Discovery of Synthetic Face Generators</a></h2>
-      <p class="authors">Alessia Infantino, Claudio Schiavella, Irene Amerini</p>
+      <h2><a href="https://arxiv.org/abs/2607.09260v1" target="_blank" rel="noopener">AnythingReality: Robust Online Gaussian Splatting SLAM for Open-Vocabulary VR Scene Exploration</a></h2>
+      <p class="authors">Timofei Kozlov, Dmitrii Maliukov, Andrey Marchenko, +2 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Generative AI</span><span class="badge badge-keyword">Multimedia Forensics</span><span class="badge badge-keyword">Open-set Attribution</span><span class="badge badge-keyword">Energy-based OOD Rejection</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="badge badge-keyword">ORB-SLAM3</span><span class="badge badge-keyword">Gaussian splatting</span><span class="badge badge-keyword">Vision-Language-Model</span><span class="badge badge-keyword">VR</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
-        2026-07-08
-        <a href="https://doi.org/10.48550/arXiv.2607.07545" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.07545</a>
-        <a href="https://arxiv.org/abs/2607.07545v1" target="_blank" rel="noopener">arXiv:2607.07545v1</a>
-        <a href="https://arxiv.org/pdf/2607.07545v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09260" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09260</a>
+        <a href="https://arxiv.org/abs/2607.09260v1" target="_blank" rel="noopener">arXiv:2607.09260v1</a>
+        <a href="https://arxiv.org/pdf/2607.09260v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -440,8 +440,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/d74977a5e35a13c3.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 11. Final contingency matrix in the in-the-wild incremental setting. Most wild known ID samples are correctly assigned to their corresponding ID classes, while in-the-wild OOD samples are either assigned to discovered clusters or kept in the buffer when no reliable assignment is available. However, some in-the-wil</p>
+        <div class="hero-fig"><img src="data/figures/4001b0dbced3dc16.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 3: Example of semantic interaction in VR. The upper view shows the Gaussian-rendered tabletop scene observed by the user, while the lower overlay shows the dialogue interface where a natural- language scene-description query is answered by the VLM.</p>
         
 
         
@@ -450,13 +450,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">WILD</span></div>
+            <div class="val"><span class="eval-chip">TUM-RGBD</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">Accuracy</span><span class="eval-chip">ARI</span><span class="eval-chip">NMI</span><span class="eval-chip">Purity</span></div>
+            <div class="val"><span class="eval-chip">PSNR</span><span class="eval-chip">SSIM</span><span class="eval-chip">LPIPS</span></div>
           </div>
           
         </div>
@@ -473,7 +473,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">既知のジェネレータの分類とエネルギーベースの未知のジェネレータの拒否を組み合わせ、拒否されたサンプルをクラスタリングして未知のジェネレータを発見する</div>
+        <div class="insight-block">ORB-SLAM3を用いたポーズ推定とオンラインガウシアン再構築を組み合わせて、ノイズのある実世界データに対処する技術的アイデアを実現している</div>
         
 
         
@@ -481,13 +481,16 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">分類</span>
+            <span class="step">ポーズ推定</span>
             <span class="arrow">▶</span>
             
-            <span class="step">拒否</span>
+            <span class="step">ガウシアン再構築</span>
             <span class="arrow">▶</span>
             
-            <span class="step">クラスタリング</span>
+            <span class="step">VR探索</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">音声認識</span>
             
             
           </div>
@@ -497,38 +500,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">クローズドセットの帰属精度が96.73%、オープンセットの拒否精度が71.25%、クラスタリングのARIが0.81</div>
+          <div class="eval-key">提案手法は、既存手法と比較して画像品質を向上させ、88%のVLMオブジェクト認識率を達成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('d74977a5e35a13c3', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('4001b0dbced3dc16', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="afacafe9f0320032" data-idx="1">
+  <section class="slide" data-id="4faae501980e2def" data-idx="1">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      ハイブリッドテキスト音声合成システムの感情制御に関する研究を行った
+      脳波を用いた夢の検出精度を向上させる新しい手法を提案した
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.00946v1" target="_blank" rel="noopener">A Geometric Perspective on Composable Emotion Steering in Text-to-Speech Models</a></h2>
-      <p class="authors">Siyi Wang, James Bailey, Ting Dang</p>
+      <h2><a href="https://arxiv.org/abs/2607.09662v1" target="_blank" rel="noopener">PHINN-EEG: Topological Time-Series Analysis of Dream-State EEG -- Dynamic Betti Curves for Dream Content Classification and Topology-Conditioned Neural Signal Synthesis</a></h2>
+      <p class="authors">Ren Takahashi, Emre Yusuf, Jayabrata Bhaduri</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">感情制御</span><span class="badge badge-keyword">テキスト音声合成</span><span class="badge badge-keyword">条件付きフロー整合</span><span class="badge badge-keyword">線形プロービング</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="badge badge-keyword">EEG</span><span class="badge badge-keyword">トポロジー</span><span class="badge badge-keyword">ニューラルネットワーク</span><span class="badge badge-keyword">夢検出</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-01
-        <a href="https://doi.org/10.48550/arXiv.2607.00946" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.00946</a>
-        <a href="https://arxiv.org/abs/2607.00946v1" target="_blank" rel="noopener">arXiv:2607.00946v1</a>
-        <a href="https://arxiv.org/pdf/2607.00946v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09662" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09662</a>
+        <a href="https://arxiv.org/abs/2607.09662v1" target="_blank" rel="noopener">arXiv:2607.09662v1</a>
+        <a href="https://arxiv.org/pdf/2607.09662v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -536,8 +539,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/afacafe9f0320032.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/4faae501980e2def.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: Dynamic Betti Curves — Predicted Dream vs. Dreamless EEG (Schematic). SCHEMATIC ONLY — no DREAM data were analysed to produce this figure. Empirical Betti curves from DREAM EDF data will be presented in the follow-up.</p>
         
 
         
@@ -546,13 +549,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">記載なし</span></div>
+            <div class="val"><span class="eval-chip">DREAMデータベース</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">記載なし</span></div>
+            <div class="val"><span class="eval-chip">AUC</span></div>
           </div>
           
         </div>
@@ -569,103 +572,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">線形プロービングとローカル固有次元性を用いて感情表現を特徴付け、単一サイトとジョイント制御の感情合成を評価した</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">感情表現特徴化</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">単一サイト制御</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">ジョイント制御</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">SLMは低次元の感情固有部分空間を提供し、スピーカーと感情の分離が強かった</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('afacafe9f0320032', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="ee531a970683826a" data-idx="2">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      この論文は、政府機関が利用する大規模言語モデルが回答する情報源の信頼性を評価する研究を行った。
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.05217v1" target="_blank" rel="noopener">Curated retrieval versus open web search in public AI information services: a coverage-trust trade-off</a></h2>
-      <p class="authors">Hafsteinn Einarsson, Hafsteinn Birgir Einarsson, Jón Gunnar Ólafsson, +1 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">大規模言語モデル</span><span class="badge badge-keyword">情報源信頼性</span><span class="badge badge-keyword">専門家評価</span><span class="badge badge-keyword">質の高い回答</span><span class="badge badge-keyword">信頼性評価</span>
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-07-06
-        <a href="https://doi.org/10.48550/arXiv.2607.05217" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.05217</a>
-        <a href="https://arxiv.org/abs/2607.05217v1" target="_blank" rel="noopener">arXiv:2607.05217v1</a>
-        <a href="https://arxiv.org/pdf/2607.05217v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/ee531a970683826a.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">Evrópuvefur</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">質の高い回答率</span><span class="eval-chip">情報源信頼性</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">大規模言語モデルが回答する情報源の信頼性を評価するために、専門家による評価と情報源の信頼性を分析し、回答の質と情報源の信頼性の関係を調べた。</div>
+        <div class="insight-block">トポロジーに基づく時系列分析を用いて、脳波の幾何学的構造を特徴付け、従来のエネルギーに基づく手法を超える精度を実現した</div>
         
 
         
@@ -676,10 +583,13 @@
             <span class="step">データ収集</span>
             <span class="arrow">▶</span>
             
-            <span class="step">専門家評価</span>
+            <span class="step">前処理</span>
             <span class="arrow">▶</span>
             
-            <span class="step">信頼性分析</span>
+            <span class="step">トポロジー解析</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">学習</span>
             
             
           </div>
@@ -689,38 +599,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">回答の約3分の1で情報源が信頼できないと判断された</div>
+          <div class="eval-key">提案手法が従来の手法を超えるAUC約0.82-0.90の精度を達成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('ee531a970683826a', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('4faae501980e2def', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="a24500b9b8bae4de" data-idx="3">
+  <section class="slide" data-id="44f81d6154b3ca29" data-idx="2">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      この論文では、エッジデプロイメントのために大規模なビジョンモデルを効率化する手法を提案し、評価を行っている
+      音声認識の精度を向上させるために、音響と視覚の情報を統合する新しいフレームワークを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.02158v1" target="_blank" rel="noopener">Efficient PEFT Methods with Adaptive Checkpointing for Vision Models and VLMs on Resource Constrained Consumer-GPUs</a></h2>
-      <p class="authors">Altay Toktassyn, Jurn-Gyu Park</p>
+      <h2><a href="https://arxiv.org/abs/2607.09001v1" target="_blank" rel="noopener">Optimal Transport-based Semantic Alignment for LLM-based Audio-Visual Speech Recognition</a></h2>
+      <p class="authors">Xugang Lu, Peng Shen, Yu Tsao, +1 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">PEFT</span><span class="badge badge-keyword">Transformer</span><span class="badge badge-keyword">ViT</span><span class="badge badge-keyword">LoRA</span>
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-keyword">LLM-AVSR</span><span class="badge badge-keyword">Optimal Transport</span><span class="badge badge-keyword">Multimodal Fusion</span><span class="badge badge-keyword">Contrastive Learning</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-02
-        <a href="https://doi.org/10.48550/arXiv.2607.02158" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.02158</a>
-        <a href="https://arxiv.org/abs/2607.02158v1" target="_blank" rel="noopener">arXiv:2607.02158v1</a>
-        <a href="https://arxiv.org/pdf/2607.02158v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09001" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09001</a>
+        <a href="https://arxiv.org/abs/2607.09001v1" target="_blank" rel="noopener">arXiv:2607.09001v1</a>
+        <a href="https://arxiv.org/pdf/2607.09001v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -728,7 +638,7 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/a24500b9b8bae4de.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/44f81d6154b3ca29.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -738,13 +648,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">CIFAR-100</span><span class="eval-chip">DTD</span></div>
+            <div class="val"><span class="eval-chip">LRS3-TED</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">accuracy</span><span class="eval-chip">training time</span><span class="eval-chip">energy</span></div>
+            <div class="val"><span class="eval-chip">WER</span></div>
           </div>
           
         </div>
@@ -761,7 +671,106 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">パラメータ効率的なファインチューニング手法とグラディエントチェックポイント戦略を提案し、エッジデプロイメントのためのメモリ使用量とエネルギー消費を削減する</div>
+        <div class="insight-block">音響と視覚の表現を言語埋め込み空間に合わせることで、モダリティ間のギャップを埋め、より効果的な多モーダル統合を実現する</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">音響エンコード</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">視覚エンコード</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">Optimal Transport</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">多モーダル統合</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">クリーンおよびノイズのある評価条件下で、既存のベースラインを上回し、最先端のパフォーマンスを達成する</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('44f81d6154b3ca29', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="ecc593bf68781972" data-idx="3">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      EEGデコーディングアプリケーション向けの新しいコントラスト学習ベースのモデルを開発した
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2607.09543v1" target="_blank" rel="noopener">CoCoT-EEG: Contrastive-Pretrained Multiscale Convolutional Transformer for EEG Decoding</a></h2>
+      <p class="authors">Gabriel Mahuas, Victoria Shevchenko, Ugo Tanielian, +2 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">EEG</span><span class="badge badge-keyword">コントラスト学習</span><span class="badge badge-keyword">トランスフォーマー</span><span class="badge badge-keyword">マルチスケール</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09543" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09543</a>
+        <a href="https://arxiv.org/abs/2607.09543v1" target="_blank" rel="noopener">arXiv:2607.09543v1</a>
+        <a href="https://arxiv.org/pdf/2607.09543v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/ecc593bf68781972.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">ベンチマークデータセット</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">デコーディング精度</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">マルチスケール時系列畳み込み入力層とトランスフォーマーエンコーダブロックを用いたコントラスト学習ベースのモデルを提案した</div>
         
 
         
@@ -772,10 +781,10 @@
             <span class="step">データ準備</span>
             <span class="arrow">▶</span>
             
-            <span class="step">モデル選択</span>
+            <span class="step">モデル構築</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ファインチューニング</span>
+            <span class="step">コントラスト学習</span>
             
             
           </div>
@@ -785,38 +794,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">QLoRAとBitFitはエネルギー消費を20-30%削減し、精度の低下は1-2%であった</div>
+          <div class="eval-key">提案モデルが既存の再構築学習ベースのモデルと同等以上の性能を示した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('a24500b9b8bae4de', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('ecc593bf68781972', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="d3752e58fe149e0e" data-idx="4">
+  <section class="slide" data-id="c69a0e6d0ca8f583" data-idx="4">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      EEG信号から感情を認識し、顔の絵文字で表現する手法を提案する
+      視覚言語モデルが複雑な社会的行動を理解する能力を向上させるために、複雑な社会的行動データセットを導入し、モデルの進歩を評価する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.02912v1" target="_blank" rel="noopener">See the Emotion: A Facial Emoji Proxy Modeling for EEG Emotion Recognition</a></h2>
-      <p class="authors">Jingjing Hu, Guo Dan, Haofan Cheng, +4 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.09654v1" target="_blank" rel="noopener">Evolution of Accuracy and Visual-Cognitive Errors in a Decade of Vision-Language AI Models</a></h2>
+      <p class="authors">Shravan Murlidaran, Miguel P. Eckstein</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">EEG</span><span class="badge badge-keyword">感情認識</span><span class="badge badge-keyword">顔の絵文字</span><span class="badge badge-keyword">黒箱問題</span>
-      <span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-keyword">Vision Language Models</span><span class="badge badge-keyword">Visual Reasoning</span><span class="badge badge-keyword">Multimodal Large Language Mode</span><span class="badge badge-keyword">Scene Understanding</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-03
-        <a href="https://doi.org/10.48550/arXiv.2607.02912" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.02912</a>
-        <a href="https://arxiv.org/abs/2607.02912v1" target="_blank" rel="noopener">arXiv:2607.02912v1</a>
-        <a href="https://arxiv.org/pdf/2607.02912v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09654" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09654</a>
+        <a href="https://arxiv.org/abs/2607.09654v1" target="_blank" rel="noopener">arXiv:2607.09654v1</a>
+        <a href="https://arxiv.org/pdf/2607.09654v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -824,8 +833,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/d3752e58fe149e0e.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 12. Frame-level emotion annotations created to describe</p>
+        <div class="hero-fig"><img src="data/figures/c69a0e6d0ca8f583.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 4: (a) Evolution of model description of a sample image from the MS-COCO dataset(left) and the CSB dataset (right). The model descriptions are similar to human descriptions for the MS-COCO image. In contrast, pre-MLLMs perform poorly on the CSB dataset compared to humans, whereas MLLMs produce descriptions simil</p>
         
 
         
@@ -834,13 +843,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">EAV</span><span class="eval-chip">MMER</span></div>
+            <div class="val"><span class="eval-chip">Complex Social Behavior</span><span class="eval-chip">MS-COCO</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">精度</span></div>
+            <div class="val"><span class="eval-chip">精度</span><span class="eval-chip">視覚認知エラー</span></div>
           </div>
           
         </div>
@@ -857,7 +866,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">EEG信号を顔の絵文字に変換することで、感情認識の説明可能性を高める手法を提案し、FMENetとFacial Emoji Learning Branchを統合したフレームワークを実装する</div>
+        <div class="insight-block">視覚言語モデルが複雑な社会的行動を理解する能力を向上させるために、複雑な社会的行動データセットを導入し、モデルの進歩を評価するために、オブジェクト検出、認識、ホールユシネーション、シーン理解、空間依存などの視覚認知エラーを分析する</div>
         
 
         
@@ -865,13 +874,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">EEG信号取得</span>
+            <span class="step">データセット構築</span>
             <span class="arrow">▶</span>
             
-            <span class="step">顔の絵文字生成</span>
+            <span class="step">モデルの評価</span>
             <span class="arrow">▶</span>
             
-            <span class="step">感情認識</span>
+            <span class="step">エラー分析</span>
             
             
           </div>
@@ -881,38 +890,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法がEEGのみを用いた既存手法を上回る精度を達成し、感情の変化を明確に表現できることを実証する</div>
+          <div class="eval-key">MLLMsはシンプルなシーンと複雑な社会的行動の両方で高い精度を達成し、視覚認知エラーを大幅に削減した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('d3752e58fe149e0e', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('c69a0e6d0ca8f583', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="a81fb76cd9e2057f" data-idx="5">
+  <section class="slide" data-id="1c73f80b4f384bee" data-idx="5">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      脳コンピュータインターフェース（BCI）技術を用いて、脳損傷による運動機能やコミュニケーション機能の喪失を回復するための中国における研究開発の現状を分析した
+      Subtoken Vision Transformer (SubViT) を提案し、画像認識の精度を向上させる
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.07185v2" target="_blank" rel="noopener">Clinical Translation of Brain-Computer Interface in China: A Landscape Analysis of Investigator-Initiated Trials, Registered Clinical Trials, and Regulatory Approval</a></h2>
-      <p class="authors">Long Chen, Wanyi Qing, Fa Lin, +7 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.09086v1" target="_blank" rel="noopener">Subtoken Vision Transformer for Fine-grained Recognition</a></h2>
+      <p class="authors">Jie Zhu, Ivy Zhang, Minchul Kim, +1 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">BCI</span><span class="badge badge-keyword">脳コンピュータインターフェース</span><span class="badge badge-keyword">神経損傷</span><span class="badge badge-keyword">脳機能回復</span>
-      <span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-keyword">Vision Transformer</span><span class="badge badge-keyword">Subtoken</span><span class="badge badge-keyword">Fine-grained Recognition</span><span class="badge badge-keyword">Attention Mechanism</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-08
-        <a href="https://doi.org/10.48550/arXiv.2607.07185" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.07185</a>
-        <a href="https://arxiv.org/abs/2607.07185v2" target="_blank" rel="noopener">arXiv:2607.07185v2</a>
-        <a href="https://arxiv.org/pdf/2607.07185v2" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09086" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09086</a>
+        <a href="https://arxiv.org/abs/2607.09086v1" target="_blank" rel="noopener">arXiv:2607.09086v1</a>
+        <a href="https://arxiv.org/pdf/2607.09086v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -920,7 +929,7 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/a81fb76cd9e2057f.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/1c73f80b4f384bee.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -930,13 +939,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">中国臨床試験登録センター（ChiCTR）</span></div>
+            <div class="val"><span class="eval-chip">CUB</span><span class="eval-chip">FGVC-Aircraft</span><span class="eval-chip">Stanford Cars</span><span class="eval-chip">CIFAR-10</span><span class="eval-chip">ImageNet-100</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">登録済み研究数</span><span class="eval-chip">承認済み製品数</span></div>
+            <div class="val"><span class="eval-chip">novel-category accuracy</span><span class="eval-chip">latency</span><span class="eval-chip">FLOPs</span></div>
           </div>
           
         </div>
@@ -953,7 +962,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">中国のBCI研究開発の現状を、臨床試験、登録済み製品、研究者主導の試験からなる3つの柱に基づいて分析し、中国におけるBCI技術の応用と将来の展開を明らかにした</div>
+        <div class="insight-block">SubViT は、画像を複数のサブトークンに分割してローカライズされた変化を捉え、グローバルなコンテキストを維持することで、画像認識の精度を向上させる</div>
         
 
         
@@ -961,13 +970,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">データ収集</span>
+            <span class="step">トレーニング</span>
             <span class="arrow">▶</span>
             
-            <span class="step">臨床試験</span>
+            <span class="step">サブトークン化</span>
             <span class="arrow">▶</span>
             
-            <span class="step">製品承認</span>
+            <span class="step">アテンションマップ抽出</span>
             
             
           </div>
@@ -977,38 +986,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">中国におけるBCI関連製品の承認数は5件で、世界初の半侵襲性インプラントBCIが含まれる</div>
+          <div class="eval-key">SubViT は、DINOv2 の平均新規カテゴリ精度を 81.3% から 84.7% 向上させた</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('a81fb76cd9e2057f', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('1c73f80b4f384bee', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="aa80499f26057098" data-idx="6">
+  <section class="slide" data-id="59ed4ce503a81117" data-idx="6">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      脳コンピュータインターフェース（BCI）技術を用いて、脳損傷による運動機能やコミュニケーション機能の喪失を回復するための中国のトランスレーショナルエコシステムを分析した
+      この論文は、盲人向けのメームの音声表現システムMemeBuddyを提案し、会話形式のメーム表現が従来のキャプション形式よりもエンゲージメントとユーザーサティスファクションを向上させることを実証した
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.07185v1" target="_blank" rel="noopener">Clinical Translation of Brain-Computer Interface in China: A Landscape Analysis of Investigator-Initiated Trials, Registered Clinical Trials, and Regulatory Approval</a></h2>
-      <p class="authors">Long Chen, Wanyi Qing, Lifen Mo, +6 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.08912v1" target="_blank" rel="noopener">MemeBuddy: Dialog-Style Audio Representations for Engaging Non-Visual Meme Experiences</a></h2>
+      <p class="authors">Chirag Bhansali, Vikas Ashok, Hae-Na Lee</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">BCI</span><span class="badge badge-keyword">脳コンピュータインターフェース</span><span class="badge badge-keyword">神経損傷</span><span class="badge badge-keyword">脳機能回復</span>
-      <span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-keyword">メーム</span><span class="badge badge-keyword">音声表現</span><span class="badge badge-keyword">多モーダルLLM</span><span class="badge badge-keyword">会話インタラクション</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-08
-        <a href="https://doi.org/10.48550/arXiv.2607.07185" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.07185</a>
-        <a href="https://arxiv.org/abs/2607.07185v1" target="_blank" rel="noopener">arXiv:2607.07185v1</a>
-        <a href="https://arxiv.org/pdf/2607.07185v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-09
+        <a href="https://doi.org/10.48550/arXiv.2607.08912" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.08912</a>
+        <a href="https://arxiv.org/abs/2607.08912v1" target="_blank" rel="noopener">arXiv:2607.08912v1</a>
+        <a href="https://arxiv.org/pdf/2607.08912v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1016,7 +1025,7 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/aa80499f26057098.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/59ed4ce503a81117.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -1026,13 +1035,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">中国臨床試験レジストリ（ChiCTR）</span></div>
+            <div class="val"><span class="eval-chip">ユーザー研究</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">登録件数</span><span class="eval-chip">承認製品数</span></div>
+            <div class="val"><span class="eval-chip">エンゲージメント</span><span class="eval-chip">ユーザーサティスファクション</span><span class="eval-chip">理解度</span></div>
           </div>
           
         </div>
@@ -1049,7 +1058,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">中国のBCIトランスレーショナルエコシステムを分析するために、臨床試験データと規制承認製品のデータを統合して、BCI技術の現状と将来の展望を明らかにした</div>
+        <div class="insight-block">メームを会話形式で表現するために、ロールベースのスピーカーを使用して構造化されたマルチターン音声表現を生成し、メームテキストと文脈知識を統合して意図、タイミング、暗黙の意味を伝える</div>
         
 
         
@@ -1057,13 +1066,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">データ収集</span>
+            <span class="step">メーム解析</span>
             <span class="arrow">▶</span>
             
-            <span class="step">データ分析</span>
+            <span class="step">会話生成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">結果評価</span>
+            <span class="step">音声合成</span>
             
             
           </div>
@@ -1073,38 +1082,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">中国のBCIトランスレーショナルエコシステムは急速に拡大しており、非侵襲性システムが主流であることが明らかになった</div>
+          <div class="eval-key">会話形式のメーム表現が従来のキャプション形式よりもエンゲージメントとユーザーサティスファクションを向上させた</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('aa80499f26057098', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('59ed4ce503a81117', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="fcbc19af5a31225b" data-idx="7">
+  <section class="slide" data-id="a1d60182b9605855" data-idx="7">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      脳波を用いたイメージドスピーチの解码を実現するための新しいパイプラインを提案する
+      ProofCouncilという数学エージェントを開発し、実世界の数学問題に適用した
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.03844v1" target="_blank" rel="noopener">EEG-Based Imagined Speech Decoding Using a Hybrid CNN-SNN Architecture</a></h2>
-      <p class="authors">Fatima Shalhoub, Mariam Al Mawla, Kabalan Chaccour, +2 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.09474v1" target="_blank" rel="noopener">ProofCouncil: An LLM Agent for Solving Open Mathematical Problems</a></h2>
+      <p class="authors">Johannes Schmitt, Tim Gehrunger, Jasper Dekoninck, +4 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">EEG</span><span class="badge badge-keyword">BCI</span><span class="badge badge-keyword">SNN</span><span class="badge badge-keyword">CNN</span>
-      <span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">author-critic architecture</span><span class="badge badge-keyword">mathematical agent</span><span class="badge badge-keyword">FirstProof</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-04
-        <a href="https://doi.org/10.48550/arXiv.2607.03844" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.03844</a>
-        <a href="https://arxiv.org/abs/2607.03844v1" target="_blank" rel="noopener">arXiv:2607.03844v1</a>
-        <a href="https://arxiv.org/pdf/2607.03844v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09474" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09474</a>
+        <a href="https://arxiv.org/abs/2607.09474v1" target="_blank" rel="noopener">arXiv:2607.09474v1</a>
+        <a href="https://arxiv.org/pdf/2607.09474v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1112,8 +1121,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/fcbc19af5a31225b.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 1: Proposed pipeline for EEG-based imagined speech decoding.</p>
+        <div class="hero-fig"><img src="data/figures/a1d60182b9605855.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 2: Progress panel for all 33 attempted problems: rows R1–R3 show the three 10- problem runs, row S the three single-problem pretest runs. Curves show GPT-5.5-Pro postscreen progress estimates. Colors indicate final status, per human feedback where received; the feedback categories match Tab. 1.</p>
         
 
         
@@ -1122,13 +1131,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">2020 BCI Competition III</span></div>
+            <div class="val"><span class="eval-chip">FirstProof</span><span class="eval-chip">数学研究者からの30の未解決問題</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">精度</span></div>
+            <div class="val"><span class="eval-chip">正解率</span><span class="eval-chip">人間のフィードバック</span></div>
           </div>
           
         </div>
@@ -1145,7 +1154,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">脳波信号から時系列表現を抽出するためにCNNを使用し、生物学的にインスパイアされた時系列分類のためにSNNを使用する</div>
+        <div class="insight-block">ProofCouncilは、オーサーと批評家のアーキテクチャを使用して、数学の未解決問題に取り組むエージェントである</div>
         
 
         
@@ -1153,13 +1162,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">信号前処理</span>
+            <span class="step">問題選択</span>
             <span class="arrow">▶</span>
             
-            <span class="step">CNN抽出</span>
+            <span class="step">証明生成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">SNN分類</span>
+            <span class="step">人間のフィードバック</span>
             
             
           </div>
@@ -1169,38 +1178,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案されたCNN-SNNアーキテクチャが80.13%の精度を達成し、既存の方法を上回った</div>
+          <div class="eval-key">6つの問題で最も優れたパフォーマンスを示し、5つの完全に正解した解と2つの約束のある解を生成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('fcbc19af5a31225b', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('a1d60182b9605855', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="a40dd93eaba131c4" data-idx="8">
+  <section class="slide" data-id="4ac4be1a4739d2c8" data-idx="8">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Physiological noise augmentation (PNA), a data augmentation method that explicitly trains decoders to become invariant to task-agnostic artifacts, and shows that PNA approximates anisotropic regularization, penalizing decoder sensitivity along artifact-dominated directions.
+      The results demonstrate that lightweight, task-specific reasoning strategies can provide strong performance on resource-constrained multimodal question answering benchmarks.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.05165v1" target="_blank" rel="noopener">Physiological Noise Augmentation Improves Non-Invasive Brain-to-Speech</a></h2>
-      <p class="authors">Benjamin Ballyk, Teyun Kwon, Miran Özdogan, +1 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.09623v1" target="_blank" rel="noopener">Task-Specific Multimodal Question Answering Agents via Confidence Calibration and Incremental Reasoning for QANTA 2026</a></h2>
+      <p class="authors">Nirjhar Das, Md. Al-Mamun Provath</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
       
-      <span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-06
-        <a href="https://doi.org/10.48550/arXiv.2607.05165" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.05165</a>
-        <a href="https://arxiv.org/abs/2607.05165v1" target="_blank" rel="noopener">arXiv:2607.05165v1</a>
-        <a href="https://arxiv.org/pdf/2607.05165v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09623" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09623</a>
+        <a href="https://arxiv.org/abs/2607.09623v1" target="_blank" rel="noopener">arXiv:2607.09623v1</a>
+        <a href="https://arxiv.org/pdf/2607.09623v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1208,8 +1217,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/a40dd93eaba131c4.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/4ac4be1a4739d2c8.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1. Overview of the proposed QANTA 2026 system. The Tossup agent combines evidence routing, confidence calibration, a</p>
         
 
         
@@ -1222,34 +1231,34 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('a40dd93eaba131c4', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('4ac4be1a4739d2c8', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="3d087fe5ef353868" data-idx="9">
+  <section class="slide" data-id="caa94c56cd0c73eb" data-idx="9">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      For PLV, gaze-based selection enabled the fastest initial pointing when sitting and comparable overall selection time to head-based selection in both scenarios; however, due to reduced gaze stability, head-based selection remained the most stable and the least mentally demanding.
+      Experiments show that the proposed synchronized visual-facial cross-refinement framework with pairwise multimodal evidence fusion with pairwise multimodal evidence fusion for ambivalence and hesitancy recognition improves public macro-F1 over both global visual-face token fusion and synchronized evidence baselines.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.06778v1" target="_blank" rel="noopener">Head, Gaze, or Finger? Comparing Object Selection Techniques in Augmented Reality for People with Low Vision</a></h2>
-      <p class="authors">Ruijia Chen, Tianyi Zhang, Sanbrita Mondal, +2 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.09417v1" target="_blank" rel="noopener">SVF-CR: Synchronized Visual-Facial Cross-Refinement for Multimodal Ambivalence and Hesitancy Recognition</a></h2>
+      <p class="authors">Hyein Park, Namho Kim, Junhwa Kim</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
       
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-07
-        <a href="https://doi.org/10.48550/arXiv.2607.06778" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.06778</a>
-        <a href="https://arxiv.org/abs/2607.06778v1" target="_blank" rel="noopener">arXiv:2607.06778v1</a>
-        <a href="https://arxiv.org/pdf/2607.06778v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-10
+        <a href="https://doi.org/10.48550/arXiv.2607.09417" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.09417</a>
+        <a href="https://arxiv.org/abs/2607.09417v1" target="_blank" rel="noopener">arXiv:2607.09417v1</a>
+        <a href="https://arxiv.org/pdf/2607.09417v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1257,8 +1266,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/3d087fe5ef353868.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 2: Stationary scenario setup (left): a shelf with eight target locations (3 × 3 grid, center excluded). Dynamic scenario setup (right): an 8m walking route with a stop sign 1 m from the path.</p>
+        <div class="hero-fig"><img src="data/figures/caa94c56cd0c73eb.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: Overview of the proposed Synchronized Visual-Facial Cross-Refinement (SVF-CR) framework. The model extracts textual, whole-video visual, cropped-face facial, and acoustic features from an input video. Whole-video and facial segment tokens are temporally synchronized and refined through intra-modal self-attent</p>
         
 
         
@@ -1271,7 +1280,7 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('3d087fe5ef353868', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('caa94c56cd0c73eb', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
