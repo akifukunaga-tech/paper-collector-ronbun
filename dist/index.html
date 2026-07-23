@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="icon" type="image/png" href="/icons/favicon.png">
-<title>Today's Papers - 2026-07-22 (Wed)</title>
+<title>Today's Papers - 2026-07-23 (Thu)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -372,7 +372,7 @@
 
 <header>
   <h1>Today's Papers</h1>
-  <span class="sub">2026-07-22 (Wed) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="sub">2026-07-23 (Thu) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
   
   
@@ -410,125 +410,29 @@
 
 <main class="slides" id="slides">
 
-  <section class="slide" data-id="dce456b9edc6347e" data-idx="0">
+  <section class="slide" data-id="ae71021e5144791a" data-idx="0">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      プロジェクターカメラシステムの精度と効率のトレードオフを解決するための新しいフレームワークを提案する
+      熱画像を可視画像に変換する技術の限界を解決するための新しいフレームワークを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17803v1" target="_blank" rel="noopener">FF-ProCams: Feed-Forward Gaussian Splatting for Projector-Camera System</a></h2>
-      <p class="authors">Ziyao Wang, Yuqi Li, Wenxing Zheng, +2 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.19886v1" target="_blank" rel="noopener">MTVDiff: Multimodal Conditional Latent Diffusion for Enhanced Thermal-to-Visible Face Translation</a></h2>
+      <p class="authors">Zhiyuan Xia, Haojie Li, Jingyu Lin, +2 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">プロジェクターカメラシステム</span><span class="badge badge-keyword">3D再構築</span><span class="badge badge-keyword">ガウシアン逆レンダリング</span><span class="badge badge-keyword">ディープラーニング</span><span class="badge badge-keyword">光学計測</span>
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
-      <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17803" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17803</a>
-        <a href="https://arxiv.org/abs/2607.17803v1" target="_blank" rel="noopener">arXiv:2607.17803v1</a>
-        <a href="https://arxiv.org/pdf/2607.17803v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/dce456b9edc6347e.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">シンセティックProCamsデータセット</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">PSNR</span><span class="eval-chip">SSIM</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">ハイブリッドエンコーダを用いて、幾何学的および光学的なヒントをクロスビューで統合し、軽量ヘッドを用いてリライト可能なガウシアン表現を予測する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">データ収集</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">エンコーダー</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">ヘッド予測</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">297ビューを使用した最適化ベースの基準よりも高い精度を達成し、テスト時間の再構築を0.13秒に短縮する</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('dce456b9edc6347e', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="17b45da348518033" data-idx="1">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      この論文では、自動化された事実検証のためにDeLIVeRというフレームワークを提案している
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17935v1" target="_blank" rel="noopener">DeLIVeR: Decomposed Learning for Information-grounded Veracity Recognition via Reinforced Knowledge Graph Exploration</a></h2>
-      <p class="authors">Cong Hoan Nguyen, Thomas Hoang, Hieu Minh Duong, +1 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Large Language Models</span><span class="badge badge-keyword">Knowledge Graphs</span><span class="badge badge-keyword">Reinforced Learning</span><span class="badge badge-keyword">Fact-Checking</span>
+      <span class="badge badge-keyword">熱画像</span><span class="badge badge-keyword">可視画像</span><span class="badge badge-keyword">深度情報</span><span class="badge badge-keyword">テキスト情報</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17935" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17935</a>
-        <a href="https://arxiv.org/abs/2607.17935v1" target="_blank" rel="noopener">arXiv:2607.17935v1</a>
-        <a href="https://arxiv.org/pdf/2607.17935v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-22
+        <a href="https://doi.org/10.48550/arXiv.2607.19886" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.19886</a>
+        <a href="https://arxiv.org/abs/2607.19886v1" target="_blank" rel="noopener">arXiv:2607.19886v1</a>
+        <a href="https://arxiv.org/pdf/2607.19886v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -536,8 +440,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/17b45da348518033.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 2. The overall DeLIVeR architecture operates through four key stages: generat- ing a sequence of questions, querying the knowledge graph, extracting the supporting information set, and updating the generative model using GRPO.</p>
+        <div class="hero-fig"><img src="data/figures/ae71021e5144791a.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 1: The overall framework of the proposed multi-modal conditional latent diffusion (MTVDiff).</p>
         
 
         
@@ -546,13 +450,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">LIAR</span><span class="eval-chip">FEVER</span><span class="eval-chip">PolitiFact</span></div>
+            <div class="val"><span class="eval-chip">MCXFace</span><span class="eval-chip">SpeakingFaces</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">F1-score</span></div>
+            <div class="val"><span class="eval-chip">FID</span><span class="eval-chip">Rank-1精度</span></div>
           </div>
           
         </div>
@@ -569,7 +473,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">DeLIVeRは、Planner LLMを用いて複雑な主張をターゲット化された質問セットに分解し、構造化されたKnowledge Graphsを利用して高精度な証拠を取得する</div>
+        <div class="insight-block">多様な情報を統合するための新しいラテント拡散フレームワークを提案し、熱画像と深度情報、テキスト情報を統合して高品質の可視画像を生成する</div>
         
 
         
@@ -577,13 +481,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">質問分解</span>
+            <span class="step">特徴抽出</span>
             <span class="arrow">▶</span>
             
-            <span class="step">Knowledge Graphs探索</span>
+            <span class="step">特徴融合</span>
             <span class="arrow">▶</span>
             
-            <span class="step">証拠評価</span>
+            <span class="step">画像生成</span>
             
             
           </div>
@@ -593,38 +497,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">DeLIVeRは既存のベースラインを10-15%上回る結果を達成した</div>
+          <div class="eval-key">提案手法が既存手法と比較して、FIDを最大48.3%、Rank-1精度を最大8.9%改善した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('17b45da348518033', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('ae71021e5144791a', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="40299022835c4315" data-idx="2">
+  <section class="slide" data-id="a1bfecdc09cd95d6" data-idx="1">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      視覚観測から物理的に妥当な衝撃音を合成するために、内部充填状態を考慮した新しいタスクとデータセットを提案した
+      大規模言語モデルに強化学習を適用し、法文書の翻訳精度を向上させる方法を研究した
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17773v1" target="_blank" rel="noopener">FillGauss: Fine-Grained Filling-Aware Impact Sound Generation for 3D Gaussian Splatting</a></h2>
-      <p class="authors">Chen Yang, Ganye Wen, Bin Huang, +4 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.19226v1" target="_blank" rel="noopener">The Price of Reasoning: Cost-Quality Tradeoffs in Reinforcement Learning for Neural Machine Translation</a></h2>
+      <p class="authors">Michael Jungo, Aixiu An</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">3D Gaussian Splatting</span><span class="badge badge-keyword">内部状態条件付け</span><span class="badge badge-keyword">ラテント拡散アーキテクチャ</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="badge badge-keyword">強化学習</span><span class="badge badge-keyword">大規模言語モデル</span><span class="badge badge-keyword">ニューラル機械翻訳</span><span class="badge badge-keyword">推論能力</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17773" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17773</a>
-        <a href="https://arxiv.org/abs/2607.17773v1" target="_blank" rel="noopener">arXiv:2607.17773v1</a>
-        <a href="https://arxiv.org/pdf/2607.17773v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-21
+        <a href="https://doi.org/10.1145/3820755.3833407" target="_blank" rel="noopener">doi:10.1145/3820755.3833407</a>
+        <a href="https://arxiv.org/abs/2607.19226v1" target="_blank" rel="noopener">arXiv:2607.19226v1</a>
+        <a href="https://arxiv.org/pdf/2607.19226v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -632,8 +536,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/40299022835c4315.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 15. An overview of the 88 real-world objects in FillImpact, meticulously curated to capture the coupled acoustic dynamics of 3D geometry and varying internal filling states.</p>
+        <div class="hero-fig"><img src="data/figures/a1bfecdc09cd95d6.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -642,13 +546,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">FillImpact</span></div>
+            <div class="val"><span class="eval-chip">法文書データセット</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">高忠実度音響生成</span></div>
+            <div class="val"><span class="eval-chip">BLEUスコア</span><span class="eval-chip">ROUGEスコア</span></div>
           </div>
           
         </div>
@@ -665,7 +569,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">3D Gaussian Splattingと内部状態条件付けを組み合わせた新しい生成フレームワークを提案し、位置、打撃物、充填状態に応じた音響合成を実現した</div>
+        <div class="insight-block">強化学習と推論トレースを組み合わせた手法を用いて、法文書の翻訳精度を向上させた</div>
         
 
         
@@ -673,16 +577,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">データ収集</span>
+            <span class="step">データ準備</span>
             <span class="arrow">▶</span>
             
-            <span class="step">データ分析</span>
+            <span class="step">モデル訓練</span>
             <span class="arrow">▶</span>
             
-            <span class="step">生成フレームワーク構築</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">実験評価</span>
+            <span class="step">推論</span>
             
             
           </div>
@@ -692,38 +593,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法が物理的に根拠のある高忠実度の衝撃音を生成できることを実証した</div>
+          <div class="eval-key">推論時に推論トレースを含めることで、翻訳精度が向上した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('40299022835c4315', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('a1bfecdc09cd95d6', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="0b130f4fca6ffa6d" data-idx="3">
+  <section class="slide" data-id="5c1d9735f15acb0e" data-idx="2">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      化学的有効性オペレーターを導入して、生成物質設計の信頼性と解釈可能性を高める
+      3Dシーンの高品質なホログラム合成を実現するためのレンダリングパイプラインを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17910v1" target="_blank" rel="noopener">Chemical filters for ultra-high-throughput materials screening and generation</a></h2>
-      <p class="authors">Kinga O. Mastej, Panyalak Detrattanawichai, Hyunsoo Park, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.19731v1" target="_blank" rel="noopener">Fast Wave-optics Rendering of Multiplane Images for 3D Holographic Displays</a></h2>
+      <p class="authors">Brian Chao, Dario Seyb, Nathan Matsuda, +6 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Generative AI</span><span class="badge badge-keyword">材料設計</span><span class="badge badge-keyword">化学的有効性</span><span class="badge badge-keyword">酸化状態モデル</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="badge badge-keyword">Neural Rendering</span><span class="badge badge-keyword">3D Reconstruction</span><span class="badge badge-keyword">Holographic Displays</span><span class="badge badge-keyword">Multiplane Images</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17910" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17910</a>
-        <a href="https://arxiv.org/abs/2607.17910v1" target="_blank" rel="noopener">arXiv:2607.17910v1</a>
-        <a href="https://arxiv.org/pdf/2607.17910v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-22
+        <a href="https://doi.org/10.48550/arXiv.2607.19731" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.19731</a>
+        <a href="https://arxiv.org/abs/2607.19731v1" target="_blank" rel="noopener">arXiv:2607.19731v1</a>
+        <a href="https://arxiv.org/pdf/2607.19731v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -731,8 +632,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/0b130f4fca6ffa6d.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 5: Pruning of the ABX3 perovskite compositional design space under progressively stricter SMACT filtering settings. Each panel shows admissible A and B element combinations for oxide and halide perovskites with X = O, Cl, Br, or I. Blue markers denote compositions satisfying the specified SMACT criteria, while r</p>
+        <div class="hero-fig"><img src="data/figures/5c1d9735f15acb0e.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -741,13 +642,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">無機結晶</span></div>
+            <div class="val"><span class="eval-chip">3Dシーンデータセット</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">化学的妥当性</span><span class="eval-chip">エネルギー</span></div>
+            <div class="val"><span class="eval-chip">画像品質</span><span class="eval-chip">計算時間</span></div>
           </div>
           
         </div>
@@ -764,7 +665,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">化学的有効性オペレーターを構築して、生成物質の化学的妥当性を評価し、生成物質探索を導く</div>
+        <div class="insight-block">マルチプレーンイメージを用いた波光学レンダリングパイプラインを開発し、高品質なホログラム合成を実現する</div>
         
 
         
@@ -772,16 +673,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">データ収集</span>
+            <span class="step">3Dシーン取得</span>
             <span class="arrow">▶</span>
             
-            <span class="step">モデル構築</span>
+            <span class="step">マルチプレーンイメージ生成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ベンチマーク</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">フィルタリング</span>
+            <span class="step">ホログラム合成</span>
             
             
           </div>
@@ -791,38 +689,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">生成物質の化学的妥当性を高め、低エネルギー化合物の生成率を向上させる</div>
+          <div class="eval-key">提案手法は従来手法と比較して250,000倍の高速化を達成し、高品質な画像を生成する</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('0b130f4fca6ffa6d', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('5c1d9735f15acb0e', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="803166cbff06fbb5" data-idx="4">
+  <section class="slide" data-id="e4341f48892e9677" data-idx="3">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      会話における複数モーダル感情認識の精度を高める新しいアプローチを提案する
+      会話における多モーダル感情認識の精度向上を目的とした研究
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17366v1" target="_blank" rel="noopener">EII-SCL: Harnessing Emotional Inertia for Multimodal Emotion Recognition in Conversation</a></h2>
-      <p class="authors">Zilong Huang, Kong Aik Lee, Chong-Xin Gan, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.18336v1" target="_blank" rel="noopener">EmoEUS: Uncertainty Supervision for Multimodal Emotion Recognition in Conversation</a></h2>
+      <p class="authors">Zilong Huang, Kong Aik Lee, Junjie Li, +2 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Multimodal Emotion Recognition</span><span class="badge badge-keyword">Contrastive Learning</span><span class="badge badge-keyword">Emotional Inertia</span><span class="badge badge-keyword">Supervised Learning</span>
+      <span class="badge badge-keyword">多モーダル感情認識</span><span class="badge badge-keyword">不確実性</span><span class="badge badge-keyword">モダリティ</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
         2026-07-19
-        <a href="https://doi.org/10.48550/arXiv.2607.17366" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17366</a>
-        <a href="https://arxiv.org/abs/2607.17366v1" target="_blank" rel="noopener">arXiv:2607.17366v1</a>
-        <a href="https://arxiv.org/pdf/2607.17366v1" target="_blank" rel="noopener">[PDF]</a>
+        <a href="https://doi.org/10.48550/arXiv.2607.18336" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.18336</a>
+        <a href="https://arxiv.org/abs/2607.18336v1" target="_blank" rel="noopener">arXiv:2607.18336v1</a>
+        <a href="https://arxiv.org/pdf/2607.18336v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -830,8 +728,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/803166cbff06fbb5.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: The overall architecture of the proposed EII-SCL approach. The backbone MERC model completes emotion prediction through contextual features extraction, multimodal feature fusion, and emotion classification. EII-SCL works with the backbone network to learn more subtle and discriminative feature representations</p>
+        <div class="hero-fig"><img src="data/figures/e4341f48892e9677.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: The overall architecture of the EmoEUS framework. EmoEUS enhances MERC performance through explicit uncertainty supervision and uncertainty-aware multimodal fusion. Solid and dashed rectangles denote trainable and frozen models, respectively.</p>
         
 
         
@@ -846,7 +744,7 @@
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">精度</span></div>
+            <div class="val"><span class="eval-chip">認識精度</span></div>
           </div>
           
         </div>
@@ -863,7 +761,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">感情の慣性を考慮した教師あり対比学習モジュールを提案し、既存のモデルとシームレスに統合する</div>
+        <div class="insight-block">不確実性を考慮した多モーダル融合手法を提案し、モダリティごとの重み付けを行うことで認識精度を向上させる</div>
         
 
         
@@ -871,13 +769,16 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">データ準備</span>
+            <span class="step">データ収集</span>
             <span class="arrow">▶</span>
             
-            <span class="step">モデルの構築</span>
+            <span class="step">モダリティ分析</span>
             <span class="arrow">▶</span>
             
-            <span class="step">評価実験</span>
+            <span class="step">不確実性推定</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">融合</span>
             
             
           </div>
@@ -887,38 +788,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法が既存手法を上回る結果を達成した</div>
+          <div class="eval-key">提案手法が既存手法を上回る結果を示した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('803166cbff06fbb5', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('e4341f48892e9677', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="e1f05a81613ae460" data-idx="5">
+  <section class="slide" data-id="7900b7fce23be900" data-idx="4">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      マイクロアクション分析のためのベンチマークプラットフォームを提供する
+      抗原特異的抗体設計を可能にするAAMFMモデルを提案した
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.16284v1" target="_blank" rel="noopener">MAC 2026: Advancing Micro-Action Analysis Towards Fine-Grained Understanding</a></h2>
-      <p class="authors">Kun Li, Dan Guo, Jihao Gu, +6 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.20057v1" target="_blank" rel="noopener">Antigen-specific Antibody Multi-modal Foundation Model for Functional Antibody Design</a></h2>
+      <p class="authors">Xiaoliang Shi, Zichen Wang, Runze Ma, +2 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">マイクロアクション</span><span class="badge badge-keyword">非言語コミュニケーション</span><span class="badge badge-keyword">マルチモーダル学習</span><span class="badge badge-keyword">人間中心のビデオ理解</span>
+      <span class="badge badge-keyword">抗原特異的抗体設計</span><span class="badge badge-keyword">蛋白質言語モデル</span><span class="badge badge-keyword">多模態学習</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-10
-        <a href="https://doi.org/10.48550/arXiv.2607.16284" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.16284</a>
-        <a href="https://arxiv.org/abs/2607.16284v1" target="_blank" rel="noopener">arXiv:2607.16284v1</a>
-        <a href="https://arxiv.org/pdf/2607.16284v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-22
+        <a href="https://doi.org/10.48550/arXiv.2607.20057" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.20057</a>
+        <a href="https://arxiv.org/abs/2607.20057v1" target="_blank" rel="noopener">arXiv:2607.20057v1</a>
+        <a href="https://arxiv.org/pdf/2607.20057v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -926,199 +827,7 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/e1f05a81613ae460.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 7: Solution of team WHU-HUVPR for Track 3.</p>
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">マイクロアクションデータセット</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">認識精度</span><span class="eval-chip">検出精度</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">マイクロアクションの認識と検出を超えて、微細なセマンティックキューや人間のマイクロアクションの解釈を評価するための新しいタスクを導入する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">データセットの収集</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">タスク設定</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">評価プロトコルの定義</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">マイクロアクション分析の精度と人間中心のビデオ理解への応用が向上した</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('e1f05a81613ae460', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="1ef1d3099392e90a" data-idx="6">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      ゼロショットのテキストガイドによる音楽編集を実現するためのフレームワークを提案する
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17526v1" target="_blank" rel="noopener">FlowSonic: Stable Zero-Shot Music Editing via High-Order Trajectory Integration</a></h2>
-      <p class="authors">Ali Boudaghi, Hadi Zare</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">diffusion transformer</span><span class="badge badge-keyword">rectified flow</span><span class="badge badge-keyword">ODE solver</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
-      <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17526" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17526</a>
-        <a href="https://arxiv.org/abs/2607.17526v1" target="_blank" rel="noopener">arXiv:2607.17526v1</a>
-        <a href="https://arxiv.org/pdf/2607.17526v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/1ef1d3099392e90a.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 3: Influence of injection steps and injection block (IB) count on the transferability–fidelity trade-off for the timbre transfer task. The figure illustrates the effect of injecting the attention value (V) representations during generation on the balance between semantic transferability and fidelity to the source </p>
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">音楽録音</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">セマンティック整合性</span><span class="eval-chip">調和的保存</span><span class="eval-chip">構造的一貫性</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">事前学習された拡散トランスフォーマーと高次ODEソルバを用いて、音楽編集のための安定した潜在空間への逆変換を実現する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">録音の逆変換</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">編集</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">生成</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法が既存の音楽編集手法を上回る性能を示した</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('1ef1d3099392e90a', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="63ecce8dcd4bc67a" data-idx="7">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      未知の楽器の音色を短いオーディオとMIDIのペアから生成する手法を提案した
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.11143v2" target="_blank" rel="noopener">Anysynth:Zero-Shot Instrument Cloning via In-Context Learning and Asymmetric Hierarchical Guidance</a></h2>
-      <p class="authors">Chong Jing, Junan Zhang, Jing Yang, +3 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Zero-shot学習</span><span class="badge badge-keyword">Diffusion Transformer</span><span class="badge badge-keyword">in-context flow matching</span>
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
-      <span class="id-line">
-        2026-07-13
-        <a href="https://doi.org/10.48550/arXiv.2607.11143" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.11143</a>
-        <a href="https://arxiv.org/abs/2607.11143v2" target="_blank" rel="noopener">arXiv:2607.11143v2</a>
-        <a href="https://arxiv.org/pdf/2607.11143v2" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/63ecce8dcd4bc67a.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/7900b7fce23be900.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -1134,7 +843,7 @@
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">音質</span><span class="eval-chip">音色類似度</span><span class="eval-chip">メロディー従属度</span></div>
+            <div class="val"><span class="eval-chip">不明</span></div>
           </div>
           
         </div>
@@ -1151,7 +860,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">Diffusion Transformerを用いて、未圧縮のリファレンスオーディオとターゲットMIDIから直接学習することで、高品質な音色を生成する手法を提案した</div>
+        <div class="insight-block">抗原情報を統合した多模態学習モデルAAMFMを提案し、抗体と抗原のペアを明示的にモデル化することで抗原特異的抗体設計を実現した</div>
         
 
         
@@ -1159,13 +868,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">オーディオ処理</span>
+            <span class="step">データ準備</span>
             <span class="arrow">▶</span>
             
-            <span class="step">MIDI処理</span>
+            <span class="step">モデルトレーニング</span>
             <span class="arrow">▶</span>
             
-            <span class="step">生成</span>
+            <span class="step">ファインチューニング</span>
             
             
           </div>
@@ -1175,38 +884,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法が従来手法を上回る結果を示した</div>
+          <div class="eval-key">AAMFMが機能的抗体設計で最先端のパフォーマンスを達成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('63ecce8dcd4bc67a', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('7900b7fce23be900', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="fbb53e38a0ee3947" data-idx="8">
+  <section class="slide" data-id="de91a68a7b9211a8" data-idx="5">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      ルーブリックベースの強化学習の限界を解消する新しい手法CriPOを提案する
+      パフォーミングアーツのプロモーションに利用されるエレクトロニックシアタープログラム（ETP）を生成するためのマルチエージェントフレームワークを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.18082v1" target="_blank" rel="noopener">Enhancing Rubric-based RL via Self-Distillation</a></h2>
-      <p class="authors">Mingxuan Xia, Yuhang Yang, Chao Ye, +7 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.19947v1" target="_blank" rel="noopener">ETPDesigner: Multi-Agent Orchestration for Interactive Multimodal Electronic Theater Program</a></h2>
+      <p class="authors">Mengtian Li, Xinru Guo, Xiaoru Lin, +3 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">ルーブリックベースの強化学習</span><span class="badge badge-keyword">自己蒸留</span><span class="badge badge-keyword">強化学習</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-keyword">マルチエージェント</span><span class="badge badge-keyword">テキストツーアイメージ</span><span class="badge badge-keyword">ビジュアルコンシステンシー</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.18082" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.18082</a>
-        <a href="https://arxiv.org/abs/2607.18082v1" target="_blank" rel="noopener">arXiv:2607.18082v1</a>
-        <a href="https://arxiv.org/pdf/2607.18082v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-22
+        <a href="https://doi.org/10.48550/arXiv.2607.19947" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.19947</a>
+        <a href="https://arxiv.org/abs/2607.19947v1" target="_blank" rel="noopener">arXiv:2607.19947v1</a>
+        <a href="https://arxiv.org/pdf/2607.19947v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1214,8 +923,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/fbb53e38a0ee3947.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/de91a68a7b9211a8.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 2: Overview of the ETPDesigner framework. ETPDesigner first extracts semantic profiles and design constraints from the script. It then employs an iterative synthesis loop, where a VLM-as-a-Judge optimizes the visual generation via a Tree of Thoughts strategy. Finally, global stylistic priors are extracted to gui</p>
         
 
         
@@ -1224,13 +933,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">医学ベンチマーク</span><span class="eval-chip">科学ベンチマーク</span></div>
+            <div class="val"><span class="eval-chip">ETP-Pro</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">最終性能</span><span class="eval-chip">最適化ステップ数</span></div>
+            <div class="val"><span class="eval-chip">記載なし</span></div>
           </div>
           
         </div>
@@ -1247,7 +956,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">ルーブリックベースの強化学習の限界であるUnexplored CriteriaとSuppressed Criteriaを解消するために、自己蒸留を用いたCriPO手法を提案する</div>
+        <div class="insight-block">グローバルスタイルアンカー機構を用いて、コアポスターから視覚的先験知識を抽出し、全ての生成コンポーネントに厳格な美学的統一性を保証する</div>
         
 
         
@@ -1255,13 +964,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">ルーブリックの作成</span>
+            <span class="step">スクリプト分析</span>
             <span class="arrow">▶</span>
             
-            <span class="step">自己蒸留の実行</span>
+            <span class="step">ポスターシンセシス</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ポリシーの最適化</span>
+            <span class="step">背景生成</span>
             
             
           </div>
@@ -1271,38 +980,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">CriPOは従来のルーブリックベースの強化学習を上回り、約2倍少ない最適化ステップ数で強い最終性能を達成した</div>
+          <div class="eval-key">提案手法が従来手法を上回るセマンティックに忠実で美学的に一貫性のあるETPを生成することを実証する</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('fbb53e38a0ee3947', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('de91a68a7b9211a8', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="b23b32e1d90936c8" data-idx="9">
+  <section class="slide" data-id="c475724ec11dbc1f" data-idx="6">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      A sparse winner-takes-all token selection module is introduced that replaces dense self-attention to improve efficiency and approximate competitive routing observed in biological visual circuits and proposes a neuro-inspired split-and-fuse video transformer.
+      睡眠段階の推定精度を向上させるために、信号源や生理学的表現を分解して分析する枠組みを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.17625v1" target="_blank" rel="noopener">Brain-Aligned Multi-Stream Video Transformers with Sparse Self-Selection</a></h2>
-      <p class="authors">Amir Hosein Fadaei, Mahyar Maleki, Mohammad-Reza A. Dehaqani</p>
+      <h2><a href="https://arxiv.org/abs/2607.19441v1" target="_blank" rel="noopener">How Far Can Wearable-Compatible Signals Go? A Controlled Decomposition of Non-EEG Sleep Staging</a></h2>
+      <p class="authors">Yi Wang</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-keyword">睡眠段階推定</span><span class="badge badge-keyword">生理信号解析</span><span class="badge badge-keyword">信号分解</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
       <span class="id-line">
-        2026-07-20
-        <a href="https://doi.org/10.48550/arXiv.2607.17625" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17625</a>
-        <a href="https://arxiv.org/abs/2607.17625v1" target="_blank" rel="noopener">arXiv:2607.17625v1</a>
-        <a href="https://arxiv.org/pdf/2607.17625v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-21
+        <a href="https://doi.org/10.48550/arXiv.2607.19441" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.19441</a>
+        <a href="https://arxiv.org/abs/2607.19441v1" target="_blank" rel="noopener">arXiv:2607.19441v1</a>
+        <a href="https://arxiv.org/pdf/2607.19441v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1310,8 +1019,203 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/b23b32e1d90936c8.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 6: Model-EEG alignment. (a) Time-resolved multiclass LDA decoding accuracy for 21 visual subcategories. (b) Time-resolved mean Spearman RSA correlations between model RDMs and EEG RDMs with noise ceiling. (c) Peak mean RSA correlations (195 ms) across models (The error bars indicate SEM), with noise ceiling. (d)</p>
+        <div class="hero-fig"><img src="data/figures/c475724ec11dbc1f.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 2. Experimental workflow for the controlled decomposition study. Signals from consumer wearable, laboratory non-EEG, and EEG+EOG reference tiers are aligned to 30-second sleep-stage epochs, transformed into physiological feature representations, and evaluated under subject-disjoint validation. The same compact sta</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">Apple Watch Sleep-Accel</span><span class="eval-chip">Sleep Heart Health Study</span><span class="eval-chip">Sleep-EDF-20</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">κ値</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">睡眠段階推定の精度を向上させるために、信号源、生理学的表現、時間的先験知識、決定の4層にわたる制御された分解フレームワークを導入し、信号の品質や生理学的情報の影響を分析する</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">信号収集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">信号分解</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モデルの適用</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">精度評価</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">実験結果は、非EEG睡眠段階推定の精度がEEGに比べて低く、信号の品質や生理学的情報の影響が大きいことを示した</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('c475724ec11dbc1f', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="3468b48231fed407" data-idx="7">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      歌詞やテキストから高品質の音楽を生成する統一フレームワークを提案した
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2607.20253v1" target="_blank" rel="noopener">Pushing the Frontier of Full-Song Generation: Hierarchical Autoregressive Planning Meets Flow-Matching Rendering</a></h2>
+      <p class="authors">Junyu Dai, Xinyue Fan, Weiqin Li, +13 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">音楽生成</span><span class="badge badge-keyword">歌詞生成</span><span class="badge badge-keyword">VAE</span>
+      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-07-22
+        <a href="https://doi.org/10.48550/arXiv.2607.20253" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.20253</a>
+        <a href="https://arxiv.org/abs/2607.20253v1" target="_blank" rel="noopener">arXiv:2607.20253v1</a>
+        <a href="https://arxiv.org/pdf/2607.20253v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/3468b48231fed407.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 8: Overview of the RL-based post-training pipeline, including DPO and GRPO.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">多言語自動ベンチマーク</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">音楽性</span><span class="eval-chip">レンダリング品質</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">音楽生成のために階層型自己回帰音響トークンモデルとフルソングフローメッチングを用いた</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">トークン化</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">階層型自己回帰</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">フローメッチング</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">提案フレームワークが競合他法と同等の性能を達成した</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('3468b48231fed407', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="4a836bb78e42e074" data-idx="8">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      ReViV is the first unified framework for holistic egocentric 4D reconstruction that extracts both viewer and view dynamics from a single monocular RGB video and achieves state-of-the-art accuracy and efficiency across holistic ego-body, hand, and gaze reconstruction, camera tracking, while maintaining highly competitive egocentric depth estimation.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2607.17790v1" target="_blank" rel="noopener">ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video</a></h2>
+      <p class="authors">Xiaozhong Lyu, Gen Li, Zhiyin Qian, +3 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-07-20
+        <a href="https://doi.org/10.48550/arXiv.2607.17790" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.17790</a>
+        <a href="https://arxiv.org/abs/2607.17790v1" target="_blank" rel="noopener">arXiv:2607.17790v1</a>
+        <a href="https://arxiv.org/pdf/2607.17790v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/4a836bb78e42e074.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 1: We present ReViV, a unified framework for holistic egocentric 4D reconstruc- tion. Given a monocular egocentric RGB video, our method jointly estimates human- centric modalities, including body, hand pose, and gaze, alongside scene-aware cam- era trajectory and depth estimation. These predictions are integrated</p>
         
 
         
@@ -1324,7 +1228,56 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('b23b32e1d90936c8', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('4a836bb78e42e074', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="32ac34ea99f4a3c8" data-idx="9">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      A two-level meta-rubric framework for evaluating open-ended generation, and instantiate it as Gamut (Grounded Assessment of Multimodal Factuality), a benchmark for factual completeness in long-form generation.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2607.19322v1" target="_blank" rel="noopener">Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness</a></h2>
+      <p class="authors">Xilun Chen, Zhaleh Feizollahi, Ross Goodwin, +5 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-07-21
+        <a href="https://doi.org/10.48550/arXiv.2607.19322" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.19322</a>
+        <a href="https://arxiv.org/abs/2607.19322v1" target="_blank" rel="noopener">arXiv:2607.19322v1</a>
+        <a href="https://arxiv.org/pdf/2607.19322v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/32ac34ea99f4a3c8.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('32ac34ea99f4a3c8', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
