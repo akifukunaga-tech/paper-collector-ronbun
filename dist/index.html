@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="icon" type="image/png" href="/icons/favicon.png">
-<title>Today's Papers - 2026-08-15 (Sat)</title>
+<title>Today's Papers - 2026-08-16 (Sun)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -372,7 +372,7 @@
 
 <header>
   <h1>Today's Papers</h1>
-  <span class="sub">2026-08-15 (Sat) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="sub">2026-08-16 (Sun) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
   
   
@@ -410,125 +410,29 @@
 
 <main class="slides" id="slides">
 
-  <section class="slide" data-id="bc8eae943b2de8b4" data-idx="0">
+  <section class="slide" data-id="7f606eca9727c7b9" data-idx="0">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      手のジェスチャ認識のためのCNNとTransformerを統合したモデルを提案した
+      多部音楽楽譜の光学音楽認識のためのデータセットOSSQ-OMRを紹介する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13217v1" target="_blank" rel="noopener">UniCon-Former: Unified Convolution Transformer is All You Need for Hand Gesture Recognition</a></h2>
-      <p class="authors">Mallika Garg, Debashis Ghosh, Pyari Mohan Pradhan</p>
+      <h2><a href="https://arxiv.org/abs/2608.10978v1" target="_blank" rel="noopener">A Dataset and Benchmark for Optical Music Recognition of String Quartet Scores</a></h2>
+      <p class="authors">Dongmin Kim, Brian Liu, Jose J. Valero-Mas, +1 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Convolutional Neural Networks</span><span class="badge badge-keyword">Transformers</span><span class="badge badge-keyword">Self-Attention</span><span class="badge badge-keyword">Hand Gesture Recognition</span>
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13217" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13217</a>
-        <a href="https://arxiv.org/abs/2608.13217v1" target="_blank" rel="noopener">arXiv:2608.13217v1</a>
-        <a href="https://arxiv.org/pdf/2608.13217v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/bc8eae943b2de8b4.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 1: The proposed model with Unified convolutional transformer. First, the input features are given to the convolution block and then through the MHA. a) shows the flow of input from the C-block to the MHA.</p>
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">NVGesture</span><span class="eval-chip">Briareo</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">Parameters</span><span class="eval-chip">MACs</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">CNNとTransformerを統合し、局所的特徴と全体的特徴の両方を学習することで、手のジェスチャ認識の性能を向上させた</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">Convolution</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">Transformer</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">Projection</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">提案モデルは従来のTransformerよりも少ないパラメータと計算コストで状態芸結果を達成した</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('bc8eae943b2de8b4', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="1fa1a33f9d345634" data-idx="1">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      Diffusionモデルによる画像生成の高速化を目的としたGlobal-Impact Cacheの提案
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13043v1" target="_blank" rel="noopener">From Local Mismatch to Global Impact: Optimizing Cache Reuse Policy for Efficient Diffusion</a></h2>
-      <p class="authors">Xichen Ye, Yifan Wu, Zhikang Xie, +3 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">Diffusionモデル</span><span class="badge badge-keyword">キャッシュアクセラレーション</span><span class="badge badge-keyword">ビレベル最適化</span>
+      <span class="badge badge-keyword">Optical Music Recognition</span><span class="badge badge-keyword">OMR</span><span class="badge badge-keyword">String Quartet</span><span class="badge badge-keyword">MusicXML</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13043" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13043</a>
-        <a href="https://arxiv.org/abs/2608.13043v1" target="_blank" rel="noopener">arXiv:2608.13043v1</a>
-        <a href="https://arxiv.org/pdf/2608.13043v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-08-11
+        <a href="https://doi.org/10.48550/arXiv.2608.10978" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.10978</a>
+        <a href="https://arxiv.org/abs/2608.10978v1" target="_blank" rel="noopener">arXiv:2608.10978v1</a>
+        <a href="https://arxiv.org/pdf/2608.10978v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -536,8 +440,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/1fa1a33f9d345634.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 5: Qualitative comparison of im- age generation results on Flux-dev 1.0. Best viewed when zoomed in.</p>
+        <div class="hero-fig"><img src="data/figures/7f606eca9727c7b9.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1. Score excerpts from OSSQ-OMR illustrating the visual diversity of the dataset across publishers, eras, and source conditions. The samples span typeset full scores from major 19th- and 20th-century publishers (Breitkopf & Härtel, Ernst Eulenburg, Trautwein, and others), 18th-century engraving conventions, mode</p>
         
 
         
@@ -546,13 +450,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">Wan2.1</span></div>
+            <div class="val"><span class="eval-chip">OSSQ-OMR</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">LPIPS</span></div>
+            <div class="val"><span class="eval-chip">OMR-NED</span></div>
           </div>
           
         </div>
@@ -569,7 +473,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">エラー伝播の厳密な理論的特性付けとベルンシュタイン形式の再パラメータ化を用いた最適なキャッシュポリシーの探索</div>
+        <div class="insight-block">多部音楽楽譜の光学音楽認識のためのデータセットを作成し、基準プロトコルとベースライン結果を提供することで、OMRの精度を向上させることを目的としている</div>
         
 
         
@@ -577,13 +481,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">エラー伝播解析</span>
+            <span class="step">データセット作成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">キャッシュポリシーの探索</span>
+            <span class="step">ベースラインモデル評価</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ビレベル最適化</span>
+            <span class="step">結果分析</span>
             
             
           </div>
@@ -593,38 +497,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">Wan2.1モデルで2.17倍の高速化とLPIPSの0.1095から0.0316への改善を達成</div>
+          <div class="eval-key">ベースラインモデルは合成入力で3.6%、スキャン入力で5.9%のOMR-NEDを達成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('1fa1a33f9d345634', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('7f606eca9727c7b9', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="fd725fed8b8df5bc" data-idx="2">
+  <section class="slide" data-id="41a57f05d67cc410" data-idx="1">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      視覚概念のアンラーニングタスクで概念の除去を改善する手法を提案する
+      音声言語モデルにおける長文脈推論のパフォーマンスを向上させる技術を提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13478v1" target="_blank" rel="noopener">MapRoute++: Surrogate-Guided Semantic Routing for Visual Concept Unlearning</a></h2>
-      <p class="authors">Ashok Urlana, L. D. M. S. Sai Teja, Vivek Hruday Kavuri, +1 more</p>
+      <h2><a href="https://arxiv.org/abs/2608.08569v1" target="_blank" rel="noopener">VoxZip: Semantic-Anchored Temporal KV Cache Compression for Long-Context Audio Inference</a></h2>
+      <p class="authors">Wenxu Jia, Dongjie Fu, Xize Cheng, +6 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">アンラーニング</span><span class="badge badge-keyword">概念除去</span><span class="badge badge-keyword">マッピング</span><span class="badge badge-keyword">セマンティックルーティング</span>
+      <span class="badge badge-keyword">Speech Large Language Models</span><span class="badge badge-keyword">KV cache compression</span><span class="badge badge-keyword">automatic speech recognition</span><span class="badge badge-keyword">semantic anchors</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13478" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13478</a>
-        <a href="https://arxiv.org/abs/2608.13478v1" target="_blank" rel="noopener">arXiv:2608.13478v1</a>
-        <a href="https://arxiv.org/pdf/2608.13478v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-08-09
+        <a href="https://doi.org/10.48550/arXiv.2608.08569" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.08569</a>
+        <a href="https://arxiv.org/abs/2608.08569v1" target="_blank" rel="noopener">arXiv:2608.08569v1</a>
+        <a href="https://arxiv.org/pdf/2608.08569v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -632,8 +536,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/fd725fed8b8df5bc.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 2: Representative successful unlearning cases of MapRoute++. In each row, the base model produces the target concept from the target prompt, while the unlearned model removes the target under direct and adversarial prompts. The final column shows that a related adjacent concept remains visually recognizable.</p>
+        <div class="hero-fig"><img src="data/figures/41a57f05d67cc410.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 3: GPU peak memory across conversational turns.</p>
         
 
         
@@ -642,13 +546,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">Gen$μ$ 2.0 Challenge</span></div>
+            <div class="val"><span class="eval-chip">Qwen3-Omni</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">Erasing-Retention-Robustness (</span></div>
+            <div class="val"><span class="eval-chip">長文脈推論パフォーマンス</span><span class="eval-chip">圧縮率</span><span class="eval-chip">推論スループット</span></div>
           </div>
           
         </div>
@@ -665,7 +569,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">タスクに特化した学習目標、豊富な概念表現、セマンティックルーティングを導入して概念除去を強化する</div>
+        <div class="insight-block">音声認識のトランスクリプトをセマンティックアンカーとして利用し、オーディオトークンを圧縮して情報密度を高める手法を提案する</div>
         
 
         
@@ -673,13 +577,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">学習目標設定</span>
+            <span class="step">トランスクリプト生成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">概念表現生成</span>
+            <span class="step">トークン圧縮</span>
             <span class="arrow">▶</span>
             
-            <span class="step">セマンティックルーティング</span>
+            <span class="step">フィルタリング</span>
             
             
           </div>
@@ -689,47 +593,44 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">基準モデルを平均12.1%上回る成果を達成</div>
+          <div class="eval-key">20倍のKVキャッシュ圧縮でも基準線の90%のパフォーマンスを維持する</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('fd725fed8b8df5bc', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('41a57f05d67cc410', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="d5a5b820c967b474" data-idx="3">
+  <section class="slide" data-id="28916c5483711e77" data-idx="2">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      インドの700以上の言語と方言に対応する多言語音声認識モデルSraVaani-1.0を提案した
+      この論文は、検索ログから個人情報を推測する脆弱性を評価し、匿名化戦略の有効性を検証する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.08235v2" target="_blank" rel="noopener">SraVaani 1.0: Scaling Inclusive Speech Recognition for Indic Languages</a></h2>
-      <p class="authors">Sujith Pulikodan, Agneedh Basu, Pavan Kumar J, +4 more</p>
+      <h2><a href="https://doi.org/10.1145/3829332" target="_blank" rel="noopener">How Anonymous are Search Engine Queries? Quantifying the Risk to Privacy in Search Engine Query Logs and Protecting Exposure of Personally Identifiable Information in Them</a></h2>
+      <p class="authors">Matan Lieber, Elad Yom-Tov</p>
     </div>
 
     <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">ASR</span><span class="badge badge-keyword">FastConformer</span><span class="badge badge-keyword">多言語モデル</span><span class="badge badge-keyword">自律学習</span>
+      <span class="badge badge-src-acm">ACM</span>
+      <span class="badge badge-keyword">PII</span><span class="badge badge-keyword">匿名化</span><span class="badge badge-keyword">Large Language Model</span><span class="badge badge-keyword">Named-Entity Recognition</span>
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-08
-        <a href="https://doi.org/10.48550/arXiv.2608.08235" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.08235</a>
-        <a href="https://arxiv.org/abs/2608.08235v2" target="_blank" rel="noopener">arXiv:2608.08235v2</a>
-        <a href="https://arxiv.org/pdf/2608.08235v2" target="_blank" rel="noopener">[PDF]</a>
+        2026-08-14
+        <a href="https://doi.org/10.1145/3829332" target="_blank" rel="noopener">doi:10.1145/3829332</a>
+        
+        <a href="https://doi.org/10.1145/3829332" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
     <div class="me-grid">
       <div class="panel method">
         <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/d5a5b820c967b474.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: Training (left) and validation (right) contrastive loss vs. step.</p>
         
 
         
@@ -738,13 +639,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">VAANI</span></div>
+            <div class="val"><span class="eval-chip">検索ログ</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">WER</span></div>
+            <div class="val"><span class="eval-chip">識別精度</span></div>
           </div>
           
         </div>
@@ -761,7 +662,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">自律学習と多モーダル学習を組み合わせて音声エンコーダーの学習を強化し、低リソース言語の認識精度を向上させた</div>
+        <div class="insight-block">人間とオフラインのLarge Language Modelを用いて、検索ログから個人情報を推測する実験を行い、匿名化手法の有効性を評価する</div>
         
 
         
@@ -769,13 +670,13 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">自律学習</span>
+            <span class="step">データ収集</span>
             <span class="arrow">▶</span>
             
-            <span class="step">多モーダル学習</span>
+            <span class="step">PII推測</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ファインチューニング</span>
+            <span class="step">匿名化手法評価</span>
             
             
           </div>
@@ -785,38 +686,38 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">提案モデルは多言語ASRベンチマークで最低WERを達成し、低リソース言語の認識精度を向上させた</div>
+          <div class="eval-key">Dissimilar Addition法を用いた匿名化が、個人情報の識別精度を18%削減することができた</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('d5a5b820c967b474', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('28916c5483711e77', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="e9edf3cc774442d1" data-idx="4">
+  <section class="slide" data-id="ef9da7f16514ebc0" data-idx="3">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      視覚障害者の屋外ナビゲーションを支援するためのモバイルARアプリケーションを開発した
+      言語モデルがタスクに関連する潜在的な構造を保持しているが、利用できないという問題に対処するためのパイプラインを提案する
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.12759v1" target="_blank" rel="noopener">NavSight in the Wild: Understanding Real-World Use of a Mobile Augmented Reality Application for People with Low Vision in Outdoor Navigation</a></h2>
-      <p class="authors">Yuheng Wu, Kexin Zhang, Ben Kosa, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2608.11822v1" target="_blank" rel="noopener">Located but Not Releasable: Silent Gate Inversion and Bounded Linear Release</a></h2>
+      <p class="authors">Xining Xun</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">AR</span><span class="badge badge-keyword">視覚障害</span><span class="badge badge-keyword">屋外ナビゲーション</span><span class="badge badge-keyword">モバイルアプリ</span>
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
+      <span class="badge badge-keyword">言語モデル</span><span class="badge badge-keyword">潜在構造</span><span class="badge badge-keyword">転移学習</span>
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.12759" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.12759</a>
-        <a href="https://arxiv.org/abs/2608.12759v1" target="_blank" rel="noopener">arXiv:2608.12759v1</a>
-        <a href="https://arxiv.org/pdf/2608.12759v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-08-12
+        <a href="https://doi.org/10.48550/arXiv.2608.11822" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.11822</a>
+        <a href="https://arxiv.org/abs/2608.11822v1" target="_blank" rel="noopener">arXiv:2608.11822v1</a>
+        <a href="https://arxiv.org/pdf/2608.11822v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -824,7 +725,391 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/e9edf3cc774442d1.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/ef9da7f16514ebc0.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">25.7Mのトランスフォーマー</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">release率</span><span class="eval-chip">CI</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">言語モデルの潜在構造を検出して活用するためのパイプラインを構築し、検証実験を行った</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">検出</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">局所化</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">解放</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">局所化は成功するが、ゲートの適用は外部データセットで失敗し、線形解放は上限に達する</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('ef9da7f16514ebc0', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="4eda980ca6283690" data-idx="4">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      この論文は、Generative Adversarial Networkを用いた手話ビデオの生成フレームワークを提案する
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2608.13368v1" target="_blank" rel="noopener">Sign Language Video Synthesis via Loss-Guided Multi-Expert GANs</a></h2>
+      <p class="authors">Dingzhan Nong, Zhihao Ren, Ziqi Li, +1 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">Generative Adversarial Network</span><span class="badge badge-keyword">Convolutional-Transformer</span><span class="badge badge-keyword">AdaptiveFeatureFusion</span><span class="badge badge-keyword">United Loss</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-08-13
+        <a href="https://doi.org/10.48550/arXiv.2608.13368" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13368</a>
+        <a href="https://arxiv.org/abs/2608.13368v1" target="_blank" rel="noopener">arXiv:2608.13368v1</a>
+        <a href="https://arxiv.org/pdf/2608.13368v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/4eda980ca6283690.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 6: Local-Global Merged Attention block.</p>
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">カスタムデータセット</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">PSNR</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">複数のディスクリミネーターとエキスパートブランチを用いた多様な視覚特徴の学習を実現し、Implicit Feature Specializationを可能にする</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">データ準備</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">モデルトレーニング</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">評価</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">0.2Bパラメータのモデルで29.8 PSNR、1.3Bパラメータのモデルで30.7 PSNRを達成</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('4eda980ca6283690', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="e206a51a11dd3cde" data-idx="5">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      マルチエージェントシステムで役割を学習可能な制御変数として扱うためのExRoleフレームワークを提案する
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2608.11949v1" target="_blank" rel="noopener">ExRole: From Team Trajectories to Executable Roles in Multi-Agent Language Models</a></h2>
+      <p class="authors">Zhou Liu, Chaoyang Han, Zewei Pan, +2 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">マルチエージェントシステム</span><span class="badge badge-keyword">役割学習</span><span class="badge badge-keyword">言語モデル</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-08-12
+        <a href="https://doi.org/10.48550/arXiv.2608.11949" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.11949</a>
+        <a href="https://arxiv.org/abs/2608.11949v1" target="_blank" rel="noopener">arXiv:2608.11949v1</a>
+        <a href="https://arxiv.org/pdf/2608.11949v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/e206a51a11dd3cde.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">MuSiQue</span><span class="eval-chip">2WikiMultiHopQA</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">EM</span><span class="eval-chip">F1</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">役割を未来予測に基づく実行可能な制御変数として定義し、トレーニングデータから役割プロトタイプを学習することで、マルチエージェントシステムのパフォーマンスを向上させる</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">トレーニングデータ収集</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">役割プロトタイプ学習</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">役割マーカー生成</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">ExRoleがシングルエージェント検索に対して15.0/14.4と13.5/16.1ポイントのパフォーマンス向上を達成した</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('e206a51a11dd3cde', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="255c988eaddf3dd2" data-idx="6">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      大規模言語モデル用の強化学習ポストトレーニングパイプラインの効率性を向上させる技術を提案する
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2608.11152v1" target="_blank" rel="noopener">Scheduling Mixed RL Rollouts Beyond Prefix Locality</a></h2>
+      <p class="authors">Zetao Hong, Song Yuan, Yuanhao Ding, +4 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">強化学習</span><span class="badge badge-keyword">言語モデル</span><span class="badge badge-keyword">キャッシュ管理</span><span class="badge badge-keyword">ロールアウトスケジューリング</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-08-11
+        <a href="https://doi.org/10.48550/arXiv.2608.11152" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.11152</a>
+        <a href="https://arxiv.org/abs/2608.11152v1" target="_blank" rel="noopener">arXiv:2608.11152v1</a>
+        <a href="https://arxiv.org/pdf/2608.11152v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/255c988eaddf3dd2.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+        <div class="eval-block">
+          <h4 class="sub-h">Evaluation</h4>
+          
+          <div class="eval-row">
+            <span class="lbl">Datasets</span>
+            <div class="val"><span class="eval-chip">Step3.7</span><span class="eval-chip">Qwen3.6-35B-A3B</span></div>
+          </div>
+          
+          
+          <div class="eval-row">
+            <span class="lbl">Metrics</span>
+            <div class="val"><span class="eval-chip">ロールアウトスループット</span><span class="eval-chip">prefix-cache hit率</span></div>
+          </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="panel insight">
+        
+        <div class="insight-header">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M9 18h6"/>
+            <path d="M10 21h4"/>
+            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
+          </svg>
+          <span>要となるアイデア</span>
+        </div>
+        <div class="insight-block">異なるロールアウトセッション間のキャッシュ容量の競合を制御するための適応セッションアドミッションとキャッシュ容量割り当てを実現する</div>
+        
+
+        
+        <div class="pipeline-section">
+          <h4 class="sub-h sub-h-green">Pipeline</h4>
+          <div class="pipeline">
+            
+            <span class="step">ロールアウト生成</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">キャッシュ割り当て</span>
+            <span class="arrow">▶</span>
+            
+            <span class="step">スケジューリング</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="key-result-section">
+          <span class="lbl">Key Result</span>
+          <div class="eval-key">提案手法MISA-Tが従来手法と比較してロールアウトスループットを53.3%と43.6%向上させる</div>
+        </div>
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('255c988eaddf3dd2', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="ae188a3f886bd75e" data-idx="7">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      この論文は、Combodied Agentsという新しいパラダイムを提案し、人間の状態とエージェンシーを中心としたAIシステムを開発することを目的としている
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2608.10915v1" target="_blank" rel="noopener">ComBodied Agents: a New Paradigm of Human-Centric Agentic AI</a></h2>
+      <p class="authors">Qianggang Ding, Xingyao Wang, Rui Feng, +19 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      <span class="badge badge-keyword">Agentic AI</span><span class="badge badge-keyword">Embodied Agents</span><span class="badge badge-keyword">Human-Centered AI</span><span class="badge badge-keyword">Personal World Models</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-08-11
+        <a href="https://doi.org/10.48550/arXiv.2608.10915" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.10915</a>
+        <a href="https://arxiv.org/abs/2608.10915v1" target="_blank" rel="noopener">arXiv:2608.10915v1</a>
+        <a href="https://arxiv.org/pdf/2608.10915v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/ae188a3f886bd75e.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -857,7 +1142,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">重要な屋外オブジェクトを認識し、リアルタイムの視覚的な拡張をレンダリングする技術を使用している</div>
+        <div class="insight-block">Combodied Agentsは、人間の状態とエージェンシーを中心としたモデリング、介入、評価を行うことで、人間の状態の変化を予測し、サポートすることを目的としている</div>
         
 
         
@@ -865,205 +1150,16 @@
           <h4 class="sub-h sub-h-green">Pipeline</h4>
           <div class="pipeline">
             
-            <span class="step">オブジェクト認識</span>
+            <span class="step">パーソナルイベントの認識</span>
             <span class="arrow">▶</span>
             
-            <span class="step">視覚的拡張</span>
+            <span class="step">長期的記憶の構築</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ユーザー評価</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">NavSightが視覚障害者の屋外ナビゲーションを支援することが実証された</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('e9edf3cc774442d1', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="ec08b3cd1f1fc79a" data-idx="5">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      大規模言語モデルを用いてIsabelle証明の発見を支援するための手法を提案する
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13459v1" target="_blank" rel="noopener">CAPRI: Contract-Aware Proof Repair for Isabelle</a></h2>
-      <p class="authors">Jim Woodcock, Gabriel Leite, Augusto Sampaio, +1 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">Isabelle</span><span class="badge badge-keyword">CAPRI</span><span class="badge badge-keyword">機械学習</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13459" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13459</a>
-        <a href="https://arxiv.org/abs/2608.13459v1" target="_blank" rel="noopener">arXiv:2608.13459v1</a>
-        <a href="https://arxiv.org/pdf/2608.13459v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/ec08b3cd1f1fc79a.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">12個の失敗した証明</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">修復の有効性</span><span class="eval-chip">契約違反の発生率</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">CAPRIという契約認識のある修復ワークフローを提案し、Isabelleによる証明の検証と独立したチェッカーによる編集契約の強制を実現する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">入力処理</span>
+            <span class="step">パーソナルワールドモデルの作成</span>
             <span class="arrow">▶</span>
             
-            <span class="step">修復提案</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">検証</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">提案手法により、29/36の有効な修復が得られ、契約違反は発生しなかった</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('ec08b3cd1f1fc79a', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="f482b50f86559e3b" data-idx="6">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      テニス動画の理解を向上させるために、ストロークの依存関係を考慮した戦術的推論を提案する
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.12920v1" target="_blank" rel="noopener">TennisVAR: A Stroke-Evidence-Grounded Multimodal Large Language Model for Tactical Reasoning in Tennis Videos</a></h2>
-      <p class="authors">Yifan Mei, Qingling Shi, Changli Wu, +3 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">マルチモーダル学習</span><span class="badge badge-keyword">グラフ理論</span><span class="badge badge-keyword">動画理解</span><span class="badge badge-keyword">テニス</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.12920" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.12920</a>
-        <a href="https://arxiv.org/abs/2608.12920v1" target="_blank" rel="noopener">arXiv:2608.12920v1</a>
-        <a href="https://arxiv.org/pdf/2608.12920v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/f482b50f86559e3b.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 3: Qualitative examples of evidence-grounded tac- tical reasoning. TennisVAR links temporally distributed strokes to its answer and rationale.</p>
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">TRACE</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">精度</span><span class="eval-chip">再現率</span><span class="eval-chip">F1スコア</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">ストロークの依存関係を考慮した戦術的推論を実現するために、イベント解析モジュールと戦術グラフガイド時系列推論器を提案する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">イベント解析</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">グラフ構築</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">時系列推論</span>
+            <span class="step">介入ポリシーの選択</span>
             
             
           </div>
@@ -1077,34 +1173,34 @@
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('f482b50f86559e3b', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('ae188a3f886bd75e', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="59620b941462099b" data-idx="7">
+  <section class="slide" data-id="6755433f11ebd0c4" data-idx="8">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      LLMの精神病リスクに関する研究を行い、LLMの安全性と潜在的な悪影響を評価した
+      心臓病の医療における大規模言語モデル(LLM)のベンチマークを開発し、実際の医療現場でのタスクに適応させることを目的としている
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13017v1" target="_blank" rel="noopener">How LLMs Respond to Escalating Delusions: Four Longitudinal Trajectories of Model Behavior</a></h2>
-      <p class="authors">Anna Sterna, Kacper Dudzic, Karolina Drożdż, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2607.25186v1" target="_blank" rel="noopener">MyoCardBench: A Real-World Data Benchmark for Evaluating Large Language Models in Clinically Authentic Cardiovascular Care Scenarios</a></h2>
+      <p class="authors">Xiao Li, Mouxiao Bian, Zhaodi Wu, +8 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">AI psychosis</span><span class="badge badge-keyword">長期評価</span><span class="badge badge-keyword">認知メトリック</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">ベンチマーク</span><span class="badge badge-keyword">心臓病</span><span class="badge badge-keyword">医療</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13017" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13017</a>
-        <a href="https://arxiv.org/abs/2608.13017v1" target="_blank" rel="noopener">arXiv:2608.13017v1</a>
-        <a href="https://arxiv.org/pdf/2608.13017v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-07-28
+        <a href="https://doi.org/10.48550/arXiv.2607.25186" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.25186</a>
+        <a href="https://arxiv.org/abs/2607.25186v1" target="_blank" rel="noopener">arXiv:2607.25186v1</a>
+        <a href="https://arxiv.org/pdf/2607.25186v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -1112,8 +1208,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/59620b941462099b.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/6755433f11ebd0c4.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 5: LLM-specific strengths and performance stability</p>
         
 
         
@@ -1122,13 +1218,13 @@
           
           <div class="eval-row">
             <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">30メッセージスクリプト</span></div>
+            <div class="val"><span class="eval-chip">心臓病関連データ</span></div>
           </div>
           
           
           <div class="eval-row">
             <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">エントレインメント</span><span class="eval-chip">モダリティ</span></div>
+            <div class="val"><span class="eval-chip">マクロ平均</span><span class="eval-chip">ホルスティック臨床品質</span></div>
           </div>
           
         </div>
@@ -1145,103 +1241,7 @@
           </svg>
           <span>要となるアイデア</span>
         </div>
-        <div class="insight-block">LLMの精神病リスクを評価するために、長期的な質的評価設計と自動化されたメトリックを提案し、15のLLMを30日間で評価した</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">LLM選択</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">評価設計</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">データ収集</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">LLMの精神病リスクを評価するための4つの応答トラジェクトリーを同定した</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('59620b941462099b', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="fbe5c870da26252f" data-idx="8">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      MRIの解釈を支援するための時間と空間の認識を含むベンチマークを提案する
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.13309v1" target="_blank" rel="noopener">How Good are Foundation Models in Longitudinal MRI Disease Progression Reasoning?</a></h2>
-      <p class="authors">Wafa Al Ghallabi, Ritesh Thawkar, Sara Ghaboura, +6 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">MRI</span><span class="badge badge-keyword">時間空間推論</span><span class="badge badge-keyword">ビジョン言語モデル</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-08-13
-        <a href="https://doi.org/10.48550/arXiv.2608.13309" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.13309</a>
-        <a href="https://arxiv.org/abs/2608.13309v1" target="_blank" rel="noopener">arXiv:2608.13309v1</a>
-        <a href="https://arxiv.org/pdf/2608.13309v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/fbe5c870da26252f.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">glioblastoma</span><span class="eval-chip">neurodegeneration</span><span class="eval-chip">vestibular schwannoma</span><span class="eval-chip">brain metastases</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">temporal alignment</span><span class="eval-chip">change direction recognition</span><span class="eval-chip">volumetric quantification</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">時間と空間の認識を含むMRIの解釈を支援するためのベンチマークを開発し、16のビジョン言語モデルを評価する</div>
+        <div class="insight-block">実際の医療データから得られた13のタスク特有のデータセットを使用し、16人の心臓病専門医によるアノテーションと参考資料の構築を行った</div>
         
 
         
@@ -1252,103 +1252,7 @@
             <span class="step">データ収集</span>
             <span class="arrow">▶</span>
             
-            <span class="step">ベンチマーク構築</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">モデル評価</span>
-            
-            
-          </div>
-        </div>
-        
-
-        
-        <div class="key-result-section">
-          <span class="lbl">Key Result</span>
-          <div class="eval-key">16のビジョン言語モデルを評価した結果、時間的整列は中程度だったが、変化方向の認識と体積の量化にはシステム的な失敗が見られた</div>
-        </div>
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('fbe5c870da26252f', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="1cfd9f048b03885c" data-idx="9">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      LLMの政治的立場検出におけるプロンプト生成の新しいアプローチを提案する
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.11008v1" target="_blank" rel="noopener">Templated or fully Synthetic? Prompt construction as a confound in measuring LLM political stance beyond writing assistance</a></h2>
-      <p class="authors">Ilias Chalkidis</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      <span class="badge badge-keyword">LLM</span><span class="badge badge-keyword">政治的立場検出</span><span class="badge badge-keyword">プロンプト生成</span>
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-08-11
-        <a href="https://doi.org/10.48550/arXiv.2608.11008" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.11008</a>
-        <a href="https://arxiv.org/abs/2608.11008v1" target="_blank" rel="noopener">arXiv:2608.11008v1</a>
-        <a href="https://arxiv.org/pdf/2608.11008v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/1cfd9f048b03885c.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: Two sets of examples for templated (orange) and LLM-generated (purple) prompts for two selected topics (Climate Change / Russia–Ukraine), each set for one of the two newly introduced intents (information seeking / opinion sharing), and a given user’s stance (neutral / sided). Below, the mean lean of GPT 5.4 m</p>
-        
-
-        
-        <div class="eval-block">
-          <h4 class="sub-h">Evaluation</h4>
-          
-          <div class="eval-row">
-            <span class="lbl">Datasets</span>
-            <div class="val"><span class="eval-chip">3つの政策問題</span><span class="eval-chip">3つの地政学的対立</span></div>
-          </div>
-          
-          
-          <div class="eval-row">
-            <span class="lbl">Metrics</span>
-            <div class="val"><span class="eval-chip">人間の評価</span><span class="eval-chip">LLMの評価</span></div>
-          </div>
-          
-        </div>
-        
-      </div>
-
-      <div class="panel insight">
-        
-        <div class="insight-header">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M9 18h6"/>
-            <path d="M10 21h4"/>
-            <path d="M12 3a7 7 0 0 0-4 12.5V18h8v-2.5A7 7 0 0 0 12 3z" fill="rgba(74,222,128,.1)"/>
-          </svg>
-          <span>要となるアイデア</span>
-        </div>
-        <div class="insight-block">LLM生成プロンプトを用いて、人間の会話のニュアンスを捉えることができる新しい評価手法を開発する</div>
-        
-
-        
-        <div class="pipeline-section">
-          <h4 class="sub-h sub-h-green">Pipeline</h4>
-          <div class="pipeline">
-            
-            <span class="step">プロンプト生成</span>
-            <span class="arrow">▶</span>
-            
-            <span class="step">人間評価</span>
+            <span class="step">アノテーション</span>
             <span class="arrow">▶</span>
             
             <span class="step">LLM評価</span>
@@ -1361,11 +1265,60 @@
         
         <div class="key-result-section">
           <span class="lbl">Key Result</span>
-          <div class="eval-key">LLM生成プロンプトは、人間の評価者によって、テンプレートプロンプトよりも現実的であると評価された</div>
+          <div class="eval-key">GPT-5.4が最高のマクロ平均とアイテム加重平均を達成した</div>
         </div>
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('1cfd9f048b03885c', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('6755433f11ebd0c4', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="985b9572584c9ee2" data-idx="9">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      A detokenizer that converts the semantic audio tokens emitted by the foundation model into high-fidelity audio within the tight compute and memory budget of the Apple Matrix Coprocessor (AMX), and audio quality assessment confirms that the architecture maintains synthesis fidelity while achieving efficiency gains over existing methods.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2607.23811v1" target="_blank" rel="noopener">Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers</a></h2>
+      <p class="authors">Dongseong Hwang, Prasanth Yadla, Kaan Elgin, +8 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="id-line">
+        2026-07-26
+        <a href="https://doi.org/10.48550/arXiv.2607.23811" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.23811</a>
+        <a href="https://arxiv.org/abs/2607.23811v1" target="_blank" rel="noopener">arXiv:2607.23811v1</a>
+        <a href="https://arxiv.org/pdf/2607.23811v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/985b9572584c9ee2.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('985b9572584c9ee2', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
