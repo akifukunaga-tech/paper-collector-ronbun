@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="icon" type="image/png" href="/icons/favicon.png">
-<title>Today's Papers - 2026-09-27 (Sun)</title>
+<title>Today's Papers - 2026-09-29 (Tue)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -372,7 +372,7 @@
 
 <header>
   <h1>Today's Papers</h1>
-  <span class="sub">2026-09-27 (Sun) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="sub">2026-09-29 (Tue) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
   
   
@@ -410,18 +410,214 @@
 
 <main class="slides" id="slides">
 
-  <section class="slide" data-id="99fec74b8f9a1296" data-idx="0">
+  <section class="slide" data-id="e2c4295edd7b0c26" data-idx="0">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      In this paper, we propose an Intrinsic Temporal Adaptation (ITA) framework for PRVR.
+      This work formally defines and systematically investigate continuous EEG emotion recognition as whole-trial affective trajectory prediction, and proposes EAGER, an Evolving Affective Graph framework with Evidence Retrieval for continuous EEG emotion recognition.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2609.04800v1" target="_blank" rel="noopener">Intrinsic Temporal Adaptation of CLIP for Partially Relevant Video Retrieval</a></h2>
-      <p class="authors">Hyun Seok Seong, Woojin Jun, SuBeen Lee, +1 more</p>
+      <h2><a href="https://arxiv.org/abs/2609.30890v1" target="_blank" rel="noopener">From Segments to Trajectories: Evolving Affective Graphs with Evidence Retrieval for Continuous EEG Emotion Recognition</a></h2>
+      <p class="authors">Chi Yang, Jihong Wang, Chengxi Xie, +5 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-09-25
+        <a href="https://doi.org/10.48550/arXiv.2609.30890" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.30890</a>
+        <a href="https://arxiv.org/abs/2609.30890v1" target="_blank" rel="noopener">arXiv:2609.30890v1</a>
+        <a href="https://arxiv.org/pdf/2609.30890v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/e2c4295edd7b0c26.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 2: Overall architecture of EAGER. Each “Cell” is the per-time-step unit of ASTE, combining the Local Coupling Trace and the Contextual Topology Gate to produce the dynamic graph A(k,j) and the enhanced feature X(k,j)</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('e2c4295edd7b0c26', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="265ec5d42c75be94" data-idx="1">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      AnomaSense is presented, a sensor activation approach for wrist wearables that keeps the microphone off by default and turns it on for at most one second when an unsupervised anomaly detector flags an IMU segment that is likely to produce sound.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2609.28936v1" target="_blank" rel="noopener">AnomaSense: Anomaly-based Sensor Activation for Fine-Grained Human Activity Recognition</a></h2>
+      <p class="authors">Xue Wang, Yang Zhang</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-09-24
+        <a href="https://doi.org/10.48550/arXiv.2609.28936" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.28936</a>
+        <a href="https://arxiv.org/abs/2609.28936v1" target="_blank" rel="noopener">arXiv:2609.28936v1</a>
+        <a href="https://arxiv.org/pdf/2609.28936v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/265ec5d42c75be94.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: Overview of the AnomaSense pipeline. Left: unsupervised activity segmentation. An LSTM variational autoencoder trained only on IMU data from non-audible motion reconstructs the incoming six channel IMU stream. The reconstruction error is smoothed and thresholded, and points above the threshold are anomaly poi</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('265ec5d42c75be94', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="35ba860c861f8164" data-idx="2">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      EmoSpeechBrain is introduced, a multimodal framework built on the insight that noise suppression is a precondition for effective fusion, and shows that once EEG noise is suppressed, fusion delivers gains that naive combination cannot.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2609.31399v1" target="_blank" rel="noopener">Differential Attention Unlocks Complementary EEG and Speech Fusion for Emotion Recognition</a></h2>
+      <p class="authors">Philip H. Lee, Shreeram Suresh Chandra, John H. L. Hansen</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-09-25
+        <a href="https://doi.org/10.48550/arXiv.2609.31399" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.31399</a>
+        <a href="https://arxiv.org/abs/2609.31399v1" target="_blank" rel="noopener">arXiv:2609.31399v1</a>
+        <a href="https://arxiv.org/pdf/2609.31399v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/35ba860c861f8164.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">FIGURE 1. Overall architecture of EmoSpeechBrain. (a) The EEG Encoder applies differential attention to isolate discriminative neural activity, while a frozen WavLM-Large encoder extracts speech features. The two modalities interact through parallel cross-modal attention and are fused by the Gating Alignment Module (GA</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('35ba860c861f8164', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="ee91e9b614a36c2f" data-idx="3">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      ViMoWear is proposed, a visual-motion-guided framework that leverages synchronized 3D hand motion as training-only supervision while requiring only wearable sensing for gesture classification at inference and improves the generalization of wearable representations to unseen subjects.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2609.27595v1" target="_blank" rel="noopener">ViMoWear: Visual Motion-Guided sEMG-IMU Representation Learning for Subject-Independent Thumb Gesture Recognition</a></h2>
+      <p class="authors">Wenjuan Zhong, Chenfei Ma, Kianoush Nazarpour</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
+      <span class="id-line">
+        2026-09-23
+        <a href="https://doi.org/10.48550/arXiv.2609.27595" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.27595</a>
+        <a href="https://arxiv.org/abs/2609.27595v1" target="_blank" rel="noopener">arXiv:2609.27595v1</a>
+        <a href="https://arxiv.org/pdf/2609.27595v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/ee91e9b614a36c2f.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 2: Aggregated confusion matrices for linear probing on unseen participants. Left ViMoWear with sEMG; Middle:ViMoWear with IMU; Right: ViMoWear with fused sEMG and IMU.</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('ee91e9b614a36c2f', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="7d68b12146e1400d" data-idx="4">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      Outperforming prior baselines across various metrics, this method can robustly generate structurally clear, detail-rich, and post-editable 3D buildings from text, thereby providing a reliable and interactive content foundation for downstream applications such as virtual reality and digital twins.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2609.23386v1" target="_blank" rel="noopener">ProxyBuild: Text-Guided Structured 3D Building Generation with Mesh-Anchored Procedural Proxies</a></h2>
+      <p class="authors">Xiang Tang, Ruotong Li, Xiaopeng Fan</p>
     </div>
 
     <div class="kw-row">
@@ -429,10 +625,10 @@
       
       <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-09-04
-        <a href="https://doi.org/10.48550/arXiv.2609.04800" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.04800</a>
-        <a href="https://arxiv.org/abs/2609.04800v1" target="_blank" rel="noopener">arXiv:2609.04800v1</a>
-        <a href="https://arxiv.org/pdf/2609.04800v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-20
+        <a href="https://doi.org/10.48550/arXiv.2609.23386" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.23386</a>
+        <a href="https://arxiv.org/abs/2609.23386v1" target="_blank" rel="noopener">arXiv:2609.23386v1</a>
+        <a href="https://arxiv.org/pdf/2609.23386v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -440,8 +636,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/99fec74b8f9a1296.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 5: Comparison between top-k and threshold- based frame selection. The orange dashed lines indicate our final model, while the blue curves show threshold- based selection using different fixed affinity thresh- olds (x-axis). The y-axis denotes SumR.</p>
+        <div class="hero-fig"><img src="data/figures/7d68b12146e1400d.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1. ProxyBuild can process geometric shells of arbitrary shapes that satisfy pre-partitioning requirements, thereby generating struc- turally clear and stylistically diverse 3D buildings. This generative paradigm, tightly coupling macroscopic topological shells with para- metric components, provides high-quality </p>
         
 
         
@@ -454,34 +650,34 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('99fec74b8f9a1296', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('7d68b12146e1400d', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="eaec03f6615d2acb" data-idx="1">
+  <section class="slide" data-id="3bf8c06d23d46b12" data-idx="5">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      To address these issues, we propose STARS-GS, a structure-aware 3DGS framework for large-scale surface reconstruction.
+      This work proposes MoQSplat, which maps 3DGS content onto the Media over QUIC (MoQ) transport hierarchy and evaluates the core components on a prototype implementation, showing that opacity-based pruning outperforms scale-based pruning for progressive delivery.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2609.03447v1" target="_blank" rel="noopener">STARS-GS: Structure-Aware Regularized Gaussian Splatting for Large-Scale Aerial Surface Reconstruction</a></h2>
-      <p class="authors">Bocheng Li, Wenjuan Zhang, Jie Pan. Dongxu Han, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2609.18624v1" target="_blank" rel="noopener">MoQSplat: Adaptive Progressive Streaming of 3D Gaussian Splatting via MoQ</a></h2>
+      <p class="authors">Emanuele Artioli, Mohammadreza Ghafari, Md Tariqul Islam, +3 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
       
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
-        2026-09-03
-        <a href="https://doi.org/10.48550/arXiv.2609.03447" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.03447</a>
-        <a href="https://arxiv.org/abs/2609.03447v1" target="_blank" rel="noopener">arXiv:2609.03447v1</a>
-        <a href="https://arxiv.org/pdf/2609.03447v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-16
+        <a href="https://doi.org/10.48550/arXiv.2609.18624" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.18624</a>
+        <a href="https://arxiv.org/abs/2609.18624v1" target="_blank" rel="noopener">arXiv:2609.18624v1</a>
+        <a href="https://arxiv.org/pdf/2609.18624v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -489,8 +685,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/eaec03f6615d2acb.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 4: Complete surface meshes reconstructed by STARS-GS on GauU- Scene (Xiong et al., 2024) and AIRLY (Yao et al., 2026). The overall tex- tured meshes and representative local details illustrate surface completeness and structural continuity in large-scale scenes.</p>
+        <div class="hero-fig"><img src="data/figures/3bf8c06d23d46b12.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -503,34 +699,34 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('eaec03f6615d2acb', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('3bf8c06d23d46b12', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="b0e0c84645045f7f" data-idx="2">
+  <section class="slide" data-id="820f40d256a52450" data-idx="6">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We propose \textbf{RISE} (\textbf{R}ecursive \textbf{I}mprovement via \textbf{S}elf-\textbf{E}xtrapolating Policy Distillation), which constructs a synthetic teacher directly from the model's own RLVR training trajectory.
+      We present CADSplat, a framework that reconstructs photorealistic, geometrically accurate digital twins from sparse ($<15$ views), wide-baseline posed images of an object by regularizing 3D Gaussian Splatting (3DGS) with an explicit CAD shape prior.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2609.05295v1" target="_blank" rel="noopener">RISE: Recursive Improvement via Self-Extrapolating Policy Distillation</a></h2>
-      <p class="authors">Yang Li, Semih Yavuz, Shafiq Joty</p>
+      <h2><a href="https://arxiv.org/abs/2609.18473v1" target="_blank" rel="noopener">CADSplat: Sparse-View 3D Gaussian Splatting Aided by CAD Models for Robust, Photorealistic Digital-Twin Reconstruction</a></h2>
+      <p class="authors">Kristof Overdulve, Lode Jorissen, Nick Michiels</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
       
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
-        2026-09-04
-        <a href="https://doi.org/10.48550/arXiv.2609.05295" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.05295</a>
-        <a href="https://arxiv.org/abs/2609.05295v1" target="_blank" rel="noopener">arXiv:2609.05295v1</a>
-        <a href="https://arxiv.org/pdf/2609.05295v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-16
+        <a href="https://doi.org/10.48550/arXiv.2609.18473" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.18473</a>
+        <a href="https://arxiv.org/abs/2609.18473v1" target="_blank" rel="noopener">arXiv:2609.18473v1</a>
+        <a href="https://arxiv.org/pdf/2609.18473v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -538,8 +734,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/b0e0c84645045f7f.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: RISE overview. (a) RLVR updates θn →θ′</p>
+        <div class="hero-fig"><img src="data/figures/820f40d256a52450.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -552,72 +748,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('b0e0c84645045f7f', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('820f40d256a52450', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="5537ec3caefebec0" data-idx="3">
+  <section class="slide" data-id="6d259714bc38a022" data-idx="7">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We present \textbf{MudraGen}, a conditional diffusion framework that synthesizes realistic RGB images of \textit{Samyukta Hasta Mudras} -- interactive two-hand gestures from Bharatanatyam (an Indian classical dance form).
+      UniAR leverages a large multimodal model to generate hierarchical diagnostic descriptions at the word, phrase, and sentence levels, compensating for the lack of paired clinical reports, and demonstrates that it offers a robust and interpretable framework for ASD screening under semantic scarcity.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2609.03415v1" target="_blank" rel="noopener">Mudragen: Geometrically Supervised Generation of Interacting Two-Hand Mudras for Preserving Indian Classical Dance Heritage</a></h2>
-      <p class="authors">Jagadish Kashinath Kamble, Jayanta Mukhopadhyay, Debaditya Roy, +1 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-09-03
-        <a href="https://doi.org/10.48550/arXiv.2609.03415" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.03415</a>
-        <a href="https://arxiv.org/abs/2609.03415v1" target="_blank" rel="noopener">arXiv:2609.03415v1</a>
-        <a href="https://arxiv.org/pdf/2609.03415v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/5537ec3caefebec0.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 6: Class-wise quantitative comparison of generative models (Conditional GAN, Conditional Diffusion, MudraGen) across four metrics: FID , KID , LPIPS , and MS-SSIM. Lower FID, KID, and LPIPS values indicate higher realism and perceptual similarity, while higher MS-SSIM reflects better structural consistency. Our </p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('5537ec3caefebec0', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="f9dc201a7f5d7b4d" data-idx="4">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      The proposed HiResNets learn to foveate around scenes similarly to human vision, and have superior performance in difficult egocentric video recognition tasks, especially egocentric video with small objects and fine-grained recognition.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2608.02140v1" target="_blank" rel="noopener">HiResNets: Native Full-HD Video Recognition with Foveal Residual Streams</a></h2>
-      <p class="authors">Shivani Mall, Swarnim Jain, Joao F. Henriques</p>
+      <h2><a href="https://arxiv.org/abs/2609.31298v1" target="_blank" rel="noopener">UniAR: A Unified Framework for Autism Recognition Enhanced by Multi-View Prompt Learning</a></h2>
+      <p class="authors">Lei Xin, Zeheng Wang, Jiayin Zhu, +6 more</p>
     </div>
 
     <div class="kw-row">
@@ -625,10 +772,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-08-03
-        <a href="https://doi.org/10.48550/arXiv.2608.02140" target="_blank" rel="noopener">doi:10.48550/arXiv.2608.02140</a>
-        <a href="https://arxiv.org/abs/2608.02140v1" target="_blank" rel="noopener">arXiv:2608.02140v1</a>
-        <a href="https://arxiv.org/pdf/2608.02140v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-25
+        <a href="https://doi.org/10.48550/arXiv.2609.31298" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.31298</a>
+        <a href="https://arxiv.org/abs/2609.31298v1" target="_blank" rel="noopener">arXiv:2609.31298v1</a>
+        <a href="https://arxiv.org/pdf/2609.31298v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -636,8 +783,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/f9dc201a7f5d7b4d.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 2. Overview of the differences between our scheme and alternative multi-gaze strategies. Using multi-gaze crops in every bottleneck block (column 2) leads to high compute, since all the gazed sites are preserved at high resolution. Using varying single-gaze crops instead (column 3), reduces compute but leads to </p>
+        <div class="hero-fig"><img src="data/figures/6d259714bc38a022.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 5: Data volume statistics of different categories across platforms.</p>
         
 
         
@@ -650,72 +797,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('f9dc201a7f5d7b4d', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('6d259714bc38a022', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="5a05f26811a08063" data-idx="5">
+  <section class="slide" data-id="0713006dec9cd281" data-idx="8">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      A mapping from the legal duties to concepts in HCI, a set of requirements elicited from the official record, an analysis of how the legal system substitutes process for evidence, and a research agenda for computing are made.
+      This work presents PentaCyto, a multi-domain benchmark covering cervical, urinary, respiratory, serous fluid, and thyroid cytology, with 24 base categories and 9 held-out novel categories, and proposes CytoSPM, an efficient detector based on a decoupled two-stage design.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.28869v1" target="_blank" rel="noopener">From Process to Evidence: How Computing Can Ground Appropriate Reliance on Legal AI</a></h2>
-      <p class="authors">James Bryan Williams</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-07-30
-        <a href="https://doi.org/10.48550/arXiv.2607.28869" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.28869</a>
-        <a href="https://arxiv.org/abs/2607.28869v1" target="_blank" rel="noopener">arXiv:2607.28869v1</a>
-        <a href="https://arxiv.org/pdf/2607.28869v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/5a05f26811a08063.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('5a05f26811a08063', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="f1a9758dcd01189a" data-idx="6">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      TokTier is a stateful CPU+GPU tokenization service for this two-mode workload, under one contract that re-tokenizes a small window around the append and splices only when a per-request check finds a stable pre-tokenization boundary.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.29678v1" target="_blank" rel="noopener">TokTier: Exact Stateful Tokenization for Agentic LLM Serving</a></h2>
-      <p class="authors">Zhenyu Zhang, Zhichao Cao</p>
+      <h2><a href="https://arxiv.org/abs/2609.31314v1" target="_blank" rel="noopener">CytoSPM: Open-Vocabulary Cytopathology Detection with Structured Prompt Bank</a></h2>
+      <p class="authors">Wenjie Li, Zishan Xu, Jinyang Huang, +3 more</p>
     </div>
 
     <div class="kw-row">
@@ -723,10 +821,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-31
-        <a href="https://doi.org/10.48550/arXiv.2607.29678" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.29678</a>
-        <a href="https://arxiv.org/abs/2607.29678v1" target="_blank" rel="noopener">arXiv:2607.29678v1</a>
-        <a href="https://arxiv.org/pdf/2607.29678v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-25
+        <a href="https://doi.org/10.48550/arXiv.2609.31314" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.31314</a>
+        <a href="https://arxiv.org/abs/2609.31314v1" target="_blank" rel="noopener">arXiv:2609.31314v1</a>
+        <a href="https://arxiv.org/pdf/2609.31314v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -734,8 +832,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/f1a9758dcd01189a.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/0713006dec9cd281.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 4. Qualitative comparison on PentaCyto. Green, red, and blue boxes denote correct predictions, false positives, and ground truth, respectively.</p>
         
 
         
@@ -748,23 +846,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('f1a9758dcd01189a', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('0713006dec9cd281', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="ce35a100f7d7b73e" data-idx="7">
+  <section class="slide" data-id="91493d533cb7134d" data-idx="9">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Dungan, a Sinitic language of Central Asia written in a Cyrillic-based script, is described in detail in the grammatical literature, yet the quantitative properties of its morphology in actual usage have, to the best of our knowledge, never been measured syste
+      The Spoken Wikipedia Presentation Corpus is presented, an extension of the Spoken Wikipedia Corpora featuring LLM-generated slide decks for multimodal ASR and spoken language models (SLMs) that show a strong potential to improve recognition through cross-modal context.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.28766v1" target="_blank" rel="noopener">The Morphological Core of Dungan: A Two-Dialect Finite-State Model and a Multi-Genre Evaluation</a></h2>
-      <p class="authors">Anton M. Alekseev, Sergey I. Nikolenko</p>
+      <h2><a href="https://arxiv.org/abs/2609.21676v1" target="_blank" rel="noopener">The Spoken Wikipedia Presentation Corpus</a></h2>
+      <p class="authors">Thomas Ranzenberger, Steffen Freisinger, Tobias Bocklet, +1 more</p>
     </div>
 
     <div class="kw-row">
@@ -772,10 +870,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-07-30
-        <a href="https://doi.org/10.48550/arXiv.2607.28766" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.28766</a>
-        <a href="https://arxiv.org/abs/2607.28766v1" target="_blank" rel="noopener">arXiv:2607.28766v1</a>
-        <a href="https://arxiv.org/pdf/2607.28766v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-09-18
+        <a href="https://doi.org/10.48550/arXiv.2609.21676" target="_blank" rel="noopener">doi:10.48550/arXiv.2609.21676</a>
+        <a href="https://arxiv.org/abs/2609.21676v1" target="_blank" rel="noopener">arXiv:2609.21676v1</a>
+        <a href="https://arxiv.org/pdf/2609.21676v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -783,8 +881,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/ce35a100f7d7b73e.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/91493d533cb7134d.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 1. Example of a rendered SWPC slide with title, bullet points, takeaway message, and generated illustrative image on the right.</p>
         
 
         
@@ -797,105 +895,7 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('ce35a100f7d7b73e', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="b5e3a5517744b3a9" data-idx="8">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      It is found that replacing conventional moderation classifiers with foundation-model-based APIs does not, by itself, provide a reliable security boundary, and such systems must be evaluated under realistic transformations and deployed as one component of a layered moderation pipeline rather than as standalone safety filters.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.28187v1" target="_blank" rel="noopener">Old Tricks, New Models: How Simple Image Transformations Break Modern AI-based Content Moderation</a></h2>
-      <p class="authors">Marco Alecci, Francesco Marchiori, Iyiola Emmanuel Olatunji, +2 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-07-30
-        <a href="https://doi.org/10.48550/arXiv.2607.28187" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.28187</a>
-        <a href="https://arxiv.org/abs/2607.28187v1" target="_blank" rel="noopener">arXiv:2607.28187v1</a>
-        <a href="https://arxiv.org/pdf/2607.28187v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/b5e3a5517744b3a9.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: Example of a Salt and Pepper transformation. Both images are censored solely for presentation purposes; all experiments were conducted on the original, uncensored dataset images.</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('b5e3a5517744b3a9', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="082455243856d1e6" data-idx="9">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      A self-initiated investigation of purification-based adversarial detection, comparing three families of detection signals across six detectors that share a CLIP ViT-L/14 backbone finds that raw $|\Delta \text{logit}|$ under median-3 purification, applied through the EFFORT detector, separates adversarial inputs from clean inputs with AUROC 0.81-0.98.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2607.25842v1" target="_blank" rel="noopener">Adversarial Deepfake Generation and an Investigation of Purification-Based Adversarial Detection</a></h2>
-      <p class="authors">Junghyun Kim, Seunghyun Kim, Jiyoung Woo</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-07-28
-        <a href="https://doi.org/10.48550/arXiv.2607.25842" target="_blank" rel="noopener">doi:10.48550/arXiv.2607.25842</a>
-        <a href="https://arxiv.org/abs/2607.25842v1" target="_blank" rel="noopener">arXiv:2607.25842v1</a>
-        <a href="https://arxiv.org/pdf/2607.25842v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/082455243856d1e6.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 2: Image detection pipeline. An input is first matched against the perceptual hashes of our own 1,002 generated submissions; an exact match short-circuits to Fake. Otherwise the image is scored by two complementary detectors — SigLIP+DINOv2 (AI-generated content) and GenD-DINOv3 (face manipulation) — and classif</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('082455243856d1e6', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('91493d533cb7134d', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
