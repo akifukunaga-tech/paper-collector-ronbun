@@ -10,7 +10,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <link rel="icon" type="image/png" href="/icons/favicon.png">
-<title>Today's Papers - 2026-11-03 (Tue)</title>
+<title>Today's Papers - 2026-11-04 (Wed)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -372,7 +372,7 @@
 
 <header>
   <h1>Today's Papers</h1>
-  <span class="sub">2026-11-03 (Tue) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
+  <span class="sub">2026-11-04 (Wed) &middot; 10 picked &middot; <span id="readcount">0</span> read &middot; 70 queued</span>
   <span class="spacer"></span>
   
   
@@ -410,18 +410,67 @@
 
 <main class="slides" id="slides">
 
-  <section class="slide" data-id="a97223c163b0b7b4" data-idx="0">
+  <section class="slide" data-id="25c2582844120d5c" data-idx="0">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      To overcome this limitation, we propose MFlowAudio, a novel latent audio generation framework that synergizes the continuous-time dynamics of Flow Matching with a custom-designed TCMamba backbone.
+      We introduce PixelBench, a benchmark for text-to-pixel (T2P) and image-to-pixel (I2P) generation across multiple resolutions, together with a complementary pixel-understanding evaluation.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41852v1" target="_blank" rel="noopener">MFlowAudio: Efficient Text-to-Audio Synthesis via Mamba-based Stateful Flow Matching</a></h2>
-      <p class="authors">Hao Dai, Panyu Chen, Jagmohan Chauhan</p>
+      <h2><a href="https://arxiv.org/abs/2611.02540v1" target="_blank" rel="noopener">PixelBench: Can LLMs Understand and Generate Images Pixel by Pixel?</a></h2>
+      <p class="authors">Haoquan Zhang, Feiyang Liu, Juanxi Tian, +3 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-11-02
+        <a href="https://doi.org/10.48550/arXiv.2611.02540" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.02540</a>
+        <a href="https://arxiv.org/abs/2611.02540v1" target="_blank" rel="noopener">arXiv:2611.02540v1</a>
+        <a href="https://arxiv.org/pdf/2611.02540v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/25c2582844120d5c.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 1: Zero-shot text-to-pixel generation by large language models. Left: pixel images generated at different resolutions. Right: our generation protocol, in which the model defines a color palette and outputs a numerical grid whose entries index the palette colors. See Figure 3 for image-to-pixel generation.</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('25c2582844120d5c', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="09c41bae8fa54b65" data-idx="1">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      Here, we propose training latent diffusion/flow-based music generation models conditioned on structured captions (SCAPs) and compare with typical free-form captions via a set of controlled ablations.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2611.00685v1" target="_blank" rel="noopener">Text-to-music Generation via Structured Captions AND Interpretable Evaluation</a></h2>
+      <p class="authors">Junkai Wu, Zhepei Wang, Ge Zhu, +3 more</p>
     </div>
 
     <div class="kw-row">
@@ -429,10 +478,10 @@
       
       <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
       <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41852" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41852</a>
-        <a href="https://arxiv.org/abs/2610.41852v1" target="_blank" rel="noopener">arXiv:2610.41852v1</a>
-        <a href="https://arxiv.org/pdf/2610.41852v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-10-31
+        <a href="https://doi.org/10.48550/arXiv.2611.00685" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.00685</a>
+        <a href="https://arxiv.org/abs/2611.00685v1" target="_blank" rel="noopener">arXiv:2611.00685v1</a>
+        <a href="https://arxiv.org/pdf/2611.00685v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -440,8 +489,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/a97223c163b0b7b4.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: The key components of MFlowAudio: (left) the workflow of MFlowAudio, audio is encoded and decoded into latent using VAE and vocoder; (middle) the architecture of the TCMamba block; and (right) the dual-scanning mechanism of Mamba.</p>
+        <div class="hero-fig"><img src="data/figures/09c41bae8fa54b65.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -454,23 +503,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('a97223c163b0b7b4', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('09c41bae8fa54b65', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="aa2b5dba360c2b5b" data-idx="1">
+  <section class="slide" data-id="fc08fe8cf12fafea" data-idx="2">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Motivated by this, we propose ViT-HarDis, which conditions attention head disentanglement on sample difficulty: samples with high cosine similarity to negative class centers receive stronger head decorrelation, enforcing specialization where identity ambiguity
+      We introduce replacement-aware cross-audio supervision: paired-audio samples use full-frame reconstruction, whereas unpaired replacement-audio samples mask out source-mouth reconstruction losses and supervise the mouth solely through audio-visual synchronizati
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41789v1" target="_blank" rel="noopener">Hard Sample-Conditioned Decorrelated Attention for Robust Face Recognition</a></h2>
-      <p class="authors">Tahar Chettaoui, Guray Ozgur, Eduarda Caldeira, +2 more</p>
+      <h2><a href="https://arxiv.org/abs/2611.03404v1" target="_blank" rel="noopener">VidDub: Replacement-Aware Distillation for Two-Step Video Dubbing</a></h2>
+      <p class="authors">Yexin Liu, Yunlong Lin, Zehan Wang, +11 more</p>
     </div>
 
     <div class="kw-row">
@@ -478,10 +527,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41789" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41789</a>
-        <a href="https://arxiv.org/abs/2610.41789v1" target="_blank" rel="noopener">arXiv:2610.41789v1</a>
-        <a href="https://arxiv.org/pdf/2610.41789v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-11-02
+        <a href="https://doi.org/10.48550/arXiv.2611.03404" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.03404</a>
+        <a href="https://arxiv.org/abs/2611.03404v1" target="_blank" rel="noopener">arXiv:2611.03404v1</a>
+        <a href="https://arxiv.org/pdf/2611.03404v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -489,8 +538,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/aa2b5dba360c2b5b.thumb0.jpg" alt="figure" loading="lazy"></div>
-        
+        <div class="hero-fig"><img src="data/figures/fc08fe8cf12fafea.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 6: Held-out multilingual examples. Twelve mechanically selected cases (six English and six Chinese) are shown at matched times. Rows contain the source, same-audio edit, and replacement-speech edit; insets enlarge the mouth, and green borders identify replacement-speech outputs.</p>
         
 
         
@@ -503,23 +552,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('aa2b5dba360c2b5b', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('fc08fe8cf12fafea', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="79a37a76ed846bd1" data-idx="2">
+  <section class="slide" data-id="10cdd3797d74fc95" data-idx="3">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We present our submission to the Beyond Transcription Challenge (BeTraC) on medical note generation from doctor-patient audio conversations.
+      We introduce ARABGEOTEXT, an Arabic-centric benchmark covering 970 geographic locations in Riyadh and Jeddah, with 17,875 manually annotated text instances per view type.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.40695v1" target="_blank" rel="noopener">JYVA at BeTraC: Audio-Based Medical Note Generation with SOAP Section-Specific Queries</a></h2>
-      <p class="authors">Youness Dkhissi, Valentin Vielzeuf, Antoine Caubrière, +1 more</p>
+      <h2><a href="https://arxiv.org/abs/2611.03339v1" target="_blank" rel="noopener">ArabGeoText: Tool-Augmented Vision-Language Models for Arabic Geospatial Text Spotting</a></h2>
+      <p class="authors">Yakoub Bazi, Sarah Alsaleh, Mohamad M. Al Rahhal, +2 more</p>
     </div>
 
     <div class="kw-row">
@@ -527,10 +576,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-10-28
-        <a href="https://doi.org/10.48550/arXiv.2610.40695" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.40695</a>
-        <a href="https://arxiv.org/abs/2610.40695v1" target="_blank" rel="noopener">arXiv:2610.40695v1</a>
-        <a href="https://arxiv.org/pdf/2610.40695v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-11-02
+        <a href="https://doi.org/10.48550/arXiv.2611.03339" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.03339</a>
+        <a href="https://arxiv.org/abs/2611.03339v1" target="_blank" rel="noopener">arXiv:2611.03339v1</a>
+        <a href="https://arxiv.org/pdf/2611.03339v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -538,8 +587,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/79a37a76ed846bd1.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Fig. 2. LLM-as-a-judge evaluation of the submitted systems.</p>
+        <div class="hero-fig"><img src="data/figures/10cdd3797d74fc95.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Fig. 4. Crop preparation: (a) text region detected by YOLO26, (b) its axis-aligned crop, and (c) the rectified and upscaled crop supplied to the VLM reader.</p>
         
 
         
@@ -552,72 +601,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('79a37a76ed846bd1', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('10cdd3797d74fc95', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="b81f5994092fb279" data-idx="3">
+  <section class="slide" data-id="a8afe7a126049c4c" data-idx="4">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We introduce VoxLution, a coarse-to-fine transformer-based approach that generates high-fidelity indoor scenes with rich details, overcoming the overly smooth geometry typical of existing generative models.
+      In this work, we investigate TASU-style posterior alignment as a means of mitigating paired-data scarcity in multilingual ASR.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41501v1" target="_blank" rel="noopener">VoxLution: Evolving Voxels for High-Fidelity 3D Scene Generation</a></h2>
-      <p class="authors">Daoyi Gao, Xinyi Zhang, Alexey Bokhovkin, +2 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41501" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41501</a>
-        <a href="https://arxiv.org/abs/2610.41501v1" target="_blank" rel="noopener">arXiv:2610.41501v1</a>
-        <a href="https://arxiv.org/pdf/2610.41501v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/b81f5994092fb279.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 4. Qualitative comparison on 3D-FRONT [14]. VoxLution generates sharp surfaces and rich geometric details.</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('b81f5994092fb279', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="caffbc88fae75930" data-idx="4">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      In this work, we introduce Grounded Generative Speech Recognition (GSR), reformulating speech recognition as generating semantically grounded text instead of a single transcript.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41292v1" target="_blank" rel="noopener">From Transcription to Reformulation: Defining and Benchmarking Grounded Generative Speech Recognition</a></h2>
-      <p class="authors">Qing Wang, Qihan Hu, Hang Lv, +9 more</p>
+      <h2><a href="https://arxiv.org/abs/2611.00692v1" target="_blank" rel="noopener">Multilingual TASU: Extending Text-Only Alignment to Multilingual Speech Recognition via Simulated CTC Posteriors</a></h2>
+      <p class="authors">Chenghao Wang, Yi Yang, Jing Peng, +3 more</p>
     </div>
 
     <div class="kw-row">
@@ -625,10 +625,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41292" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41292</a>
-        <a href="https://arxiv.org/abs/2610.41292v1" target="_blank" rel="noopener">arXiv:2610.41292v1</a>
-        <a href="https://arxiv.org/pdf/2610.41292v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-10-31
+        <a href="https://doi.org/10.48550/arXiv.2611.00692" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.00692</a>
+        <a href="https://arxiv.org/abs/2611.00692v1" target="_blank" rel="noopener">arXiv:2611.00692v1</a>
+        <a href="https://arxiv.org/pdf/2611.00692v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -636,8 +636,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/caffbc88fae75930.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 1: Overview of GSR-Bench: Data Construction, Quality Assurance, and Hierarchical Task Organization.</p>
+        <div class="hero-fig"><img src="data/figures/a8afe7a126049c4c.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -650,181 +650,34 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('caffbc88fae75930', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('a8afe7a126049c4c', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="373657a1e9a4e60a" data-idx="5">
+  <section class="slide" data-id="87bfb1e8d99b9534" data-idx="5">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      Guided by these observations, we propose $C^3$(Cluster-Compete-Compete), which organizes audio KVs in a hierarchical key-space index, lets query heads sharing a KV head compete for a common retrieval budget, and adaptively reallocates retrieval resolution thro
+      Augmented reality (AR) can support vocabulary learning by placing mnemonic cues in the physical contexts where new words are encountered.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2611.00333v1" target="_blank" rel="noopener">C3: Speech-Guided KV Retrieval for Long-Context SpeechLLM Inference</a></h2>
-      <p class="authors">Dancheng Liu, Markus Müller, Rupak Vignesh Swaminathan, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2610.40760v1" target="_blank" rel="noopener">Personalised 3D Mnemonics for Vocabulary Learning in Context</a></h2>
+      <p class="authors">Karolina Trajkovska, Matjaž Kljun, Maheshya Weerasinghe, +1 more</p>
     </div>
 
     <div class="kw-row">
       <span class="badge badge-src-arxiv">ARXIV</span>
       
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2611.00333" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.00333</a>
-        <a href="https://arxiv.org/abs/2611.00333v1" target="_blank" rel="noopener">arXiv:2611.00333v1</a>
-        <a href="https://arxiv.org/pdf/2611.00333v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/373657a1e9a4e60a.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 3: Retrieval-induced generation drift. The retrieval trajectory initially follows the relevant audio region but later jumps forward, causing the transcript to lose alignment and terminate prema- turely. Curves are smoothed and outliers removed for visualization.</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('373657a1e9a4e60a', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="1aba90740961d459" data-idx="6">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      With the final aim to use MLLMs for visual comparison of complex phenotypes, we investigate a very simple baseline: comparison of the size of body parts in synthetic images of ants.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41841v1" target="_blank" rel="noopener">Open-Weight MLLMs Cannot Compare What They Cannot Name</a></h2>
-      <p class="authors">Wenxin Su, Anna Kreshuk</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
-      <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41841" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41841</a>
-        <a href="https://arxiv.org/abs/2610.41841v1" target="_blank" rel="noopener">arXiv:2610.41841v1</a>
-        <a href="https://arxiv.org/pdf/2610.41841v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/1aba90740961d459.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 6: Top-1 most similar image token connections in the first and last layers of the DINOv3 and Qwen3.8 vision encoders. Blue arrows point from each patch to its most similar patch.</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('1aba90740961d459', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="b7fa40cf0ab6736c" data-idx="7">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      We introduce Motion Regime Expert Routing for Gaussian Splatting (MoRE-GS), a causal, render-aware framework for forecasting dynamic 3D Gaussian scenes.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2611.00375v1" target="_blank" rel="noopener">MoRE-GS: Motion-Regime Experts for Future Gaussian Splatting</a></h2>
-      <p class="authors">Shima Salehi, Joshua Peeples</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">ML_GenAI</span><span class="badge badge-cat">Music_Art</span>
-      <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2611.00375" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.00375</a>
-        <a href="https://arxiv.org/abs/2611.00375v1" target="_blank" rel="noopener">arXiv:2611.00375v1</a>
-        <a href="https://arxiv.org/pdf/2611.00375v1" target="_blank" rel="noopener">[PDF]</a>
-      </span>
-    </div>
-
-    <div class="me-grid">
-      <div class="panel method">
-        <h3>Method</h3>
-        
-        <div class="hero-fig"><img src="data/figures/b7fa40cf0ab6736c.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 2. Long-horizon forecasts and absolute RGB residuals on Mutant, Stand Up, and Chicken. All residual maps use the same color scale.</p>
-        
-
-        
-      </div>
-
-      <div class="panel insight">
-        
-
-        
-
-        
-
-        <button class="btn-read insight-dismiss" onclick="markRead('b7fa40cf0ab6736c', this)">Read &amp; Dismiss (R)</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-id="9e2cdecf0e26488a" data-idx="8">
-
-    
-    <div class="tldr">
-      <span class="label">この論文がやりたいこと</span>
-      We present Apriel Voice 27B Preview, an open speech-language model that unifies these capabilities within a shared reasoning backbone while retaining text and image input modalities.
-    </div>
-    
-
-    <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.40738v1" target="_blank" rel="noopener">Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use</a></h2>
-      <p class="authors">Aman Tiwari, Akshay Kalkunte, Akintunde Oladipo, +28 more</p>
-    </div>
-
-    <div class="kw-row">
-      <span class="badge badge-src-arxiv">ARXIV</span>
-      
-      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
       <span class="id-line">
         2026-10-29
-        <a href="https://doi.org/10.48550/arXiv.2610.40738" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.40738</a>
-        <a href="https://arxiv.org/abs/2610.40738v1" target="_blank" rel="noopener">arXiv:2610.40738v1</a>
-        <a href="https://arxiv.org/pdf/2610.40738v1" target="_blank" rel="noopener">[PDF]</a>
+        <a href="https://doi.org/10.48550/arXiv.2610.40760" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.40760</a>
+        <a href="https://arxiv.org/abs/2610.40760v1" target="_blank" rel="noopener">arXiv:2610.40760v1</a>
+        <a href="https://arxiv.org/pdf/2610.40760v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -832,7 +685,56 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/9e2cdecf0e26488a.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <div class="hero-fig"><img src="data/figures/87bfb1e8d99b9534.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 4: Conceptual storyboard illustrating the proposed interaction design for personalised 3D mnemonics in AR. The five-step pipeline includes (1) system initialisation; (2) physical scene capture; (3) mnemonic prompting; and (4) real-time 3D synthesis, resulting in (5) spatial persistence of the augmented vocabular</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('87bfb1e8d99b9534', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="bbf3cd39630b33b1" data-idx="6">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      Freezing of gait (FoG) detectors built on inertial measurement units (IMUs) are accurate while the legs move, but they become unreliable when the legs are nearly still, which is exactly when akinetic freezing, voluntary stopping, and standing must be told apar
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2611.00497v1" target="_blank" rel="noopener">Where Does EEG Help Wearable Freezing of Gait Detection?</a></h2>
+      <p class="authors">Chuntian Chi, Lifang He, Huajie Shao, +1 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">VR_XR_HCI</span><span class="badge badge-cat">BCI_BMI</span>
+      <span class="id-line">
+        2026-10-31
+        <a href="https://doi.org/10.48550/arXiv.2611.00497" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.00497</a>
+        <a href="https://arxiv.org/abs/2611.00497v1" target="_blank" rel="noopener">arXiv:2611.00497v1</a>
+        <a href="https://arxiv.org/pdf/2611.00497v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/bbf3cd39630b33b1.thumb0.jpg" alt="figure" loading="lazy"></div>
         
         
 
@@ -846,23 +748,23 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('9e2cdecf0e26488a', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('bbf3cd39630b33b1', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
 
-  <section class="slide" data-id="723a3078d476c821" data-idx="9">
+  <section class="slide" data-id="86db9b017930a89e" data-idx="7">
 
     
     <div class="tldr">
       <span class="label">この論文がやりたいこと</span>
-      We introduce Nereus, a large-scale dataset for Underwater Fine-grained Perception that jointly supports Fine-Grained Object Attribute Understanding and Grounded Counting Perception.
+      Language model agents increasingly act on users' behalf by manipulating external environments through tools, often from high-level instructions that leave critical task- and environment-specific context unstated.
     </div>
     
 
     <div class="title-row">
-      <h2><a href="https://arxiv.org/abs/2610.41705v1" target="_blank" rel="noopener">Nereus: A Large-Scale Underwater Dataset for Fine-Grained Attribute Understanding and Grounded Counting Perception</a></h2>
-      <p class="authors">Jingtao Deng, Zihao Jin, Yuehe Chen, +3 more</p>
+      <h2><a href="https://arxiv.org/abs/2611.02950v1" target="_blank" rel="noopener">Action Verification through Conjecture and Refutation for Language Model Agents</a></h2>
+      <p class="authors">Minhyeon Oh, Chiyeong Heo, Geonwoo Noh, +3 more</p>
     </div>
 
     <div class="kw-row">
@@ -870,10 +772,10 @@
       
       <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
       <span class="id-line">
-        2026-10-30
-        <a href="https://doi.org/10.48550/arXiv.2610.41705" target="_blank" rel="noopener">doi:10.48550/arXiv.2610.41705</a>
-        <a href="https://arxiv.org/abs/2610.41705v1" target="_blank" rel="noopener">arXiv:2610.41705v1</a>
-        <a href="https://arxiv.org/pdf/2610.41705v1" target="_blank" rel="noopener">[PDF]</a>
+        2026-11-02
+        <a href="https://doi.org/10.48550/arXiv.2611.02950" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.02950</a>
+        <a href="https://arxiv.org/abs/2611.02950v1" target="_blank" rel="noopener">arXiv:2611.02950v1</a>
+        <a href="https://arxiv.org/pdf/2611.02950v1" target="_blank" rel="noopener">[PDF]</a>
       </span>
     </div>
 
@@ -881,8 +783,8 @@
       <div class="panel method">
         <h3>Method</h3>
         
-        <div class="hero-fig"><img src="data/figures/723a3078d476c821.thumb0.jpg" alt="figure" loading="lazy"></div>
-        <p class="hero-cap">Figure 6: Examples of Nereus applications, covering object-level attribute understanding, region- aware counting, camouﬂage-aware counting, density-hotspot reasoning, and underwater degradation annotation.</p>
+        <div class="hero-fig"><img src="data/figures/86db9b017930a89e.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
         
 
         
@@ -895,7 +797,105 @@
 
         
 
-        <button class="btn-read insight-dismiss" onclick="markRead('723a3078d476c821', this)">Read &amp; Dismiss (R)</button>
+        <button class="btn-read insight-dismiss" onclick="markRead('86db9b017930a89e', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="c8e2fe4611ba2018" data-idx="8">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      In this study, we aim to address this technological disparity by proposing a framework for the automatic collection and preparation of sign language datasets, with very minimal human-labour intervention, using the South African Sign Language (SASL) as a testbe
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2611.02903v1" target="_blank" rel="noopener">Maswao: An automatically collected, prepared, and benchmarked dataset for the South African Sign language</a></h2>
+      <p class="authors">Thapelo Sindane, Unarine Netshifhefhe, Vukosi Marivate, +3 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-11-02
+        <a href="https://doi.org/10.48550/arXiv.2611.02903" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.02903</a>
+        <a href="https://arxiv.org/abs/2611.02903v1" target="_blank" rel="noopener">arXiv:2611.02903v1</a>
+        <a href="https://arxiv.org/pdf/2611.02903v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/c8e2fe4611ba2018.thumb0.jpg" alt="figure" loading="lazy"></div>
+        <p class="hero-cap">Figure 4: Left: A motion-halt detection graph with gradient-informed segmentation points with sentence-size ratios enforced (S(N)), and gradient detection without sentence ratios (E(N)) breaking points. N is the number of sentences determined during the audio transcription phase. Right: dataset splitting with stratifie</p>
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('c8e2fe4611ba2018', this)">Read &amp; Dismiss (R)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-id="711159c5eb3d6d7b" data-idx="9">
+
+    
+    <div class="tldr">
+      <span class="label">この論文がやりたいこと</span>
+      We describe two submissions to Task B of the 1st DAFx Parameter Estimation Challenge, which estimates an unknown number of modal frequency, decay, and gain triples from a synthetic plate-reverb impulse response.
+    </div>
+    
+
+    <div class="title-row">
+      <h2><a href="https://arxiv.org/abs/2611.02083v1" target="_blank" rel="noopener">Count-Density Networks for Modal Plate Parameter Estimation</a></h2>
+      <p class="authors">Rodrigo Diaz, Pablo Tablas De Paula, David Marttila, +2 more</p>
+    </div>
+
+    <div class="kw-row">
+      <span class="badge badge-src-arxiv">ARXIV</span>
+      
+      <span class="badge badge-cat">BCI_BMI</span><span class="badge badge-cat">ML_GenAI</span>
+      <span class="id-line">
+        2026-11-01
+        <a href="https://doi.org/10.48550/arXiv.2611.02083" target="_blank" rel="noopener">doi:10.48550/arXiv.2611.02083</a>
+        <a href="https://arxiv.org/abs/2611.02083v1" target="_blank" rel="noopener">arXiv:2611.02083v1</a>
+        <a href="https://arxiv.org/pdf/2611.02083v1" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+
+    <div class="me-grid">
+      <div class="panel method">
+        <h3>Method</h3>
+        
+        <div class="hero-fig"><img src="data/figures/711159c5eb3d6d7b.thumb0.jpg" alt="figure" loading="lazy"></div>
+        
+        
+
+        
+      </div>
+
+      <div class="panel insight">
+        
+
+        
+
+        
+
+        <button class="btn-read insight-dismiss" onclick="markRead('711159c5eb3d6d7b', this)">Read &amp; Dismiss (R)</button>
       </div>
     </div>
   </section>
